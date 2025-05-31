@@ -1,0 +1,50 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="dotPattern" patternUnits="userSpaceOnUse" width="50" height="50">
+      <circle cx="25" cy="25" r="2" fill="white" opacity="0.1"/>
+    </pattern>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#backgroundGradient)" rx="16"/>
+  
+  <!-- Pattern overlay -->
+  <rect width="800" height="450" fill="url(#dotPattern)"/>
+  
+  <!-- Tech tags -->
+  <g transform="translate(650, 30)">
+    <rect x="0" y="0" width="60" height="25" rx="12" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)"/>
+    <text x="30" y="17" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="white">AI/ML</text>
+  </g>
+  
+  <g transform="translate(720, 30)">
+    <rect x="0" y="0" width="65" height="25" rx="12" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)"/>
+    <text x="32" y="17" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="white">Python</text>
+  </g>
+  
+  <g transform="translate(680, 65)">
+    <rect x="0" y="0" width="70" height="25" rx="12" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.3)"/>
+    <text x="35" y="17" font-family="Inter, sans-serif" font-size="12" text-anchor="middle" fill="white">Medical</text>
+  </g>  
+    <!-- Title -->
+  <text x="400" y="220" font-family="Inter, sans-serif" font-size="40" font-weight="700" text-anchor="middle" fill="white" style="text-shadow: 0 2px 4px rgba(0,0,0,0.3)">Medical Spytool</text>
+    <!-- Subtitle -->
+  <text x="400" y="250" font-family="Inter, sans-serif" font-size="16" text-anchor="middle" fill="white" opacity="0.8">Medizinisch-wissenschaftliche Recherche-Anwendung für Datenauswertung</text>
+  
+  <!-- Play button -->
+  <g transform="translate(400, 300)">
+    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="3" filter="url(#blur)" opacity="0.5"/>
+    <circle cx="0" cy="0" r="40" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.8)" stroke-width="3"/>
+    <polygon points="-12,-15 -12,15 18,0" fill="white"/>
+  </g>
+  
+  <!-- Bottom accent -->
+  <rect x="0" y="430" width="800" height="20" fill="rgba(255,255,255,0.1)" rx="0 0 16 16"/>
+</svg>

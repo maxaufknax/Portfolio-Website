@@ -1,0 +1,31 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Modern portfolio website for Mediendesigninformatik applications",
+  "main": "index.html",  "scripts": {
+    "start": "npx live-server --port=3000 --host=localhost --open=/",
+    "dev": "npx live-server --port=3000 --host=localhost --open=/ --watch=.",
+    "build": "echo 'Static website - no build step required'",
+    "deploy": "echo 'Ready for deployment to GitHub Pages, Vercel, or Netlify'"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "mediendesigninformatik",
+    "responsive",
+    "modern",
+    "html5",
+    "css3",
+    "javascript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/portfolio.git"
+  },
+  "homepage": "https://yourusername.github.io/portfolio"
+}

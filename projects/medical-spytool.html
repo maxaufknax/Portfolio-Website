@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Spytool - Portfolio</title>
+    <meta name="description" content="Medical Spytool - Innovative medizinische Analyse-Software mit AI-Integration">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">&lt;Portfolio/&gt;</a>
+            </div>            <div class="nav-menu" id="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../about.html" class="nav-link">Über mich</a>
+                <a href="../projects.html" class="nav-link active">Projekte</a>
+                <a href="../contact.html" class="nav-link">Kontakt</a>
+                <a href="../qr-code.html" class="nav-link qr-link" title="QR-Code für Portfolio">
+                    <i class="fas fa-qrcode"></i>
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-hero-layout">
+                <div class="project-hero-content">
+                    <div class="project-breadcrumb">
+                        <a href="../projects.html">Projekte</a> / <span>Medical Spytool</span>
+                    </div>
+                    <h1 class="project-title">
+                        <i class="fas fa-stethoscope"></i>
+                        Medical Spytool
+                    </h1>                    <p class="project-subtitle">
+                        Innovative medizinisch-wissenschaftliche Recherche-Anwendung als Desktop- und Webanwendung für umfassende Datenauswertung und detaillierte Analysen
+                    </p>
+                    <div class="project-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span>2024</span>
+                        </div>                        <div class="meta-item">
+                            <i class="fas fa-code"></i>
+                            <span>Python, Medical APIs, SQL</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-users"></i>
+                            <span>Solo-Projekt</span>
+                        </div>
+                    </div>                    <div class="project-actions">
+                        <a href="https://github.com/maxaufknax/Medical-Spytool" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Code auf GitHub ansehen
+                        </a>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-file-pdf"></i> Dokumentation (PDF)
+                        </a>
+                    </div>
+                </div>                <div class="project-hero-image">
+                    <div class="hero-image-container">
+                        <div class="hero-3d-carousel">
+                            <img src="../assets/imag223.png" alt="Medical Spytool - Wissenschaftliche Publikationen Interface" class="hero-interface-image active" />
+                            <img src="../assets/imag224.png" alt="Medical Spytool - Personenbezogene Suche Interface" class="hero-interface-image" />
+                        </div>
+                        <div class="hero-decorations">
+                            <div class="floating-stethoscope">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <div class="floating-pulse"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-image-container">
+                <div class="project-main-image">
+                    <img src="../images/medical-spytool-preview.jpg" alt="Medical Spytool Screenshot" />
+                    <div class="image-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+        </div>    </section><!-- Video Showcase Section -->
+    <section class="project-video-showcase">
+        <div class="container">            <h2 class="section-title">
+                <i class="fas fa-play-circle"></i>
+                Video Showcase
+            </h2>
+
+            <!-- Dual Video Container -->
+            <div class="dual-video-container">
+                <!-- Web Application Video -->
+                <div class="video-card" id="webVideoCard">
+                    <div class="video-card-header">
+                        <h3 class="video-card-title">Web-Anwendung</h3>
+                        <p class="video-card-subtitle">Browser-basierte Benutzeroberfläche</p>
+                    </div>
+                    <div class="video-card-content">
+                        <video 
+                            controls 
+                            poster="../images/medical-spytool-video-thumbnail.svg"
+                            preload="metadata"
+                            class="showcase-video"
+                            id="webVideo"
+                            controlsList="nodownload"
+                            disablePictureInPicture="false"
+                            playsinline
+                        >
+                            <source src="../assets/Medical Spytool Web Showcase.mp4" type="video/mp4">
+                            <p>Ihr Browser unterstützt das Video-Element nicht. 
+                               <a href="../assets/Medical Spytool Web Showcase.mp4">Video herunterladen</a>
+                            </p>
+                        </video>
+                    </div>
+                    <div class="video-card-info">
+                        <ul class="video-card-features">
+                            <li><i class="fas fa-check-circle"></i> Grafische Benutzeroberfläche</li>
+                            <li><i class="fas fa-check-circle"></i> Interaktive Datenvisualisierung</li>
+                            <li><i class="fas fa-check-circle"></i> Workflow-Demonstration</li>
+                            <li><i class="fas fa-check-circle"></i> Export-Funktionen</li>
+                        </ul>
+                    </div>
+                </div>                <!-- Local CLI Application Video -->
+                <div class="video-card" id="localVideoCard">
+                    <div class="video-card-header">
+                        <h3 class="video-card-title">Desktop-Anwendung</h3>
+                        <p class="video-card-subtitle">Lokal-basierte Benutzeroberfläche</p>
+                    </div>
+                    <div class="video-card-content">
+                        <video 
+                            controls 
+                            poster="../images/medical-spytool-local-thumbnail.svg"
+                            preload="metadata"
+                            class="showcase-video"
+                            id="localVideo"
+                            controlsList="nodownload"
+                            disablePictureInPicture="false"
+                            playsinline
+                        >
+                            <source src="../assets/Medical Spytool Local Showcase.mp4" type="video/mp4">
+                            <p>Ihr Browser unterstützt das Video-Element nicht. 
+                               <a href="../assets/Medical Spytool Local Showcase.mp4">Video herunterladen</a>
+                            </p>
+                        </video>
+                    </div>                    <div class="video-card-info">
+                        <ul class="video-card-features">
+                            <li><i class="fas fa-check-circle"></i> Native Desktop-Benutzeroberfläche</li>
+                            <li><i class="fas fa-check-circle"></i> Lokale Datenverarbeitung</li>
+                            <li><i class="fas fa-check-circle"></i> Offline-Funktionalität</li>
+                            <li><i class="fas fa-check-circle"></i> Plattformübergreifende Kompatibilität</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Technical Overview Section -->
+    <section class="project-technical">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-cogs"></i>
+                Technische Details
+            </h2>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Backend</h3>
+                    <p>Python mit FastAPI für hochperformante API-Entwicklung</p>
+                    <ul>
+                        <li>Async/Await Pattern</li>
+                        <li>Automatische API-Dokumentation</li>
+                        <li>Type Hints</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Datenbank</h3>
+                    <p>PostgreSQL für sichere medizinische Datenverarbeitung</p>
+                    <ul>
+                        <li>ACID-Konformität</li>
+                        <li>Verschlüsselung</li>
+                        <li>Skalierbarkeit</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI/ML</h3>
+                    <p>TensorFlow für intelligente Dokumentenanalyse</p>
+                    <ul>
+                        <li>Natural Language Processing</li>
+                        <li>Pattern Recognition</li>
+                        <li>Predictive Analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="project-features">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-star"></i>
+                Hauptfunktionen
+            </h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Intelligente Suche</h3>
+                    <p>AI-gestützte Suche durch medizinische Publikationen und Patientendaten mit semantischer Analyse.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Datenvisualisierung</h3>
+                    <p>Interaktive Dashboards und Grafiken für bessere Dateninterpretation.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Datenschutz</h3>
+                    <p>GDPR-konforme Verarbeitung medizinischer Daten mit End-to-End-Verschlüsselung.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Export-Funktionen</h3>
+                    <p>Flexible Export-Optionen für Berichte und Analyseergebnisse in verschiedenen Formaten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="project-gallery">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-images"></i>
+                Bildergalerie
+            </h2>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../assets/projects/medical-spytool/imag222.png" alt="Medical Spytool Dashboard" />
+                    <div class="gallery-overlay">
+                        <h4>Dashboard</h4>
+                        <p>Hauptübersicht der Anwendung</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/projects/medical-spytool/imag223.png" alt="Medical Spytool Suche" />
+                    <div class="gallery-overlay">
+                        <h4>Suchfunktion</h4>
+                        <p>Erweiterte Suchoptionen</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/projects/medical-spytool/imag224.png" alt="Medical Spytool Analyse" />
+                    <div class="gallery-overlay">
+                        <h4>Datenanalyse</h4>
+                        <p>Detaillierte Analysefunktionen</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/projects/medical-spytool/Screenshot 2025-05-31 at 03-35-10 MedicalSpy - Home.png" alt="Medical Spytool Home" />
+                    <div class="gallery-overlay">
+                        <h4>Startseite</h4>
+                        <p>Benutzerfreundliche Navigation</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="../assets/projects/medical-spytool/Screenshot 2025-05-31 at 04-16-35 MedicalSpy - Suche.png" alt="Medical Spytool Suchergebnisse" />
+                    <div class="gallery-overlay">
+                        <h4>Suchergebnisse</h4>
+                        <p>Übersichtliche Ergebnisdarstellung</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge and Solution Section -->
+    <section class="project-challenge">
+        <div class="container">
+            <div class="challenge-content">
+                <div class="challenge-item">
+                    <h2>
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Herausforderung
+                    </h2>
+                    <p>Die Entwicklung einer sicheren, GDPR-konformen Anwendung für die Verarbeitung sensibler medizinischer Daten, die gleichzeitig benutzerfreundlich und leistungsstark ist.</p>
+                    <ul>
+                        <li>Komplexe medizinische Datenstrukturen</li>
+                        <li>Strenge Datenschutzanforderungen</li>
+                        <li>Performance bei großen Datenmengen</li>
+                        <li>Benutzerfreundliche Interface-Gestaltung</li>
+                    </ul>
+                </div>
+                
+                <div class="solution-item">
+                    <h2>
+                        <i class="fas fa-lightbulb"></i>
+                        Lösung
+                    </h2>
+                    <p>Entwicklung einer modularen Architektur mit KI-Integration, die sowohl als Desktop- als auch als Webanwendung funktioniert.</p>
+                    <ul>
+                        <li>Microservices-Architektur für Skalierbarkeit</li>
+                        <li>End-to-End-Verschlüsselung für Datensicherheit</li>
+                        <li>Caching-Strategien für Performance</li>
+                        <li>Responsive Design für alle Geräte</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Maximilian Paasch</h3>
+                    <p>Medieninformatik Student mit Leidenschaft für innovative Technologien</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../about.html">Über mich</a></li>
+                        <li><a href="../projects.html">Projekte</a></li>
+                        <li><a href="../contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Projekte</h4>
+                    <ul>
+                        <li><a href="medical-spytool.html">Medical Spytool</a></li>
+                        <li><a href="soulscribe.html">SoulScribe</a></li>
+                        <li><a href="ai-discord-bot.html">AI Discord Bot</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Maximilian Paasch. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/main.js"></script>
+</body>
+</html>

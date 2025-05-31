@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Code Generator - Maximilian Paasch Portfolio | Einfach Teilen</title>
+    <meta name="description" content="QR-Code für Maximilian Paasch Portfolio-Website - Einfach scannen und Portfolio ansehen. Automatische URL-Erkennung für verschiedene Deployment-Umgebungen.">
+    <meta name="keywords" content="QR-Code, Portfolio, Teilen, Maximilian Paasch, Generator, URL, Verlinken">
+    <meta name="author" content="Maximilian Paasch">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maximilianpaasch.de/qr-code.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="QR-Code Generator - Maximilian Paasch Portfolio | Einfach Teilen">
+    <meta property="og:description" content="QR-Code für Maximilian Paasch Portfolio-Website - Einfach scannen und Portfolio ansehen.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maximilianpaasch.de/qr-code.html">
+    <meta property="og:image" content="https://maximilianpaasch.de/assets/profile/profile.jpg">
+    <meta property="og:image:alt" content="QR-Code Generator Portfolio">
+    <meta property="og:site_name" content="Maximilian Paasch Portfolio">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="QR-Code Generator - Maximilian Paasch Portfolio | Einfach Teilen">
+    <meta name="twitter:description" content="QR-Code für Maximilian Paasch Portfolio-Website - Einfach scannen und Portfolio ansehen.">
+    <meta name="twitter:image" content="https://maximilianpaasch.de/assets/profile/profile.jpg">
+    <meta name="twitter:image:alt" content="QR-Code Generator Portfolio">
+    
+    <!-- Structured Data for Tool -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Portfolio QR-Code Generator",
+        "description": "QR-Code Generator für Maximilian Paasch Portfolio mit automatischer URL-Erkennung",
+        "applicationCategory": "UtilityApplication",
+        "author": {
+            "@type": "Person",
+            "name": "Maximilian Paasch"
+        },
+        "url": "https://maximilianpaasch.de/qr-code.html",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        }
+    }
+    </script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Max Paasch Portfolio">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">&lt;Portfolio/&gt;</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">Über mich</a>
+                <a href="projects.html" class="nav-link">Projekte</a>
+                <a href="contact.html" class="nav-link">Kontakt</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- QR Code Section -->
+    <section class="qr-hero">
+        <div class="container">
+            <div class="qr-content">
+                <div class="qr-info">
+                    <h1 class="qr-title">
+                        <i class="fas fa-qrcode"></i>
+                        Portfolio QR-Code
+                    </h1>
+                    <p class="qr-subtitle">
+                        Scannen Sie den QR-Code mit Ihrem Smartphone, um mein Portfolio 
+                        jederzeit und überall zu besuchen. Perfekt für Bewerbungen, 
+                        Visitenkarten und Networking-Events.
+                    </p>
+                    
+                    <div class="qr-features">
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobil-optimiert</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>Schneller Zugriff</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Einfach teilbar</span>
+                        </div>
+                    </div>
+
+                    <div class="url-display">
+                        <label for="portfolio-url">Portfolio-URL:</label>
+                        <div class="url-input-group">
+                            <input type="text" id="portfolio-url" value="https://your-portfolio.com" readonly>
+                            <button class="copy-btn" onclick="copyUrl()">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qr-generator">
+                    <div class="qr-card">
+                        <div class="qr-header">
+                            <h3>Portfolio QR-Code</h3>
+                            <div class="qr-controls">
+                                <button class="control-btn" onclick="updateQRCode()" title="Aktualisieren">
+                                    <i class="fas fa-sync-alt"></i>
+                                </button>
+                                <button class="control-btn" onclick="downloadQR()" title="Herunterladen">
+                                    <i class="fas fa-download"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-container">
+                            <canvas id="qr-code"></canvas>
+                            <div class="qr-overlay">
+                                <div class="qr-logo">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="qr-footer">
+                            <p>Scannen für Portfolio-Zugriff</p>
+                            <div class="size-selector">
+                                <label>Größe:</label>
+                                <select id="qr-size" onchange="updateQRSize()">
+                                    <option value="200">Klein (200px)</option>
+                                    <option value="300" selected>Mittel (300px)</option>
+                                    <option value="500">Groß (500px)</option>
+                                    <option value="800">Extra Groß (800px)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Instructions -->
+    <section class="usage-instructions">
+        <div class="container">
+            <h2 class="section-title">Verwendungsmöglichkeiten</h2>
+            <div class="usage-grid">
+                <div class="usage-item">
+                    <div class="usage-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3>Visitenkarten</h3>
+                    <p>Fügen Sie den QR-Code zu Ihren Visitenkarten hinzu für einen direkten Link zu Ihrem Portfolio</p>
+                </div>
+                
+                <div class="usage-item">
+                    <div class="usage-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Bewerbungsunterlagen</h3>
+                    <p>Integrieren Sie den Code in Ihr PDF-Portfolio oder Anschreiben für einfachen Online-Zugriff</p>
+                </div>
+                
+                <div class="usage-item">
+                    <div class="usage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Networking-Events</h3>
+                    <p>Zeigen Sie den QR-Code bei Veranstaltungen, damit Kontakte sofort Ihr Portfolio besuchen können</p>
+                </div>
+                
+                <div class="usage-item">
+                    <div class="usage-icon">
+                        <i class="fas fa-presentation"></i>
+                    </div>
+                    <h3>Präsentationen</h3>
+                    <p>Integrieren Sie den Code in Slides oder Poster für direkten Zugriff während Präsentationen</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QR Code Variations -->
+    <section class="qr-variations">
+        <div class="container">
+            <h2 class="section-title">QR-Code Varianten</h2>
+            <div class="variations-grid">
+                <div class="variation-item">
+                    <div class="variation-preview">
+                        <canvas id="qr-standard" width="150" height="150"></canvas>
+                    </div>
+                    <h4>Standard</h4>
+                    <p>Klassischer schwarzer QR-Code</p>
+                    <button class="btn btn-outline btn-sm" onclick="generateVariation('standard')">
+                        <i class="fas fa-download"></i> Herunterladen
+                    </button>
+                </div>
+                
+                <div class="variation-item">
+                    <div class="variation-preview">
+                        <canvas id="qr-branded" width="150" height="150"></canvas>
+                    </div>
+                    <h4>Branded</h4>
+                    <p>Mit Portfolio-Farben</p>
+                    <button class="btn btn-outline btn-sm" onclick="generateVariation('branded')">
+                        <i class="fas fa-download"></i> Herunterladen
+                    </button>
+                </div>
+                
+                <div class="variation-item">
+                    <div class="variation-preview">
+                        <canvas id="qr-minimal" width="150" height="150"></canvas>
+                    </div>
+                    <h4>Minimal</h4>
+                    <p>Reduziertes Design</p>
+                    <button class="btn btn-outline btn-sm" onclick="generateVariation('minimal')">
+                        <i class="fas fa-download"></i> Herunterladen
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Print Template -->
+    <section class="print-template">
+        <div class="container">
+            <h2 class="section-title">Druckvorlage</h2>
+            <div class="template-container">
+                <div class="print-card" id="print-card">
+                    <div class="card-header">
+                        <h3>Maximilian Paasch</h3>
+                        <p>Mediendesigninformatik Student</p>
+                    </div>
+                    <div class="card-qr">
+                        <canvas id="qr-print" width="120" height="120"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <p>Scannen Sie den Code für mein Portfolio</p>
+                        <small>Portfolio-Website</small>
+                    </div>
+                </div>
+                <div class="template-actions">
+                    <button class="btn btn-primary" onclick="printTemplate()">
+                        <i class="fas fa-print"></i> Drucken
+                    </button>
+                    <button class="btn btn-secondary" onclick="downloadTemplate()">
+                        <i class="fas fa-download"></i> Als PDF speichern
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Maximilian Paasch. Alle Rechte vorbehalten.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- Scripts -->
+    <script src="js/accessibility.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/qr-generator.js"></script>
+</body>
+</html>

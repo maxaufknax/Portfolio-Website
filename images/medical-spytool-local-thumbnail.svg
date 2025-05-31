@@ -1,0 +1,93 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#312e81;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0.9" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgGradient)"/>
+    <!-- Terminal Window -->
+  <rect x="50" y="80" width="320" height="220" rx="8" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2"/>
+  <!-- Window Header -->
+  <rect x="50" y="80" width="320" height="30" rx="8" fill="#e9ecef"/>
+  <circle cx="70" cy="95" r="5" fill="#dc3545"/>
+  <circle cx="90" cy="95" r="5" fill="#ffc107"/>
+  <circle cx="110" cy="95" r="5" fill="#28a745"/>
+  <text x="130" y="98" font-family="Arial" font-size="10" fill="#495057">Medical Spytool - Desktop App</text>
+  
+  <!-- GUI Content -->
+  <rect x="60" y="120" width="300" height="20" rx="4" fill="#007bff" opacity="0.8"/>
+  <text x="70" y="133" font-family="Arial" font-size="9" fill="#ffffff">Datenbank-Suche</text>
+  
+  <rect x="60" y="150" width="140" height="15" rx="3" fill="#ffffff" stroke="#ced4da"/>
+  <text x="65" y="160" font-family="Arial" font-size="8" fill="#6c757d">Suchbegriff eingeben...</text>
+  
+  <rect x="210" y="150" width="60" height="15" rx="3" fill="#28a745"/>
+  <text x="230" y="160" font-family="Arial" font-size="8" fill="#ffffff">Suchen</text>
+  
+  <rect x="60" y="175" width="300" height="60" rx="4" fill="#ffffff" stroke="#dee2e6"/>
+  <text x="70" y="190" font-family="Arial" font-size="8" fill="#495057">Ergebnisse:</text>
+  <text x="70" y="205" font-family="Arial" font-size="7" fill="#6c757d">• Publikation 1: "Cancer Research Methods..."</text>
+  <text x="70" y="220" font-family="Arial" font-size="7" fill="#6c757d">• Publikation 2: "Medical Data Analysis..."</text>
+  
+  <rect x="280" y="245" width="80" height="15" rx="3" fill="#17a2b8"/>
+  <text x="310" y="255" font-family="Arial" font-size="8" fill="#ffffff">Exportieren</text>
+  
+  <!-- Data Flow Visualization -->
+  <rect x="430" y="120" width="320" height="160" rx="12" fill="url(#cardGradient)" opacity="0.8"/>
+  
+  <!-- Database Icons -->
+  <circle cx="460" cy="150" r="15" fill="#ffffff" opacity="0.9"/>
+  <text x="456" y="155" font-family="Arial" font-size="12" fill="#3b82f6">DB</text>
+  <text x="440" y="175" font-family="Arial" font-size="8" fill="#ffffff">PubMed</text>
+  
+  <circle cx="520" cy="150" r="15" fill="#ffffff" opacity="0.9"/>
+  <text x="516" y="155" font-family="Arial" font-size="12" fill="#3b82f6">DB</text>
+  <text x="505" y="175" font-family="Arial" font-size="8" fill="#ffffff">Crossref</text>
+  
+  <circle cx="580" cy="150" r="15" fill="#ffffff" opacity="0.9"/>
+  <text x="576" y="155" font-family="Arial" font-size="12" fill="#3b82f6">DB</text>
+  <text x="565" y="175" font-family="Arial" font-size="8" fill="#ffffff">ArXiv</text>
+  
+  <!-- Arrow to Processing -->
+  <path d="M 600 165 L 630 165" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Processing Box -->
+  <rect x="640" y="140" width="80" height="50" rx="8" fill="#ffffff" opacity="0.9"/>
+  <text x="670" y="160" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">Filter &amp;</text>
+  <text x="670" y="175" font-family="Arial" font-size="10" fill="#3b82f6" text-anchor="middle">Export</text>
+    <!-- Local Application Badge -->
+  <rect x="500" y="220" width="140" height="25" rx="12" fill="#6f42c1"/>
+  <text x="570" y="235" font-family="Arial" font-size="11" fill="#ffffff" text-anchor="middle">DESKTOP APP</text>
+  
+  <!-- Medical Icons -->
+  <g transform="translate(100, 350)">
+    <circle cx="0" cy="0" r="20" fill="#ef4444" opacity="0.8"/>
+    <path d="M -8 -8 L 8 8 M 8 -8 L -8 8" stroke="#ffffff" stroke-width="3"/>
+  </g>
+  
+  <g transform="translate(200, 350)">
+    <circle cx="0" cy="0" r="20" fill="#10b981" opacity="0.8"/>
+    <path d="M -10 0 L 10 0 M 0 -10 L 0 10" stroke="#ffffff" stroke-width="3"/>
+  </g>
+  
+  <!-- Play Button Overlay -->
+  <circle cx="400" cy="225" r="35" fill="rgba(255,255,255,0.9)"/>
+  <polygon points="390,210 390,240 415,225" fill="#3b82f6"/>
+    <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">Medical Spytool</text>
+  <text x="400" y="60" font-family="Arial" font-size="14" fill="#cbd5e1" text-anchor="middle">Desktop-Anwendung Demo</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+</svg>

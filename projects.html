@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekte - Maximilian Paasch | AI Tools & Web-Anwendungen Portfolio</title>
+    <meta name="description" content="Entdecken Sie die innovativen Projekte von Maximilian Paasch - AI-Tools, Web-Anwendungen und kreative Medien-Projekte. Medical Spytool, AI Discord Bot, SoulScribe und mehr.">
+    <meta name="keywords" content="Projekte, Portfolio, AI Tools, Web-Anwendungen, Medical Spytool, Discord Bot, SoulScribe, Maximilian Paasch">
+    <meta name="author" content="Maximilian Paasch">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://maximilianpaasch.de/projects.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Projekte - Maximilian Paasch | AI Tools & Web-Anwendungen Portfolio">
+    <meta property="og:description" content="Entdecken Sie die innovativen Projekte von Maximilian Paasch - AI-Tools, Web-Anwendungen und kreative Medien-Projekte.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maximilianpaasch.de/projects.html">
+    <meta property="og:image" content="https://maximilianpaasch.de/assets/projects/medical-spytool/Screenshot 2025-05-31 at 03-35-10 MedicalSpy - Home.png">
+    <meta property="og:image:alt" content="Maximilian Paasch Projekte Portfolio">
+    <meta property="og:site_name" content="Maximilian Paasch Portfolio">
+    <meta property="og:locale" content="de_DE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Projekte - Maximilian Paasch | AI Tools & Web-Anwendungen Portfolio">
+    <meta name="twitter:description" content="Entdecken Sie die innovativen Projekte von Maximilian Paasch - AI-Tools, Web-Anwendungen und kreative Medien-Projekte.">
+    <meta name="twitter:image" content="https://maximilianpaasch.de/assets/projects/medical-spytool/Screenshot 2025-05-31 at 03-35-10 MedicalSpy - Home.png">
+    <meta name="twitter:image:alt" content="Maximilian Paasch Projekte Portfolio">
+    
+    <!-- Structured Data for Portfolio -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Maximilian Paasch Portfolio - Projekte",
+        "description": "Portfolio der innovativen Projekte von Maximilian Paasch - AI-Tools, Web-Anwendungen und kreative Medien-Projekte",
+        "author": {
+            "@type": "Person",
+            "name": "Maximilian Paasch"
+        },
+        "url": "https://maximilianpaasch.de/projects.html",
+        "workExample": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "Medical Spytool",
+                "description": "AI-powered medical information search tool",
+                "applicationCategory": "HealthApplication"
+            },
+            {
+                "@type": "SoftwareApplication",
+                "name": "AI Discord Bot",
+                "description": "Intelligent Discord bot with AI capabilities",
+                "applicationCategory": "SocialNetworkingApplication"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Max Paasch Portfolio">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">&lt;Portfolio/&gt;</a>
+            </div>            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">Über mich</a>
+                <a href="projects.html" class="nav-link active">Projekte</a>
+                <a href="contact.html" class="nav-link">Kontakt</a>
+                <a href="qr-code.html" class="nav-link qr-link" title="QR-Code für Portfolio">
+                    <i class="fas fa-qrcode"></i>
+                </a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title">
+                    <span class="text-gradient">Meine Projekte</span>
+                </h1>
+                <p class="page-subtitle">
+                    Innovative Lösungen an der Schnittstelle von AI, Web Development und Creative Design
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Filters -->
+    <section class="project-controls">
+        <div class="container">
+            <div class="controls-wrapper">
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">
+                        <i class="fas fa-th"></i> Alle Projekte
+                    </button>
+                    <button class="filter-btn" data-filter="ai">
+                        <i class="fas fa-robot"></i> AI & ML
+                    </button>
+                    <button class="filter-btn" data-filter="web">
+                        <i class="fas fa-globe"></i> Web Development
+                    </button>
+                    <button class="filter-btn" data-filter="mobile">
+                        <i class="fas fa-mobile-alt"></i> Mobile Apps
+                    </button>
+                    <button class="filter-btn" data-filter="media">
+                        <i class="fas fa-video"></i> Media & Design
+                    </button>
+                </div>
+                <div class="project-search">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="project-search" placeholder="Projekte durchsuchen...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="projects-showcase">
+        <div class="container">
+            <div class="projects-grid">
+                <!-- Medical Spytool -->
+                <div class="project-card featured" data-project="medical-spytool" data-categories="ai,web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge featured">Featured</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Medical Spytool</h3>
+                            <div class="project-year">2024</div>
+                        </div>
+                        <p>
+                            Innovative medizinische Analyse-Software mit KI-Integration zur 
+                            Unterstützung von Ärzten bei der Diagnose und Datenauswertung.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                        <div class="project-features">
+                            <div class="feature-item">
+                                <i class="fas fa-brain"></i>
+                                <span>KI-gestützte Analyse</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>HIPAA-konform</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Echtzeit-Monitoring</span>
+                            </div>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/medical-spytool.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a href="#" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Discord Bot -->
+                <div class="project-card" data-project="ai-discord-bot" data-categories="ai,web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge active">Live</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>AI Discord Bot</h3>
+                            <div class="project-year">2024</div>
+                        </div>
+                        <p>
+                            Intelligenter Discord Bot mit Natural Language Processing, 
+                            der kontextuelle Gespräche führt und Server-Management unterstützt.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Discord.js</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/ai-discord-bot.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SoulScribe -->
+                <div class="project-card" data-project="soulscribe" data-categories="ai,web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>SoulScribe</h3>
+                            <div class="project-year">2024</div>
+                        </div>
+                        <p>
+                            KI-gestütztes Reflexions- und Journaling-Tool, das Benutzern 
+                            hilft, ihre Gedanken zu strukturieren und emotionales Wohlbefinden zu fördern.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/soulscribe.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local AI Assistant -->
+                <div class="project-card" data-project="local-ai-assistant" data-categories="ai">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <div class="project-status">
+                            <span class="status-badge privacy">Privacy-First</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Lokaler KI-Assistent</h3>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <p>
+                            Vollständig lokaler KI-Assistent, der ohne Cloud-Verbindung funktioniert 
+                            und maximalen Datenschutz gewährleistet.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">PyQt6</span>
+                            <span class="tech-tag">ONNX</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/local-ai-assistant.html" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-download"></i> Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Website -->
+                <div class="project-card" data-project="portfolio-website" data-categories="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Portfolio Website</h3>
+                            <div class="project-year">2025</div>
+                        </div>
+                        <p>
+                            Moderne, responsive Portfolio-Website mit ansprechendem Design 
+                            und optimierter Performance für verschiedene Geräte.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-eye"></i> Sie sind hier!
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-Commerce Platform -->
+                <div class="project-card" data-project="ecommerce-platform" data-categories="web">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>E-Commerce Platform</h3>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <p>
+                            Vollständige E-Commerce-Lösung mit Produktmanagement, 
+                            Zahlungsintegration und Admin-Dashboard.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">Prisma</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fas fa-external-link-alt"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Fitness App -->
+                <div class="project-card" data-project="fitness-app" data-categories="mobile">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Fitness Tracking App</h3>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <p>
+                            Cross-Platform Mobile App für Fitness-Tracking mit 
+                            personalisierten Trainingsplänen und Progress-Monitoring.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Expo</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">HealthKit</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="#" class="btn btn-primary">
+                                <i class="fas fa-info-circle"></i> Details
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fab fa-app-store"></i> App Store
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Media Projects -->
+                <div class="project-card" data-project="media-projects" data-categories="media">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <i class="fas fa-video"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3>Creative Media Projekte</h3>
+                            <div class="project-year">2022-2024</div>
+                        </div>
+                        <p>
+                            Sammlung kreativer Medienprojekte: Produktfotografie, 
+                            Werbespots, Animationen und Brand Design.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Adobe Creative Suite</span>
+                            <span class="tech-tag">After Effects</span>
+                            <span class="tech-tag">DaVinci Resolve</span>
+                            <span class="tech-tag">Blender</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="projects/media-projects.html" class="btn btn-primary">
+                                <i class="fas fa-images"></i> Portfolio
+                            </a>
+                            <a href="#" class="btn btn-outline">
+                                <i class="fab fa-vimeo"></i> Showreel
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Stats -->
+    <section class="project-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-label">Completed Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Technologies Used</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="3">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">% Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Haben Sie ein Projekt im Kopf?</h2>
+                <p>
+                    Lassen Sie uns zusammenarbeiten und Ihre Ideen zum Leben erwecken. 
+                    Von der Konzeption bis zur Umsetzung - ich begleite Sie durch den gesamten Entwicklungsprozess.
+                </p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Projekt starten
+                    </a>
+                    <a href="about.html" class="btn btn-secondary">
+                        <i class="fas fa-user"></i> Mehr über mich
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>&copy; 2025 Maximilian Paasch. Alle Rechte vorbehalten.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    <!-- Scripts -->
+    <script src="js/accessibility.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
+    <script>
+        // Animate counting stats
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateStats = () => {
+                const stats = document.querySelectorAll('.stat-number');
+                
+                stats.forEach(stat => {
+                    const target = parseInt(stat.dataset.count);
+                    const increment = target / 100;
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current);
+                    }, 20);
+                });
+            };
+            
+            // Trigger animation when stats section is visible
+            const statsSection = document.querySelector('.project-stats');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateStats();
+                    observer.disconnect();
+                }
+            });
+            
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
+    </script>
+</body>
+</html>
