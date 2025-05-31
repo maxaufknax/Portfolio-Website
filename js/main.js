@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle();
     initContactForm();
     initTabNavigation(); // Add tab navigation initialization
-    initAccessibilityFeatures(); // Add accessibility initialization
+    initProjectHeroCarousel(); // Add project hero carousel initialization
     
     // Initialize floating elements with a small delay to ensure DOM is ready
     setTimeout(() => {
@@ -18,26 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Portfolio website loaded successfully! 🚀');
 });
-
-// Accessibility Features Initialization
-function initAccessibilityFeatures() {
-    // Load accessibility script if not already loaded
-    if (!document.querySelector('script[src*="accessibility.js"]')) {
-        const script = document.createElement('script');
-        script.src = 'js/accessibility.js';
-        script.async = true;
-        document.head.appendChild(script);
-    }
-    
-    // Setup focus indicators
-    setupFocusIndicators();
-    
-    // Setup keyboard navigation
-    setupKeyboardNavigation();
-    
-    // Setup ARIA live regions if not already present
-    setupLiveRegions();
-}
 
 // Navigation functionality
 function initNavigation() {
@@ -314,154 +294,34 @@ function initContactForm() {
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
-        // Enhanced form validation
-        const fields = {
-            name: document.getElementById('name'),
-            email: document.getElementById('email'),
-            message: document.getElementById('message'),
-            privacy: document.getElementById('privacy')
-        };
-
-        // Real-time validation
-        Object.keys(fields).forEach(fieldName => {
-            const field = fields[fieldName];
-            if (field) {
-                field.addEventListener('blur', () => validateField(fieldName, field));
-                field.addEventListener('input', () => clearFieldError(fieldName));
-            }
-        });
-
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validate all fields
-            let isValid = true;
-            Object.keys(fields).forEach(fieldName => {
-                if (!validateField(fieldName, fields[fieldName])) {
-                    isValid = false;
-                }
-            });
-
-            if (!isValid) {
-                showNotification('Bitte korrigieren Sie die Fehler im Formular.', 'error');
+            // Get form data
+            const formData = new FormData(this);
+            const formObj = Object.fromEntries(formData);
+            
+            // Basic validation
+            if (!formObj.name || !formObj.email || !formObj.message) {
+                showNotification('Bitte füllen Sie alle Felder aus.', 'error');
                 return;
             }
-
-            // Show loading state
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
             
-            submitBtn.disabled = true;
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline-flex';
-
-            // Submit form data
-            const formData = new FormData(this);
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formObj.email)) {
+                showNotification('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'error');
+                return;
+            }
             
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    showNotification('Nachricht erfolgreich gesendet! Ich melde mich in Kürze bei Ihnen.', 'success');
-                    contactForm.reset();
-                    // Track successful form submission
-                    window.portfolioUtils?.trackEvent('contact_form_submitted', {
-                        project_type: formData.get('project-type'),
-                        budget: formData.get('budget')
-                    });
-                } else {
-                    throw new Error('Form submission failed');
-                }
-            })
-            .catch(error => {
-                console.error('Form submission error:', error);
-                showNotification('Es gab ein Problem beim Senden der Nachricht. Versuchen Sie es erneut oder kontaktieren Sie mich direkt.', 'error');
-            })
-            .finally(() => {
-                // Reset button state
-                submitBtn.disabled = false;
-                btnText.style.display = 'inline';
-                btnLoading.style.display = 'none';
-            });
+            // Simulate form submission
+            showNotification('Nachricht wird gesendet...', 'info');
+            
+            setTimeout(() => {
+                showNotification('Nachricht erfolgreich gesendet!', 'success');
+                contactForm.reset();
+            }, 2000);
         });
-    }
-
-    // Field validation function
-    function validateField(fieldName, field) {
-        const errorElement = document.getElementById(`${fieldName}-error`);
-        let isValid = true;
-        let errorMessage = '';
-
-        switch (fieldName) {
-            case 'name':
-                if (!field.value.trim()) {
-                    errorMessage = 'Name ist erforderlich.';
-                    isValid = false;
-                } else if (field.value.trim().length < 2) {
-                    errorMessage = 'Name muss mindestens 2 Zeichen lang sein.';
-                    isValid = false;
-                }
-                break;
-
-            case 'email':
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!field.value.trim()) {
-                    errorMessage = 'E-Mail ist erforderlich.';
-                    isValid = false;
-                } else if (!emailRegex.test(field.value.trim())) {
-                    errorMessage = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.';
-                    isValid = false;
-                }
-                break;
-
-            case 'message':
-                if (!field.value.trim()) {
-                    errorMessage = 'Nachricht ist erforderlich.';
-                    isValid = false;
-                } else if (field.value.trim().length < 10) {
-                    errorMessage = 'Nachricht muss mindestens 10 Zeichen lang sein.';
-                    isValid = false;
-                }
-                break;
-
-            case 'privacy':
-                if (!field.checked) {
-                    errorMessage = 'Sie müssen der Datenschutzerklärung zustimmen.';
-                    isValid = false;
-                }
-                break;
-        }
-
-        if (errorElement) {
-            if (!isValid) {
-                errorElement.textContent = errorMessage;
-                errorElement.style.display = 'block';
-                field.parentElement.classList.add('error');
-            } else {
-                errorElement.style.display = 'none';
-                field.parentElement.classList.remove('error');
-            }
-        }
-
-        return isValid;
-    }
-
-    // Clear field error function
-    function clearFieldError(fieldName) {
-        const errorElement = document.getElementById(`${fieldName}-error`);
-        if (errorElement) {
-            errorElement.style.display = 'none';
-            const field = document.getElementById(fieldName);
-            if (field) {
-                field.parentElement.classList.remove('error');
-            }
-        }
     }
 }
 
@@ -600,95 +460,38 @@ document.addEventListener('DOMContentLoaded', function () {
     initModals();
 });
 
-// Enhanced accessibility helper functions
-function setupFocusIndicators() {
-    // Add visible focus indicators for keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
-            document.body.classList.add('keyboard-navigation');
-        }
-    });
-    
-    document.addEventListener('mousedown', function() {
-        document.body.classList.remove('keyboard-navigation');
-    });
-}
-
-function setupKeyboardNavigation() {
-    // Enhanced keyboard navigation for interactive elements
-    document.addEventListener('keydown', function(e) {
-        // Handle escape key for modals and menus
-        if (e.key === 'Escape') {
-            closeActiveModal();
-            closeMobileMenu();
-        }
-        
-        // Handle enter key for button-like elements
-        if (e.key === 'Enter' && e.target.classList.contains('btn-like')) {
-            e.target.click();
-        }
-    });
-}
-
-function setupLiveRegions() {
-    // Create ARIA live regions for dynamic content announcements
-    if (!document.getElementById('live-region-polite')) {
-        const politeRegion = document.createElement('div');
-        politeRegion.id = 'live-region-polite';
-        politeRegion.className = 'sr-only';
-        politeRegion.setAttribute('aria-live', 'polite');
-        politeRegion.setAttribute('aria-atomic', 'true');
-        document.body.appendChild(politeRegion);
+// Function to initialize the project hero image carousel
+function initProjectHeroCarousel() {
+    const carousel = document.querySelector('.hero-3d-carousel');
+    if (!carousel) {
+        return; // Carousel not found on this page
     }
-    
-    if (!document.getElementById('live-region-assertive')) {
-        const assertiveRegion = document.createElement('div');
-        assertiveRegion.id = 'live-region-assertive';
-        assertiveRegion.className = 'sr-only';
-        assertiveRegion.setAttribute('aria-live', 'assertive');
-        assertiveRegion.setAttribute('aria-atomic', 'true');
-        document.body.appendChild(assertiveRegion);
-    }
-}
 
-function announceToScreenReader(message, priority = 'polite') {
-    const regionId = priority === 'assertive' ? 'live-region-assertive' : 'live-region-polite';
-    const region = document.getElementById(regionId);
-    
-    if (region) {
-        region.textContent = message;
-        setTimeout(() => {
-            region.textContent = '';
-        }, 1000);
+    const images = carousel.querySelectorAll('.hero-interface-image');
+    if (images.length < 2) {
+        return; // Not enough images for a carousel
     }
-}
 
-function closeActiveModal() {
-    const activeModal = document.querySelector('.modal.active, .project-modal.active');
-    if (activeModal) {
-        activeModal.classList.remove('active');
-        announceToScreenReader('Modal geschlossen');
-        
-        // Return focus to the element that opened the modal
-        const modalTrigger = document.querySelector(`[data-modal="${activeModal.id}"]`);
-        if (modalTrigger) {
-            modalTrigger.focus();
+    let currentIndex = 0;
+    images[currentIndex].classList.add('active');
+
+    setInterval(() => {
+        const prevIndex = currentIndex;
+        currentIndex = (currentIndex + 1) % images.length;
+
+        images[prevIndex].classList.remove('active');
+        images[prevIndex].classList.add('prev'); // Add prev class for outgoing image
+
+        images[currentIndex].classList.add('active');
+        images[currentIndex].classList.remove('prev'); // Ensure new active image doesn't have prev
+
+        // Clean up prev class from other images
+        for (let i = 0; i < images.length; i++) {
+            if (i !== prevIndex && i !== currentIndex) {
+                images[i].classList.remove('prev');
+            }
         }
-    }
-}
-
-function closeMobileMenu() {
-    const navMenu = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    
-    if (navMenu && navMenu.classList.contains('active')) {
-        navMenu.classList.remove('active');
-        if (navToggle) {
-            navToggle.setAttribute('aria-expanded', 'false');
-            navToggle.focus();
-        }
-        announceToScreenReader('Menü geschlossen');
-    }
+    }, 4000); // Change image every 4 seconds
 }
 
 // Utility functions

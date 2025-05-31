@@ -1,59 +1,9 @@
 // QR Code Generator for Portfolio Website
 class PortfolioQRGenerator {
     constructor() {
-        // Dynamic URL detection with fallback
-        this.defaultUrl = this.getCurrentPortfolioUrl();
+        this.defaultUrl = 'https://your-portfolio.com'; // Update with your actual URL
         this.currentSize = 300;
         this.init();
-    }    getCurrentPortfolioUrl() {
-        // Check if we're in development or production
-        const hostname = window.location.hostname;
-        const protocol = window.location.protocol;
-        const port = window.location.port;
-        
-        console.log('🔍 Detecting deployment environment:', { hostname, protocol, port });
-        
-        if (hostname === 'localhost' || hostname === '127.0.0.1') {
-            // Development environment
-            const url = `${protocol}//${hostname}${port ? ':' + port : ''}`;
-            console.log('🛠️ Development environment detected:', url);
-            return url;
-        } else if (hostname.includes('github.io')) {
-            // GitHub Pages
-            const url = window.location.origin;
-            console.log('🐙 GitHub Pages detected:', url);
-            return url;
-        } else if (hostname.includes('vercel.app') || hostname.includes('vercel.com')) {
-            // Vercel deployment
-            const url = window.location.origin;
-            console.log('▲ Vercel deployment detected:', url);
-            return url;
-        } else if (hostname.includes('netlify.app') || hostname.includes('netlify.com')) {
-            // Netlify deployment
-            const url = window.location.origin;
-            console.log('🌐 Netlify deployment detected:', url);
-            return url;
-        } else if (hostname.includes('surge.sh')) {
-            // Surge.sh deployment
-            const url = window.location.origin;
-            console.log('⚡ Surge.sh deployment detected:', url);
-            return url;
-        } else if (hostname.includes('firebase') || hostname.includes('web.app')) {
-            // Firebase hosting
-            const url = window.location.origin;
-            console.log('🔥 Firebase hosting detected:', url);
-            return url;
-        } else if (hostname !== '' && protocol !== 'file:') {
-            // Custom domain or other hosting service
-            const url = window.location.origin;
-            console.log('🌍 Custom domain detected:', url);
-            return url;
-        } else {
-            // Fallback for file:// protocol or unknown
-            const fallbackUrl = 'https://your-portfolio.com'; // Update this with your actual domain
-            console.log('⚠️ Using fallback URL:', fallbackUrl);
-            return fallbackUrl;
-        }
     }
 
     init() {
@@ -63,41 +13,20 @@ class PortfolioQRGenerator {
         } else {
             this.setupQRCodes();
         }
-    }    setupQRCodes() {
-        console.log('🎯 Setting up QR codes with URL:', this.defaultUrl);
-        
-        // Update URL input with detected URL
+    }
+
+    setupQRCodes() {
+        // Update URL input with current domain if possible
         const urlInput = document.getElementById('portfolio-url');
-        if (urlInput) {
-            // Always update the input with the detected URL
-            urlInput.value = this.defaultUrl;
-            
-            // Show different placeholder text based on environment
-            const hostname = window.location.hostname;
-            if (hostname === 'localhost' || hostname === '127.0.0.1') {
-                urlInput.placeholder = 'Entwicklungsumgebung erkannt';
-            } else if (this.defaultUrl.includes('your-portfolio.com')) {
-                urlInput.placeholder = 'Aktualisieren Sie die URL in qr-generator.js';
-                urlInput.style.borderColor = '#f59e0b';
-                urlInput.title = 'Diese URL sollte durch Ihre echte Domain ersetzt werden';
-            } else {
-                urlInput.placeholder = 'Live-Domain automatisch erkannt';
-                urlInput.style.borderColor = '#10b981';
-                urlInput.title = 'URL automatisch aus der aktuellen Domain erkannt';
-            }
+        if (urlInput && window.location.hostname !== 'localhost') {
+            urlInput.value = window.location.origin;
+            this.defaultUrl = window.location.origin;
         }
 
         // Generate all QR codes
         this.generateMainQR();
         this.generateVariations();
         this.generatePrintQR();
-        
-        // Show user feedback about URL detection
-        if (this.defaultUrl.includes('your-portfolio.com')) {
-            console.warn('⚠️ Default fallback URL wird verwendet. Aktualisieren Sie die URL in der Produktion.');
-        } else {
-            console.log('✅ QR-Codes erfolgreich mit automatisch erkannter URL generiert');
-        }
     }
 
     generateMainQR() {

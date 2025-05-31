@@ -1,84 +1,5 @@
 // Project-specific JavaScript functionality
 
-// Global project data
-let projectsData = null;
-
-document.addEventListener('DOMContentLoaded', function() {
-    loadProjectsData().then(() => {
-        initProjectCards();
-        initProjectModals();
-        initProjectFilters();
-        initProjectSearch();
-        initProjectAnimations();
-    });
-});
-
-// Load project data from JSON file
-async function loadProjectsData() {
-    try {
-        const response = await fetch('data/projects.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        projectsData = await response.json();
-        console.log('✅ Projects data loaded successfully', projectsData);
-        
-        // Update filter buttons with loaded categories
-        updateFilterButtons();
-        
-        return projectsData;
-    } catch (error) {
-        console.error('❌ Error loading projects data:', error);
-        // Fallback to hardcoded data if JSON loading fails
-        projectsData = getFallbackProjectData();
-        console.warn('⚠️ Using fallback project data');
-        return projectsData;
-    }
-}
-
-// Update filter buttons with categories from JSON
-function updateFilterButtons() {
-    const filterContainer = document.querySelector('.project-filters');
-    if (!filterContainer || !projectsData?.categories) return;
-
-    const filterButtons = filterContainer.querySelectorAll('.filter-btn');
-    filterButtons.forEach(button => {
-        const filter = button.dataset.filter;
-        if (projectsData.categories[filter]) {
-            // Update button text if it exists in loaded data
-            const text = button.querySelector('span') || button;
-            text.textContent = projectsData.categories[filter];
-        }
-    });
-}
-
-// Fallback project data (simplified version for development)
-function getFallbackProjectData() {
-    return {
-        projects: {
-            "medical-spytool": {
-                title: "Medical Spytool",
-                category: "ai",
-                description: "Innovative medizinische Analyse-Software mit AI-Integration",
-                technologies: ["Python", "FastAPI", "React", "TensorFlow"],
-                features: ["AI-gestützte Dokumentenanalyse", "Personenbezogene Suchfunktionen"],
-                links: { live: "#", github: "#" },
-                images: { 
-                    hero: "assets/projects/medical-spytool/imag223.png", 
-                    gallery: ["assets/projects/medical-spytool/imag222.png"] 
-                }
-            }
-        },
-        categories: {
-            "all": "Alle Projekte",
-            "ai": "AI & Machine Learning",
-            "web": "Web Development",
-            "mobile": "Mobile Apps",
-            "design": "Media & Design"
-        }
-    };
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     initProjectCards();
     initProjectModals();
@@ -201,17 +122,6 @@ function createProjectModal(data) {
                     ${data.images.map(img => `
                         <img src="${img}" alt="${data.title} Screenshot" loading="lazy">
                     `).join('')}
-                    ${data.videos?.length ? `
-                        <div class="project-videos">
-                            ${data.videos.map(video => `
-                                <video controls poster="${video.thumbnail || ''}" preload="metadata">
-                                    <source src="${video.src}" type="video/mp4">
-                                    <p>Ihr Browser unterstützt das Video-Element nicht.</p>
-                                </video>
-                                <p class="video-title">${video.title}</p>
-                            `).join('')}
-                        </div>
-                    ` : ''}
                 </div>
                 <div class="project-details">
                     <div class="project-description">
@@ -234,44 +144,19 @@ function createProjectModal(data) {
                             `).join('')}
                         </ul>
                     </div>
-                    ${data.challenges?.length ? `
-                        <div class="project-challenges">
-                            <h3>Herausforderungen</h3>
-                            <ul>
-                                ${data.challenges.map(challenge => `
-                                    <li>${challenge}</li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    ` : ''}
-                    ${data.achievements?.length ? `
-                        <div class="project-achievements">
-                            <h3>Errungenschaften</h3>
-                            <ul>
-                                ${data.achievements.map(achievement => `
-                                    <li>${achievement}</li>
-                                `).join('')}
-                            </ul>
-                        </div>
-                    ` : ''}
                     <div class="project-actions">
-                        ${data.github && data.github !== '#' ? `
+                        ${data.github ? `
                             <a href="${data.github}" class="btn btn-primary" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i> Code auf GitHub
                             </a>
                         ` : ''}
-                        ${data.demo && data.demo !== '#' ? `
+                        ${data.demo ? `
                             <a href="${data.demo}" class="btn btn-secondary" target="_blank" rel="noopener">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
                         ` : ''}
-                        ${data.documentation && data.documentation !== '#' ? `
-                            <a href="${data.documentation}" class="btn btn-outline" target="_blank" rel="noopener">
-                                <i class="fas fa-book"></i> Dokumentation
-                            </a>
-                        ` : ''}
-                        ${data.download && data.download !== '#' ? `
-                            <a href="${data.download}" class="btn btn-outline" target="_blank" rel="noopener">
+                        ${data.download ? `
+                            <a href="${data.download}" class="btn btn-outline">
                                 <i class="fas fa-download"></i> Download
                             </a>
                         ` : ''}
@@ -283,32 +168,92 @@ function createProjectModal(data) {
     return modal;
 }
 
-// Get project modal data from loaded JSON
+// Project data (placeholder - replace with your actual project data)
 function getProjectModalData(projectId) {
-    if (!projectsData?.projects?.[projectId]) {
-        console.warn(`❌ Project data not found for: ${projectId}`);
-        return null;
-    }
-    
-    const project = projectsData.projects[projectId];
-    const modalData = projectsData.modal_data?.[projectId] || {};
-    
-    // Combine project data with modal-specific data
-    return {
-        title: project.title,
-        subtitle: modalData.subtitle || project.description,
-        description: modalData.detailed_description || project.description,
-        technologies: project.technologies || [],
-        features: project.features || [],
-        challenges: modalData.challenges || [],
-        achievements: modalData.achievements || [],
-        images: project.images?.gallery || [project.images?.hero].filter(Boolean) || [],
-        videos: project.videos || [],
-        github: project.links?.github,
-        demo: project.links?.live,
-        download: project.links?.download,
-        documentation: project.links?.documentation
+    const projects = {
+        'medical-spytool': {
+            title: 'Medical Spytool',
+            subtitle: 'Innovative medizinische Analyse-Software',
+            description: 'Ein fortschrittliches Tool zur medizinischen Datenanalyse mit KI-Integration. Das System ermöglicht es Ärzten, komplexe medizinische Daten zu analysieren und fundierte Entscheidungen zu treffen.',
+            technologies: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL', 'Docker'],
+            features: [
+                'KI-gestützte Diagnose-Unterstützung',
+                'Echtzeit-Datenanalyse',
+                'Sichere Patientendaten-Verwaltung',
+                'Intuitive Benutzeroberfläche',
+                'Integration mit bestehenden Systemen'
+            ],
+            images: [
+                'images/projects/medical-spytool-1.jpg',
+                'images/projects/medical-spytool-2.jpg'
+            ],
+            github: 'https://github.com/yourusername/medical-spytool',
+            demo: null,
+            download: null
+        },
+        'ai-discord-bot': {
+            title: 'AI Discord Bot',
+            subtitle: 'Intelligenter Discord Bot mit NLP',
+            description: 'Ein Discord Bot mit fortschrittlicher KI-Integration, der natürliche Sprache versteht und kontextuelle Antworten generiert.',
+            technologies: ['Node.js', 'Discord.js', 'OpenAI API', 'MongoDB', 'Express'],
+            features: [
+                'Natural Language Processing',
+                'Kontextuelle Gespräche',
+                'Moderation Tools',
+                'Custom Commands',
+                'Musik-Streaming Integration'
+            ],
+            images: [
+                'images/projects/discord-bot-1.jpg',
+                'images/projects/discord-bot-2.jpg'
+            ],
+            github: 'https://github.com/yourusername/ai-discord-bot',
+            demo: 'https://discord.com/invite/yourbot',
+            download: null
+        },
+        'soulscribe': {
+            title: 'SoulScribe',
+            subtitle: 'KI-gestütztes Reflexions- und Journaling-Tool',
+            description: 'Eine innovative Anwendung, die KI nutzt, um Benutzern bei der Selbstreflexion und dem emotionalen Wohlbefinden zu helfen.',
+            technologies: ['React', 'TypeScript', 'OpenAI API', 'Firebase', 'Material-UI'],
+            features: [
+                'KI-gestützte Reflexionsführung',
+                'Emotionale Analyse',
+                'Personalisierte Insights',
+                'Sichere Datenspeicherung',
+                'Progress Tracking'
+            ],
+            images: [
+                'images/projects/soulscribe-1.jpg',
+                'images/projects/soulscribe-2.jpg'
+            ],
+            github: 'https://github.com/yourusername/soulscribe',
+            demo: 'https://soulscribe-demo.vercel.app',
+            download: null
+        },
+        'local-ai-assistant': {
+            title: 'Lokaler KI-Assistent',
+            subtitle: 'Datenschutzfreundlicher AI-Assistent',
+            description: 'Ein vollständig lokaler KI-Assistent, der ohne Cloud-Verbindung funktioniert und maximalen Datenschutz gewährleistet.',
+            technologies: ['Python', 'Transformers', 'PyQt6', 'SQLite', 'ONNX'],
+            features: [
+                'Vollständig offline',
+                'Zero-Data-Collection',
+                'Sprachverarbeitung',
+                'Task-Automation',
+                'Anpassbare Modelle'
+            ],
+            images: [
+                'images/projects/local-ai-1.jpg',
+                'images/projects/local-ai-2.jpg'
+            ],
+            github: 'https://github.com/yourusername/local-ai-assistant',
+            demo: null,
+            download: 'https://github.com/yourusername/local-ai-assistant/releases'
+        }
     };
+    
+    return projects[projectId];
 }
 
 // Project filtering

@@ -3,61 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Maximilian Paasch | Lassen Sie uns zusammenarbeiten</title>
-    <meta name="description" content="Kontaktieren Sie Maximilian Paasch für spannende Projekte und Zusammenarbeit in den Bereichen AI, Web Development und Design. Bereit für neue Herausforderungen!">
-    <meta name="keywords" content="Kontakt, Maximilian Paasch, Zusammenarbeit, Projekte, AI, Web Development, Design, Medieninformatik">
-    <meta name="author" content="Maximilian Paasch">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://maximilianpaasch.de/contact.html">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kontakt - Maximilian Paasch | Lassen Sie uns zusammenarbeiten">
-    <meta property="og:description" content="Kontaktieren Sie Maximilian Paasch für spannende Projekte und Zusammenarbeit in den Bereichen AI, Web Development und Design.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://maximilianpaasch.de/contact.html">
-    <meta property="og:image" content="https://maximilianpaasch.de/assets/profile/profile.jpg">
-    <meta property="og:image:alt" content="Kontakt Maximilian Paasch">
-    <meta property="og:site_name" content="Maximilian Paasch Portfolio">
-    <meta property="og:locale" content="de_DE">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Kontakt - Maximilian Paasch | Lassen Sie uns zusammenarbeiten">
-    <meta name="twitter:description" content="Kontaktieren Sie Maximilian Paasch für spannende Projekte und Zusammenarbeit in den Bereichen AI, Web Development und Design.">
-    <meta name="twitter:image" content="https://maximilianpaasch.de/assets/profile/profile.jpg">
-    <meta name="twitter:image:alt" content="Kontakt Maximilian Paasch">
-    
-    <!-- Structured Data for Contact -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "Kontakt - Maximilian Paasch",
-        "description": "Kontaktseite für Maximilian Paasch - Medieninformatik Student",
-        "url": "https://maximilianpaasch.de/contact.html",
-        "mainEntity": {
-            "@type": "Person",
-            "name": "Maximilian Paasch",
-            "jobTitle": "Medieninformatik Student",
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "Professional",
-                "availableLanguage": ["German", "English"]
-            }
-        }
-    }
-    </script>
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#667eea">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Max Paasch Portfolio">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <title>Kontakt - Portfolio</title>
+    <meta name="description" content="Kontaktieren Sie Maximilian Paasch für spannende Projekte und Zusammenarbeit in den Bereichen AI, Web Development und Design">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -75,14 +22,12 @@
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="index.html">&lt;Portfolio/&gt;</a>
-            </div>            <div class="nav-menu" id="nav-menu">
+            </div>
+            <div class="nav-menu" id="nav-menu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">Über mich</a>
                 <a href="projects.html" class="nav-link">Projekte</a>
                 <a href="contact.html" class="nav-link active">Kontakt</a>
-                <a href="qr-code.html" class="nav-link qr-link" title="QR-Code für Portfolio">
-                    <i class="fas fa-qrcode"></i>
-                </a>
             </div>
             <div class="nav-toggle" id="nav-toggle">
                 <span class="bar"></span>
@@ -188,22 +133,19 @@
                     <div class="contact-form-header">
                         <h2>Nachricht senden</h2>
                         <p>Teilen Sie mir Details zu Ihrem Projekt mit</p>
-                    </div>                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-                        <!-- Hidden field for form identification -->
-                        <input type="hidden" name="_subject" value="Neue Portfolio Anfrage">
-                        <input type="hidden" name="_next" value="thank-you.html">
-                        <input type="hidden" name="_captcha" value="false">
-                        
+                    </div>
+
+                    <form class="contact-form" id="contact-form" novalidate>
                         <div class="form-group">
                             <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required aria-describedby="name-error">
-                            <div class="error-message" id="name-error" role="alert"></div>
+                            <input type="text" id="name" name="name" required>
+                            <div class="error-message" id="name-error"></div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">E-Mail *</label>
-                            <input type="email" id="email" name="email" required aria-describedby="email-error">
-                            <div class="error-message" id="email-error" role="alert"></div>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
                         </div>
 
                         <div class="form-group">
@@ -437,8 +379,9 @@
                 </div>
             </div>
         </div>
-    </footer>    <!-- Scripts -->
-    <script src="js/accessibility.js"></script>
+    </footer>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script>
         // FAQ Accordion functionality

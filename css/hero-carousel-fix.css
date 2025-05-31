@@ -1,0 +1,99 @@
+/* Medical Spytool Hero Image Carousel - Fixed Version */
+.project-hero-image, /* Ensure this parent is transparent */
+.hero-image-container, /* Ensure this parent is transparent */
+.hero-3d-carousel { /* Ensure this parent is transparent */
+    background-color: transparent !important; /* Added important for emphasis */
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.hero-interface-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* border-radius: 8px; */ /* Temporarily remove to see if it affects the perceived border */    opacity: 0;
+    transform: scale(1.19); /* Increased by 20% more (0.99 × 1.2 = 1.188, rounded to 1.19) */
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    display: block; /* Ensure images are treated as block elements */
+    max-width: 100%; /* Ensure images don't overflow their container */
+    max-height: 100%; /* Ensure images don't overflow their container */
+    background-color: transparent !important; /* Ensure background is transparent */
+    border: none !important; /* Explicitly remove any border */
+    outline: none !important; /* Explicitly remove any outline */
+    box-shadow: none !important; /* Ensure no shadow is present */
+}
+
+.hero-interface-image.active {
+    opacity: 1;
+    transform: scale(1.32); /* Increased by 20% more (1.1 × 1.2 = 1.32) */
+    z-index: 10;
+}
+
+.hero-interface-image.prev {
+    opacity: 0.3; /* Slightly visible previous image */
+    transform: scale(1.19); /* Increased by 20% more (0.99 × 1.2 = 1.188, rounded to 1.19) */
+    z-index: 5;
+    background-color: transparent !important; /* Ensure background is transparent for prev state */
+}
+
+/* Decorations for Hero Image */
+.hero-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Decorations should not be interactive */
+}
+
+.floating-stethoscope,
+.floating-pulse {
+    position: absolute;
+    font-size: 2rem; /* Smaller icon size */
+    color: var(--primary-color);
+    opacity: 0.6; /* Slightly more subtle */
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-stethoscope {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.floating-pulse {
+    bottom: 10%;
+    right: 5%;
+    animation-delay: 2s; /* Stagger animation */
+    width: 40px; /* Smaller pulse */
+    height: 40px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation-name: pulse-animation; /* Specific pulse animation */
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); } /* Reduced float distance */
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+}

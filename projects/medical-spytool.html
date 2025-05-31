@@ -9,6 +9,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/hero-carousel-fix.css"> <!-- Hinzugefügt -->
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -72,16 +73,11 @@
                         </a>
                     </div>
                 </div>                <div class="project-hero-image">
-                    <div class="hero-image-container">
-                        <div class="hero-3d-carousel">
-                            <img src="../assets/imag223.png" alt="Medical Spytool - Wissenschaftliche Publikationen Interface" class="hero-interface-image active" />
-                            <img src="../assets/imag224.png" alt="Medical Spytool - Personenbezogene Suche Interface" class="hero-interface-image" />
+                    <div class="hero-image-container">                        <div class="hero-3d-carousel">
+                            <img src="../assets/projects/medical-spytool/imag223.png" alt="Medical Spytool - Wissenschaftliche Publikationen Interface" class="hero-interface-image active" />
+                            <img src="../assets/projects/medical-spytool/imag224.png" alt="Medical Spytool - Personenbezogene Suche Interface" class="hero-interface-image" />
                         </div>
                         <div class="hero-decorations">
-                            <div class="floating-stethoscope">
-                                <i class="fas fa-stethoscope"></i>
-                            </div>
-                            <div class="floating-pulse"></div>
                         </div>
                     </div>
                 </div>
@@ -120,9 +116,9 @@
                             disablePictureInPicture="false"
                             playsinline
                         >
-                            <source src="../assets/Medical Spytool Web Showcase.mp4" type="video/mp4">
+                            <source src="../assets/projects/medical-spytool/Medical Spytool Web Showcase.mp4" type="video/mp4">
                             <p>Ihr Browser unterstützt das Video-Element nicht. 
-                               <a href="../assets/Medical Spytool Web Showcase.mp4">Video herunterladen</a>
+                               <a href="../assets/projects/medical-spytool/Medical Spytool Web Showcase.mp4">Video herunterladen</a>
                             </p>
                         </video>
                     </div>
@@ -151,9 +147,9 @@
                             disablePictureInPicture="false"
                             playsinline
                         >
-                            <source src="../assets/Medical Spytool Local Showcase.mp4" type="video/mp4">
+                            <source src="../assets/projects/medical-spytool/Medical Spytool Local Showcase.mp4" type="video/mp4">
                             <p>Ihr Browser unterstützt das Video-Element nicht. 
-                               <a href="../assets/Medical Spytool Local Showcase.mp4">Video herunterladen</a>
+                               <a href="../assets/projects/medical-spytool/Medical Spytool Local Showcase.mp4">Video herunterladen</a>
                             </p>
                         </video>
                     </div>                    <div class="video-card-info">
@@ -167,184 +163,143 @@
                 </div>
             </div>
         </div>
-    </section>    <!-- Technical Overview Section -->
-    <section class="project-technical">
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details">
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-cogs"></i>
-                Technische Details
-            </h2>
-            
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fab fa-python"></i>
+            <div class="details-grid">
+                <div class="details-content">                    <div class="detail-section">
+                        <h2>Über das Projekt</h2>
+                        <p>
+                            Medical Spytool ist eine plattformunabhängige Recherche- und Analyse­anwendung, die medizinisch-wissenschaftliche Publikationen aus mehreren Datenquellen zentral zusammenführt, intelligent filtert, anschaulich visualisiert und in gängige Formate exportiert. Das komplett in Python entwickelte Solo-Projekt verfügt über eine klar strukturierte, Enterprise-ready Codebasis, Docker-Support sowie ein komfortables CLI-Tool, mit dem du vom Klonen bis zur ersten eigenen Suche nur wenige Befehle benötigst.
+                        </p>
+                    </div>                    <div class="detail-section">
+                        <h3>Hauptfunktionen</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Multi-Datenbank-Suche</li>
+                            <li><i class="fas fa-check"></i> Erweiterte Filter</li>
+                            <li><i class="fas fa-check"></i> Interaktive Visualisierungen</li>
+                            <li><i class="fas fa-check"></i> Daten­export</li>
+                            <li><i class="fas fa-check"></i> Gespeicherte Suchen & Logging</li>
+                        </ul>
                     </div>
-                    <h3>Backend</h3>
-                    <p>Python mit FastAPI für hochperformante API-Entwicklung</p>
-                    <ul>
-                        <li>Async/Await Pattern</li>
-                        <li>Automatische API-Dokumentation</li>
-                        <li>Type Hints</li>
-                    </ul>
+
+                    <div class="detail-section">
+                        <h3>Technische Herausforderungen</h3>                        <div class="challenge-grid">
+                            <div class="challenge-item">
+                                <h4>Datenschutz & Sicherheit</h4>
+                                <p>Implementierung strenger Sicherheitsmaßnahmen für sensible medizinische Daten</p>
+                            </div>
+                            <div class="challenge-item">
+                                <h4>Performance-Optimierung</h4>
+                                <p>Gewährleistung schneller Analysezeiten auch bei großen Datenmengen</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-database"></i>
+
+                <div class="details-sidebar">
+                    <div class="tech-stack">
+                        <h3>Technologien</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">SQLite</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
                     </div>
-                    <h3>Datenbank</h3>
-                    <p>PostgreSQL für sichere medizinische Datenverarbeitung</p>
-                    <ul>
-                        <li>ACID-Konformität</li>
-                        <li>Verschlüsselung</li>
-                        <li>Skalierbarkeit</li>
-                    </ul>
-                </div>
-                
-                <div class="tech-card">
-                    <div class="tech-icon">
-                        <i class="fas fa-brain"></i>
+
+                    <div class="project-stats">
+                        <h3>Projekt-Statistiken</h3>
+                        <div class="stat-item">
+                            <span class="stat-number">2,500+</span>
+                            <span class="stat-label">Zeilen Code</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">Monate Entwicklung</span>
+                        </div>                        <div class="stat-item">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Genauigkeit</span>
+                        </div>
                     </div>
-                    <h3>AI/ML</h3>
-                    <p>TensorFlow für intelligente Dokumentenanalyse</p>
-                    <ul>
-                        <li>Natural Language Processing</li>
-                        <li>Pattern Recognition</li>
-                        <li>Predictive Analytics</li>
-                    </ul>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="project-features">
-        <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-star"></i>
-                Hauptfunktionen
-            </h2>
-            
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Intelligente Suche</h3>
-                    <p>AI-gestützte Suche durch medizinische Publikationen und Patientendaten mit semantischer Analyse.</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Datenvisualisierung</h3>
-                    <p>Interaktive Dashboards und Grafiken für bessere Dateninterpretation.</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Datenschutz</h3>
-                    <p>GDPR-konforme Verarbeitung medizinischer Daten mit End-to-End-Verschlüsselung.</p>
-                </div>
-                
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <i class="fas fa-download"></i>
-                    </div>
-                    <h3>Export-Funktionen</h3>
-                    <p>Flexible Export-Optionen für Berichte und Analyseergebnisse in verschiedenen Formaten.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
+    </section>    <!-- Project Gallery -->
     <section class="project-gallery">
         <div class="container">
-            <h2 class="section-title">
-                <i class="fas fa-images"></i>
-                Bildergalerie
-            </h2>
-            
+            <h2 class="section-title">Screenshots & Live-Demo</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../assets/projects/medical-spytool/imag222.png" alt="Medical Spytool Dashboard" />
+                <div class="gallery-item featured">
+                    <img src="../assets/Screenshot 2025-05-31 at 03-35-10 MedicalSpy - Home.png" alt="Medical Spytool - Home Dashboard" />
                     <div class="gallery-overlay">
-                        <h4>Dashboard</h4>
-                        <p>Hauptübersicht der Anwendung</p>
+                        <h4>Home Dashboard</h4>
+                        <p>Hauptübersicht der Medical Spytool Anwendung mit Navigationsmöglichkeiten</p>
+                        <div class="overlay-actions">
+                            <button class="btn-expand" onclick="openImageModal(this)">
+                                <i class="fas fa-expand"></i> Vergrößern
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="gallery-item">
-                    <img src="../assets/projects/medical-spytool/imag223.png" alt="Medical Spytool Suche" />
+                <div class="gallery-item featured">
+                    <img src="../assets/Screenshot 2025-05-31 at 04-16-35 MedicalSpy - Suche.png" alt="Medical Spytool - Suche Interface" />
                     <div class="gallery-overlay">
-                        <h4>Suchfunktion</h4>
-                        <p>Erweiterte Suchoptionen</p>
+                        <h4>Suche Interface</h4>
+                        <p>Erweiterte Suchfunktionen für medizinische Publikationen und Daten</p>
+                        <div class="overlay-actions">
+                            <button class="btn-expand" onclick="openImageModal(this)">
+                                <i class="fas fa-expand"></i> Vergrößern
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
                 <div class="gallery-item">
-                    <img src="../assets/projects/medical-spytool/imag224.png" alt="Medical Spytool Analyse" />
+                    <img src="../assets/imag222.png" alt="Medical Spytool - Additional Interface" />
                     <div class="gallery-overlay">
-                        <h4>Datenanalyse</h4>
-                        <p>Detaillierte Analysefunktionen</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="../assets/projects/medical-spytool/Screenshot 2025-05-31 at 03-35-10 MedicalSpy - Home.png" alt="Medical Spytool Home" />
-                    <div class="gallery-overlay">
-                        <h4>Startseite</h4>
-                        <p>Benutzerfreundliche Navigation</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item">
-                    <img src="../assets/projects/medical-spytool/Screenshot 2025-05-31 at 04-16-35 MedicalSpy - Suche.png" alt="Medical Spytool Suchergebnisse" />
-                    <div class="gallery-overlay">
-                        <h4>Suchergebnisse</h4>
-                        <p>Übersichtliche Ergebnisdarstellung</p>
+                        <h4>Interface Details</h4>
+                        <p>Detailansicht der Benutzeroberfläche und Funktionen</p>
+                        <div class="overlay-actions">
+                            <button class="btn-expand" onclick="openImageModal(this)">
+                                <i class="fas fa-expand"></i> Vergrößern
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Challenge and Solution Section -->
-    <section class="project-challenge">
+    <!-- Image Modal for Full-Screen View -->
+    <div id="imageModal" class="image-modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="" />
+            <div class="modal-caption">
+                <h4 id="modalTitle"></h4>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Next Project Navigation -->
+    <section class="project-navigation">
         <div class="container">
-            <div class="challenge-content">
-                <div class="challenge-item">
-                    <h2>
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Herausforderung
-                    </h2>
-                    <p>Die Entwicklung einer sicheren, GDPR-konformen Anwendung für die Verarbeitung sensibler medizinischer Daten, die gleichzeitig benutzerfreundlich und leistungsstark ist.</p>
-                    <ul>
-                        <li>Komplexe medizinische Datenstrukturen</li>
-                        <li>Strenge Datenschutzanforderungen</li>
-                        <li>Performance bei großen Datenmengen</li>
-                        <li>Benutzerfreundliche Interface-Gestaltung</li>
-                    </ul>
-                </div>
-                
-                <div class="solution-item">
-                    <h2>
-                        <i class="fas fa-lightbulb"></i>
-                        Lösung
-                    </h2>
-                    <p>Entwicklung einer modularen Architektur mit KI-Integration, die sowohl als Desktop- als auch als Webanwendung funktioniert.</p>
-                    <ul>
-                        <li>Microservices-Architektur für Skalierbarkeit</li>
-                        <li>End-to-End-Verschlüsselung für Datensicherheit</li>
-                        <li>Caching-Strategien für Performance</li>
-                        <li>Responsive Design für alle Geräte</li>
-                    </ul>
-                </div>
+            <div class="nav-links">
+                <a href="../projects.html" class="nav-link back">
+                    <i class="fas fa-arrow-left"></i>
+                    Alle Projekte
+                </a>
+                <a href="ai-discord-bot.html" class="nav-link next">
+                    Nächstes Projekt: AI Discord Bot
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -352,39 +307,229 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Maximilian Paasch</h3>
-                    <p>Medieninformatik Student mit Leidenschaft für innovative Technologien</p>
+            <div class="footer-content">                <div class="footer-left">
+                    <p>&copy; 2025 Maximilian Paasch. Alle Rechte vorbehalten.</p>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../about.html">Über mich</a></li>
-                        <li><a href="../projects.html">Projekte</a></li>
-                        <li><a href="../contact.html">Kontakt</a></li>
-                    </ul>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Projekte</h4>
-                    <ul>
-                        <li><a href="medical-spytool.html">Medical Spytool</a></li>
-                        <li><a href="soulscribe.html">SoulScribe</a></li>
-                        <li><a href="ai-discord-bot.html">AI Discord Bot</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Maximilian Paasch. Alle Rechte vorbehalten.</p>
             </div>
         </div>
-    </footer>
-
-    <!-- Scripts -->
+    </footer>    <!-- Scripts -->
     <script src="../js/main.js"></script>
+    <script>
+        // Medical Spytool Image Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.hero-showcase-image');
+            let currentImageIndex = 0;
+            
+            if (images.length > 1) {
+                // Initialize: show first image, hide others
+                images.forEach((img, index) => {
+                    if (index === 0) {
+                        img.classList.add('active');
+                        img.style.opacity = '1';
+                        img.style.zIndex = '2';
+                    } else {
+                        img.classList.remove('active');
+                        img.style.opacity = '0';
+                        img.style.zIndex = '1';
+                    }
+                });
+                
+                // Function to switch to next image
+                function switchToNextImage() {
+                    const currentImage = images[currentImageIndex];
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    const nextImage = images[currentImageIndex];
+                    
+                    // Fade out current image
+                    currentImage.style.opacity = '0';
+                    currentImage.style.zIndex = '1';
+                    currentImage.classList.remove('active');
+                    
+                    // Fade in next image
+                    setTimeout(() => {
+                        nextImage.style.opacity = '1';
+                        nextImage.style.zIndex = '2';
+                        nextImage.classList.add('active');
+                    }, 300);
+                }
+                
+                // Start automatic rotation every 4 seconds
+                setInterval(switchToNextImage, 4000);
+            }
+        });
+
+        // Enhanced video experience
+        document.addEventListener('DOMContentLoaded', function() {
+            const webVideo = document.getElementById('webVideo');
+            const localVideo = document.getElementById('localVideo');
+            
+            // Add video event listeners
+            [webVideo, localVideo].forEach(video => {
+                if (video) {
+                    video.addEventListener('loadstart', function() {
+                        console.log('Video wird geladen...');
+                    });
+                    
+                    video.addEventListener('canplay', function() {
+                        console.log('Video ist bereit zum Abspielen');
+                    });
+                    
+                    video.addEventListener('play', function() {
+                        // Pause other video when one starts playing
+                        const otherVideo = video.id === 'webVideo' ? localVideo : webVideo;
+                        if (otherVideo && !otherVideo.paused) {
+                            otherVideo.pause();
+                        }
+                        
+                        // Add playing class for visual feedback
+                        video.closest('.video-card').classList.add('playing');
+                    });
+                    
+                    video.addEventListener('pause', function() {
+                        video.closest('.video-card').classList.remove('playing');
+                    });
+                    
+                    video.addEventListener('ended', function() {
+                        video.closest('.video-card').classList.remove('playing');
+                    });
+                }
+            });
+            
+            // Add hover effects
+            document.querySelectorAll('.video-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('playing')) {
+                        this.style.transform = 'scale(1.02) translateY(-4px)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('playing')) {
+                        this.style.transform = '';
+                    }
+                });
+            });
+        });
+
+        // Medical Spytool 3D Interface Carousel
+        const interfaceImages = document.querySelectorAll('.hero-interface-image');
+        let currentInterfaceIndex = 0;
+
+        if (interfaceImages.length > 1) {
+            // Set first image as active
+            interfaceImages[0].classList.add('active');
+            
+            // Start automatic 3D rotation
+            setInterval(() => {
+                // Remove active class from current image
+                interfaceImages[currentInterfaceIndex].classList.remove('active');
+                
+                // Move to next image
+                currentInterfaceIndex = (currentInterfaceIndex + 1) % interfaceImages.length;
+                
+                // Add active class to new image
+                interfaceImages[currentInterfaceIndex].classList.add('active');
+                
+                console.log(`3D Interface switching to image ${currentInterfaceIndex + 1}`);
+            }, 5000); // 5 seconds for better viewing
+        } else if (interfaceImages.length === 1) {
+            // If only one image, make it active
+            interfaceImages[0].classList.add('active');
+        }
+
+        // Image Modal Functions
+        window.openImageModal = function(button) {
+            const galleryItem = button.closest('.gallery-item');
+            const img = galleryItem.querySelector('img');
+            const title = galleryItem.querySelector('h4').textContent;
+            const description = galleryItem.querySelector('p').textContent;
+            
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDescription = document.getElementById('modalDescription');
+            
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeImageModal = function() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        // Close modal on outside click
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+
+        // Gallery Modal Functionality
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                const modalImg = modal.querySelector('.modal-content');
+                
+                // Set image source and alt text
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                
+                // Display the modal
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close gallery modal
+        document.querySelectorAll('.modal-close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.image-modal');
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close gallery modal on outside click
+        document.querySelectorAll('.image-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Close gallery modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.image-modal').forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
