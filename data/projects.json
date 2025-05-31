@@ -1,0 +1,82 @@
+{
+    "medical-spytool": {
+        "title": "Medical Spytool",
+        "subtitle": "Innovative medizinische Analyse-Software",
+        "description": "Ein fortschrittliches Tool zur medizinischen Datenanalyse mit KI-Integration. Das System ermöglicht es Ärzten, komplexe medizinische Daten zu analysieren und fundierte Entscheidungen zu treffen.",
+        "technologies": ["Python", "TensorFlow", "FastAPI", "PostgreSQL", "Docker"],
+        "features": [
+            "KI-gestützte Diagnose-Unterstützung",
+            "Echtzeit-Datenanalyse",
+            "Sichere Patientendaten-Verwaltung",
+            "Intuitive Benutzeroberfläche",
+            "Integration mit bestehenden Systemen"
+        ],
+        "images": [
+            "images/projects/medical-spytool-1.jpg",
+            "images/projects/medical-spytool-2.jpg"
+        ],
+        "github": "https://github.com/yourusername/medical-spytool",
+        "demo": null,
+        "download": null
+    },
+    "ai-discord-bot": {
+        "title": "AI Discord Bot",
+        "subtitle": "Intelligenter Discord Bot mit NLP",
+        "description": "Ein Discord Bot mit fortschrittlicher KI-Integration, der natürliche Sprache versteht und kontextuelle Antworten generiert.",
+        "technologies": ["Node.js", "Discord.js", "OpenAI API", "MongoDB", "Express"],
+        "features": [
+            "Natural Language Processing",
+            "Kontextuelle Gespräche",
+            "Moderation Tools",
+            "Custom Commands",
+            "Musik-Streaming Integration"
+        ],
+        "images": [
+            "images/projects/discord-bot-1.jpg",
+            "images/projects/discord-bot-2.jpg"
+        ],
+        "github": "https://github.com/yourusername/ai-discord-bot",
+        "demo": "https://discord.com/invite/yourbot",
+        "download": null
+    },
+    "soulscribe": {
+        "title": "SoulScribe",
+        "subtitle": "KI-gestütztes Reflexions- und Journaling-Tool",
+        "description": "Eine innovative Anwendung, die KI nutzt, um Benutzern bei der Selbstreflexion und dem emotionalen Wohlbefinden zu helfen.",
+        "technologies": ["React", "TypeScript", "OpenAI API", "Firebase", "Material-UI"],
+        "features": [
+            "KI-gestützte Reflexionsführung",
+            "Emotionale Analyse",
+            "Personalisierte Insights",
+            "Sichere Datenspeicherung",
+            "Progress Tracking"
+        ],
+        "images": [
+            "images/projects/soulscribe-1.jpg",
+            "images/projects/soulscribe-2.jpg"
+        ],
+        "github": "https://github.com/yourusername/soulscribe",
+        "demo": "https://soulscribe-demo.vercel.app",
+        "download": null
+    },
+    "local-ai-assistant": {
+        "title": "Lokaler KI-Assistent",
+        "subtitle": "Datenschutzfreundlicher AI-Assistent",
+        "description": "Ein vollständig lokaler KI-Assistent, der ohne Cloud-Verbindung funktioniert und maximalen Datenschutz gewährleistet.",
+        "technologies": ["Python", "Transformers", "PyQt6", "SQLite", "ONNX"],
+        "features": [
+            "Vollständig offline",
+            "Zero-Data-Collection",
+            "Sprachverarbeitung",
+            "Task-Automation",
+            "Anpassbare Modelle"
+        ],
+        "images": [
+            "images/projects/local-ai-1.jpg",
+            "images/projects/local-ai-2.jpg"
+        ],
+        "github": "https://github.com/yourusername/local-ai-assistant",
+        "demo": null,
+        "download": "https://github.com/yourusername/local-ai-assistant/releases"
+    }
+}

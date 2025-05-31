@@ -502,28 +502,6 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script>
-        // Animate skill bars on scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            const skillBars = document.querySelectorAll('.skill-progress');
-            
-            const animateSkills = () => {
-                skillBars.forEach(bar => {
-                    const rect = bar.getBoundingClientRect();
-                    if (rect.top < window.innerHeight && rect.bottom > 0) {
-                        const progress = bar.dataset.progress;
-                        bar.style.width = progress + '%';
-                        bar.style.transition = 'width 1.5s ease-in-out';
-                    }
-                });
-            };
-            
-            // Initial check
-            animateSkills();
-            
-            // Check on scroll
-            window.addEventListener('scroll', animateSkills);
-        });
-    </script>
+    <!-- Inline script for skill bar animation has been moved to js/main.js -->
 </body>
 </html>

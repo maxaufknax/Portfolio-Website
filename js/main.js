@@ -10,13 +10,16 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initTabNavigation(); // Add tab navigation initialization
     initProjectHeroCarousel(); // Add project hero carousel initialization
+    initGalleryModals(); // Add gallery modal initialization
+    initAboutPageAnimations(); // Add about page animations initialization
+    initFaqAccordion(); // Add FAQ accordion initialization
+    initProjectVideoPlayers(); // Add project video players initialization
     
     // Initialize floating elements with a small delay to ensure DOM is ready
     setTimeout(() => {
         initFloatingElements();
     }, 100);
     
-    console.log('Portfolio website loaded successfully! 🚀');
 });
 
 // Navigation functionality
@@ -168,11 +171,8 @@ function initFloatingElements() {
     const floatingElements = document.querySelectorAll('.floating-element');
     
     if (floatingElements.length === 0) {
-        console.log('No floating elements found');
         return;
     }
-    
-    console.log(`Initializing ${floatingElements.length} floating elements`);
     
     floatingElements.forEach((element, index) => {
         // Set initial position and animation delay
@@ -213,7 +213,6 @@ function initFloatingElements() {
             }, 150);
             
             const tech = element.getAttribute('data-tech');
-            console.log(`Clicked on ${tech} element`);
         });
     });
 }
@@ -527,7 +526,6 @@ function copyToClipboard(text) {
 
 // Analytics tracking (placeholder)
 function trackEvent(eventName, properties = {}) {
-    console.log('Event tracked:', eventName, properties);
     // Integrate with your analytics service here
     // Example: gtag('event', eventName, properties);
 }
@@ -538,7 +536,6 @@ function measurePerformance() {
         window.addEventListener('load', () => {
             const perfData = performance.timing;
             const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            console.log(`Page load time: ${pageLoadTime}ms`);
             
             // Track performance
             trackEvent('page_load_time', {
@@ -559,3 +556,225 @@ window.portfolioUtils = {
     trackEvent,
     debounce
 };
+
+// Gallery Modal Functions
+function initGalleryModals() {
+    const imageModal = document.getElementById('imageModal');
+    if (imageModal) {
+        // Close modal on outside click
+        imageModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageModal();
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('imageModal');
+                if (modal && modal.style.display === 'flex') {
+                    closeImageModal();
+                }
+            }
+        });
+    }
+}
+
+window.openImageModal = function(buttonOrImageElement) {
+    let imgElement, title, description;
+
+    if (buttonOrImageElement.closest('.gallery-item')) { // Handling click from gallery item button
+        const galleryItem = buttonOrImageElement.closest('.gallery-item');
+        imgElement = galleryItem.querySelector('img');
+        title = galleryItem.querySelector('h4')?.textContent || '';
+        description = galleryItem.querySelector('p')?.textContent || '';
+    } else if (buttonOrImageElement.tagName === 'IMG') { // Handling click directly on an image meant for modal
+        imgElement = buttonOrImageElement;
+        title = buttonOrImageElement.dataset.modalTitle || imgElement.alt || '';
+        description = buttonOrImageElement.dataset.modalDescription || '';
+    } else {
+        console.error("openImageModal called with an unsupported element:", buttonOrImageElement);
+        return;
+    }
+
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+
+    if (!modal || !modalImg || !modalTitle || !modalDescription) {
+        console.error("Modal elements not found in the DOM.");
+        return;
+    }
+
+    modalImg.src = imgElement.src;
+    modalImg.alt = imgElement.alt;
+    modalTitle.textContent = title;
+    modalDescription.textContent = description;
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeImageModal = function() {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+};
+
+function initAboutPageAnimations() {
+    if (document.querySelector('.skill-progress')) {
+        const skillBars = document.querySelectorAll('.skill-progress');
+
+        const animateSkills = () => {
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const progress = bar.dataset.progress;
+                    bar.style.width = progress + '%';
+                    bar.style.transition = 'width 1.5s ease-in-out';
+                }
+            });
+        };
+
+        // Initial check
+        animateSkills();
+
+        // Check on scroll
+        window.addEventListener('scroll', animateSkills);
+    }
+}
+
+function initFaqAccordion() {
+    if (document.querySelector('.faq-item')) {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            // const answer = item.querySelector('.faq-answer'); // Not strictly needed for click logic
+            const icon = question.querySelector('i');
+
+            question.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                // Close all other items to ensure only one is open at a time
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) { // Don't close the one being clicked if it's already open
+                        otherItem.classList.remove('active');
+                        const otherIcon = otherItem.querySelector('.faq-question i');
+                        if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+                if (icon) icon.style.transform = item.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+            });
+        });
+    }
+}
+
+// Portfolio sharing functions (global)
+window.copyPortfolioLink = function() {
+    const url = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/index.html'); // Assumes index.html is the main page
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => {
+            if (window.portfolioUtils && typeof window.portfolioUtils.showNotification === 'function') {
+                window.portfolioUtils.showNotification('Portfolio-Link kopiert!', 'success');
+            } else {
+                alert('Portfolio-Link kopiert!'); // Fallback
+            }
+        }).catch(err => {
+            console.error('Konnte Link nicht kopieren: ', err);
+            alert('Link konnte nicht kopiert werden.'); // Fallback
+        });
+    } else {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            if (window.portfolioUtils && typeof window.portfolioUtils.showNotification === 'function') {
+                window.portfolioUtils.showNotification('Portfolio-Link kopiert! (Fallback)', 'success');
+            } else {
+                alert('Portfolio-Link kopiert! (Fallback)');
+            }
+        } catch (err) {
+            console.error('Fallback: Konnte Link nicht kopieren', err);
+            alert('Link konnte nicht kopiert werden. (Fallback)');
+        }
+        document.body.removeChild(textArea);
+    }
+};
+
+window.sharePortfolio = function() {
+    const url = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/index.html');
+    const title = document.title;
+    const text = `Schauen Sie sich dieses Portfolio an: ${title}`;
+
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            text: text,
+            url: url,
+        })
+        .then(() => console.log('Erfolgreich geteilt'))
+        .catch((error) => console.log('Fehler beim Teilen', error));
+    } else {
+        // Fallback if Web Share API is not available
+        window.copyPortfolioLink(); // Offer to copy link as a fallback
+        if (window.portfolioUtils && typeof window.portfolioUtils.showNotification === 'function') {
+            window.portfolioUtils.showNotification('Web Share nicht unterstützt. Link wurde kopiert.', 'info');
+        } else {
+            alert('Web Share wird von diesem Browser nicht unterstützt. Der Link wurde stattdessen in die Zwischenablage kopiert.');
+        }
+    }
+};
+
+function initProjectVideoPlayers() {
+    const videoCards = document.querySelectorAll('.video-card');
+    if (videoCards.length === 0) {
+        return;
+    }
+
+    const allVideos = document.querySelectorAll('video.showcase-video');
+
+    videoCards.forEach(card => {
+        const video = card.querySelector('video.showcase-video');
+        if (!video) return;
+
+        video.addEventListener('play', function() {
+            // Pause other videos
+            allVideos.forEach(otherVideo => {
+                if (otherVideo !== video && !otherVideo.paused) {
+                    otherVideo.pause();
+                }
+            });
+            card.classList.add('playing');
+        });
+
+        video.addEventListener('pause', function() {
+            card.classList.remove('playing');
+        });
+
+        video.addEventListener('ended', function() {
+            card.classList.remove('playing');
+        });
+
+        card.addEventListener('mouseenter', function() {
+            if (!card.classList.contains('playing')) {
+                // Apply hover effect only if not playing
+                video.style.transform = 'scale(1.03)'; // Example hover effect
+            }
+        });
+
+        card.addEventListener('mouseleave', function() {
+            // Remove hover effect
+            video.style.transform = 'scale(1)';
+        });
+    });
+}

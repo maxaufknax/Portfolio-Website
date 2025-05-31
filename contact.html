@@ -383,55 +383,6 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script>
-        // FAQ Accordion functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqItems = document.querySelectorAll('.faq-item');
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-                const icon = question.querySelector('i');
-                
-                question.addEventListener('click', () => {
-                    const isOpen = item.classList.contains('active');
-                    
-                    // Close all other items
-                    faqItems.forEach(otherItem => {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('i').style.transform = 'rotate(0deg)';
-                    });
-                    
-                    // Toggle current item
-                    if (!isOpen) {
-                        item.classList.add('active');
-                        icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-        });
-
-        // Portfolio sharing functions
-        function copyPortfolioLink() {
-            const url = window.location.origin;
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(url).then(() => {
-                    window.portfolioUtils?.showNotification('Portfolio-Link kopiert!', 'success');
-                });
-            }
-        }
-
-        function sharePortfolio() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Portfolio - Maximilian Paasch',
-                    text: 'Schauen Sie sich mein Portfolio an!',
-                    url: window.location.origin
-                });
-            } else {
-                copyPortfolioLink();
-            }
-        }
-    </script>
+    <!-- Inline script for FAQ and sharing has been moved to js/main.js -->
 </body>
 </html>

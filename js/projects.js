@@ -1,12 +1,83 @@
 // Project-specific JavaScript functionality
 
+let allProjectsData = {};
+
+async function loadProjectsData() {
+    try {
+        const response = await fetch('../data/projects.json'); // Adjusted path
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        allProjectsData = await response.json();
+        renderProjectCards();
+        initProjectFilters(); // Call after cards are rendered
+        initProjectSearch();  // Call after cards are rendered
+        initProjectModals();  // Modals might depend on cards or data
+    } catch (error) {
+        console.error("Could not load projects data:", error);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    initProjectCards();
-    initProjectModals();
-    initProjectFilters();
-    initProjectSearch();
-    initProjectAnimations();
+    loadProjectsData();
 });
+
+function renderProjectCards() {
+    const projectsGrid = document.querySelector('.projects-grid');
+    if (!projectsGrid) {
+        console.error("Projects grid not found!");
+        return;
+    }
+    projectsGrid.innerHTML = ''; // Clear existing content
+
+    for (const projectId in allProjectsData) {
+        const project = allProjectsData[projectId];
+        const card = document.createElement('div');
+        card.className = `project-card ${project.featured ? 'featured' : ''}`;
+        card.dataset.project = projectId;
+        card.dataset.categories = project.categories ? project.categories.join(',') : ''; // Assuming categories is an array
+
+        // Determine image path, assuming a default or project-specific image
+        const imagePath = project.images && project.images.length > 0 ? project.images[0] : '../images/placeholder.jpg'; // Adjusted path
+        const overlayIcon = project.overlayIcon || 'fas fa-eye'; // Default icon
+
+        card.innerHTML = `
+            <div class="project-image">
+                <div class="project-overlay">
+                    <i class="${overlayIcon}"></i>
+                </div>
+                ${project.status ? `<div class="project-status"><span class="status-badge ${project.status.type || ''}">${project.status.text || ''}</span></div>` : ''}
+            </div>
+            <div class="project-content">
+                <div class="project-header">
+                    <h3>${project.title}</h3>
+                    ${project.year ? `<div class="project-year">${project.year}</div>` : ''}
+                </div>
+                <p>${project.subtitle || project.description.substring(0, 100) + '...'}</p>
+                <div class="project-tech">
+                    ${project.technologies.slice(0, 4).map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+                <div class="project-actions">
+                    <a href="${project.detailsLink || `projects/${projectId}.html`}" class="btn btn-primary">
+                        <i class="fas fa-info-circle"></i> Details
+                    </a>
+                    ${project.github ? `<a href="${project.github}" class="btn btn-secondary" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>` : ''}
+                    ${project.demo ? `<a href="${project.demo}" class="btn btn-outline" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> Demo</a>` : ''}
+                </div>
+            </div>
+        `;
+        // Set project image dynamically
+        const projectImageDiv = card.querySelector('.project-image');
+        if (projectImageDiv) {
+             projectImageDiv.style.backgroundImage = `url('${imagePath}')`;
+        }
+
+        projectsGrid.appendChild(card);
+    }
+    initProjectCards();
+    initProjectAnimations();
+    initProjectStatsAnimation(); // Initialize stats animation
+}
 
 // Project card interactions
 function initProjectCards() {
@@ -170,90 +241,7 @@ function createProjectModal(data) {
 
 // Project data (placeholder - replace with your actual project data)
 function getProjectModalData(projectId) {
-    const projects = {
-        'medical-spytool': {
-            title: 'Medical Spytool',
-            subtitle: 'Innovative medizinische Analyse-Software',
-            description: 'Ein fortschrittliches Tool zur medizinischen Datenanalyse mit KI-Integration. Das System ermöglicht es Ärzten, komplexe medizinische Daten zu analysieren und fundierte Entscheidungen zu treffen.',
-            technologies: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL', 'Docker'],
-            features: [
-                'KI-gestützte Diagnose-Unterstützung',
-                'Echtzeit-Datenanalyse',
-                'Sichere Patientendaten-Verwaltung',
-                'Intuitive Benutzeroberfläche',
-                'Integration mit bestehenden Systemen'
-            ],
-            images: [
-                'images/projects/medical-spytool-1.jpg',
-                'images/projects/medical-spytool-2.jpg'
-            ],
-            github: 'https://github.com/yourusername/medical-spytool',
-            demo: null,
-            download: null
-        },
-        'ai-discord-bot': {
-            title: 'AI Discord Bot',
-            subtitle: 'Intelligenter Discord Bot mit NLP',
-            description: 'Ein Discord Bot mit fortschrittlicher KI-Integration, der natürliche Sprache versteht und kontextuelle Antworten generiert.',
-            technologies: ['Node.js', 'Discord.js', 'OpenAI API', 'MongoDB', 'Express'],
-            features: [
-                'Natural Language Processing',
-                'Kontextuelle Gespräche',
-                'Moderation Tools',
-                'Custom Commands',
-                'Musik-Streaming Integration'
-            ],
-            images: [
-                'images/projects/discord-bot-1.jpg',
-                'images/projects/discord-bot-2.jpg'
-            ],
-            github: 'https://github.com/yourusername/ai-discord-bot',
-            demo: 'https://discord.com/invite/yourbot',
-            download: null
-        },
-        'soulscribe': {
-            title: 'SoulScribe',
-            subtitle: 'KI-gestütztes Reflexions- und Journaling-Tool',
-            description: 'Eine innovative Anwendung, die KI nutzt, um Benutzern bei der Selbstreflexion und dem emotionalen Wohlbefinden zu helfen.',
-            technologies: ['React', 'TypeScript', 'OpenAI API', 'Firebase', 'Material-UI'],
-            features: [
-                'KI-gestützte Reflexionsführung',
-                'Emotionale Analyse',
-                'Personalisierte Insights',
-                'Sichere Datenspeicherung',
-                'Progress Tracking'
-            ],
-            images: [
-                'images/projects/soulscribe-1.jpg',
-                'images/projects/soulscribe-2.jpg'
-            ],
-            github: 'https://github.com/yourusername/soulscribe',
-            demo: 'https://soulscribe-demo.vercel.app',
-            download: null
-        },
-        'local-ai-assistant': {
-            title: 'Lokaler KI-Assistent',
-            subtitle: 'Datenschutzfreundlicher AI-Assistent',
-            description: 'Ein vollständig lokaler KI-Assistent, der ohne Cloud-Verbindung funktioniert und maximalen Datenschutz gewährleistet.',
-            technologies: ['Python', 'Transformers', 'PyQt6', 'SQLite', 'ONNX'],
-            features: [
-                'Vollständig offline',
-                'Zero-Data-Collection',
-                'Sprachverarbeitung',
-                'Task-Automation',
-                'Anpassbare Modelle'
-            ],
-            images: [
-                'images/projects/local-ai-1.jpg',
-                'images/projects/local-ai-2.jpg'
-            ],
-            github: 'https://github.com/yourusername/local-ai-assistant',
-            demo: null,
-            download: 'https://github.com/yourusername/local-ai-assistant/releases'
-        }
-    };
-    
-    return projects[projectId];
+    return allProjectsData[projectId];
 }
 
 // Project filtering
@@ -404,3 +392,42 @@ window.projectUtils = {
     filterProjects,
     searchProjects
 };
+
+function initProjectStatsAnimation() {
+    if (document.querySelector('.project-stats')) {
+        const animateStats = () => {
+            const stats = document.querySelectorAll('.stat-number');
+
+            stats.forEach(stat => {
+                const target = parseInt(stat.dataset.count);
+                // Ensure target is a number and not NaN
+                if (isNaN(target)) {
+                    stat.textContent = stat.dataset.count; // Display original text if not a number
+                    return;
+                }
+
+                const increment = Math.max(1, target / 100); // Ensure increment is at least 1
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current);
+                }, 20); // Animation speed
+            });
+        };
+
+        const statsSection = document.querySelector('.project-stats');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                animateStats();
+                observer.disconnect(); // Ensure animation runs only once
+            }
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+        observer.observe(statsSection);
+    }
+}
