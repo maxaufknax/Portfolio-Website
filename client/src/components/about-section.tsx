@@ -322,9 +322,7 @@ export default function AboutSection() {
                 </div>
                 <div className="flex-1 glassmorphism p-6 rounded-2xl">
                   <h5 className="text-lg font-semibold text-accent mb-3">Impact</h5>
-                  <p className="text-muted-foreground text-sm">
-                    Ich baue nicht einfach nur Apps oder Websites, sondern Lösungen, die echte Probleme lösen und Menschen wirklich helfen. Es geht um Impact, nicht um Features.
-                  </p>
+                  <p className="text-muted-foreground text-sm">Ich baue keine Projekte fürs Portfolio, sondern für echten Nutzen. Ob Tools, Websites oder Produkte – was ich mache, soll Menschen helfen, inspirieren oder einfach etwas in Bewegung setzen.</p>
                 </div>
               </div>
               
