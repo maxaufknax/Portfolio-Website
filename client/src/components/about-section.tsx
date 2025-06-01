@@ -22,7 +22,7 @@ export default function AboutSection() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <div className="glassmorphism p-8 rounded-2xl animate-slide-up">
-              <h3 className="text-2xl font-semibold mb-4 text-primary">My Journey</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-primary">Über mich</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
                 Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
