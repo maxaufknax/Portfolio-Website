@@ -118,20 +118,41 @@ export default function ProjectModal() {
               
               {/* Video Showcase - nur für Medical Spytool */}
               {selectedProject.id === 'medical-spytool' && (
-                <div className="space-y-3">
-                  <h5 className="text-lg font-medium text-secondary">Video Demo</h5>
-                  <div className="relative rounded-lg overflow-hidden bg-black/20">
-                    <video 
-                      controls 
-                      className="w-full h-48 object-contain rounded-lg"
-                      poster={selectedProject.image}
-                    >
-                      <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
-                      Browser unterstützt das Video nicht.
-                    </video>
+                <div className="space-y-4">
+                  <h5 className="text-lg font-medium text-secondary">Video Demos</h5>
+                  
+                  {/* Web Version */}
+                  <div className="space-y-2">
+                    <h6 className="text-sm font-medium text-primary">Web Version</h6>
+                    <div className="relative rounded-lg overflow-hidden bg-black/20">
+                      <video 
+                        controls 
+                        className="w-full h-32 object-contain rounded-lg"
+                        poster={selectedProject.image}
+                      >
+                        <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
+                        Browser unterstützt das Video nicht.
+                      </video>
+                    </div>
                   </div>
+                  
+                  {/* Desktop Version */}
+                  <div className="space-y-2">
+                    <h6 className="text-sm font-medium text-accent">Desktop Version</h6>
+                    <div className="relative rounded-lg overflow-hidden bg-black/20">
+                      <video 
+                        controls 
+                        className="w-full h-32 object-contain rounded-lg"
+                        poster={selectedProject.image}
+                      >
+                        <source src="/medical-spytool-local-showcase.mp4" type="video/mp4" />
+                        Browser unterstützt das Video nicht.
+                      </video>
+                    </div>
+                  </div>
+                  
                   <p className="text-xs text-muted-foreground">
-                    🎥 Live-Demo des Web Interface
+                    🎥 Live-Demos beider Versionen des Medical Spytool
                   </p>
                 </div>
               )}
