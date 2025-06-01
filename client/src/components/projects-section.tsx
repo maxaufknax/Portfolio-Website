@@ -24,36 +24,42 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {projects.map((project) => (
             <div 
               key={project.id}
-              className="project-card glassmorphism p-6 rounded-2xl cursor-pointer" 
+              className="glassmorphism-strong p-8 rounded-3xl cursor-pointer hover:scale-105 transition-all duration-500 group relative overflow-hidden" 
               onClick={() => handleProjectClick(project.id)}
             >
-              <img 
-                src={project.image} 
-                alt={project.imageAlt}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <div className="space-y-3">
-                <h3 className="text-xl font-semibold text-primary">{project.title}</h3>
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <span 
-                      key={index}
-                      className={`px-2 py-1 text-xs rounded font-mono ${
-                        index % 3 === 0 ? 'bg-primary/20 text-primary' :
-                        index % 3 === 1 ? 'bg-secondary/20 text-secondary' :
-                        'bg-accent/20 text-accent'
-                      }`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/3 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10">
+                <div className="aspect-video mb-6 rounded-2xl overflow-hidden shadow-2xl">
+                  <img 
+                    src={project.image} 
+                    alt={project.imageAlt}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-black text-gradient group-hover:scale-105 transition-transform duration-300">{project.title}</h3>
+                  <p className="text-muted-foreground text-base leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    {project.technologies.slice(0, 3).map((tech, index) => (
+                      <span 
+                        key={index}
+                        className="glassmorphism px-4 py-2 text-sm font-bold rounded-full border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 3 && (
+                      <span className="glassmorphism px-4 py-2 text-sm font-bold rounded-full border border-accent/30 text-accent">
+                        +{project.technologies.length - 3} mehr
+                      </span>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
