@@ -79,8 +79,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <a href="mailto:alex.chen@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      alex.chen@example.com
+                    <a href="mailto:maimilian.elias.paasch@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      maimilian.elias.paasch@gmail.com
                     </a>
                   </div>
                 </div>
