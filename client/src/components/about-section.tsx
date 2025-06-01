@@ -13,7 +13,7 @@ export default function AboutSection() {
     <section id="about" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Über mich</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Bridging the gap between technical innovation and creative expression
           </p>
