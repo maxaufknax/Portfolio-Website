@@ -51,7 +51,7 @@ export default function Portfolio() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="text-muted-foreground">
-              © 2024 Alex Chen. Built with modern web technologies and deployed on GitHub Pages.
+              © 2025 Max Paasch. Erstellt mit modernen Web-Technologien und bereitgestellt auf Replit.
             </p>
             <div className="flex justify-center space-x-6 mt-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy</a>
