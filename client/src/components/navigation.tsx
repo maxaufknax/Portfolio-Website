@@ -33,16 +33,16 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             <button onClick={() => scrollToSection('home')} className="hover:text-primary transition-colors duration-300">
-              Startseite
+              Home
             </button>
             <button onClick={() => scrollToSection('about')} className="hover:text-primary transition-colors duration-300">
-              Über mich
+              About
             </button>
             <button onClick={() => scrollToSection('projects')} className="hover:text-primary transition-colors duration-300">
-              Projekte
+              Projects
             </button>
             <button onClick={() => scrollToSection('contact')} className="hover:text-primary transition-colors duration-300">
-              Kontakt
+              Contact
             </button>
           </div>
 
@@ -57,16 +57,16 @@ export default function Navigation() {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               <button onClick={() => scrollToSection('home')} className="text-left hover:text-primary transition-colors duration-300">
-                Startseite
+                Home
               </button>
               <button onClick={() => scrollToSection('about')} className="text-left hover:text-primary transition-colors duration-300">
-                Über mich
+                About
               </button>
               <button onClick={() => scrollToSection('projects')} className="text-left hover:text-primary transition-colors duration-300">
-                Projekte
+                Projects
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-left hover:text-primary transition-colors duration-300">
-                Kontakt
+                Contact
               </button>
             </div>
           </div>

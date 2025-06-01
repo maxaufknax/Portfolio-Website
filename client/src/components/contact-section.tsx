@@ -62,7 +62,10 @@ export default function ContactSection() {
     <section id="contact" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Mein Kontakt</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Let's Connect</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Ready to collaborate on innovative projects or discuss Media Design Informatics opportunities
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -76,8 +79,8 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <p className="font-semibold">Email</p>
-                    <a href="mailto:maximilian.elias.paasch@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      maximilian.elias.paasch@gmail.com
+                    <a href="mailto:maimilian.elias.paasch@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      maimilian.elias.paasch@gmail.com
                     </a>
                   </div>
                 </div>

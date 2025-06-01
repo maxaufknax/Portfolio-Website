@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function AboutSection() {
   const [activeTimeline, setActiveTimeline] = useState<'education' | 'career' | 'interests'>('education');
-  const [isTimelineExpanded, setIsTimelineExpanded] = useState(false);
   const skills = [
     'Python', 'React', 'TensorFlow', 'Node.js', 'Adobe CC', 'Three.js',
     'TypeScript', 'Next.js', 'PostgreSQL', 'Docker', 'AWS', 'Figma'
@@ -132,7 +131,9 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">Über mich</h2>
-          <p className="md:text-2xl text-muted-foreground max-w-4xl mx-auto text-[23px]">Während andere noch überlegen, bau ich es einfach. Learning by Doing, 100%.</p>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            Bridging the gap between technical innovation and creative expression
+          </p>
         </div>
         
         {/* Vision und Expertise - zentriert über Lebenslauf */}
@@ -176,130 +177,102 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Kompakter Lebenslauf-Bereich */}
-        <div className="glassmorphism p-6 rounded-2xl">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-xl font-semibold text-foreground">Mein Werdegang</h3>
-            <button
-              onClick={() => setIsTimelineExpanded(!isTimelineExpanded)}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
-            >
-              {isTimelineExpanded ? 'Weniger anzeigen' : 'Details anzeigen'}
-              <svg 
-                className={`w-4 h-4 transition-transform duration-300 ${isTimelineExpanded ? 'rotate-180' : ''}`}
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-          </div>
+        {/* Lebenslauf-Bereich */}
+        <div className="space-y-8">
+            {/* Timeline Navigation */}
+            <div className="glassmorphism p-2 rounded-2xl">
+              <div className="flex space-x-1">
+                <button
+                  onClick={() => setActiveTimeline('education')}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTimeline === 'education' 
+                      ? 'bg-primary text-primary-foreground shadow-lg transform scale-105' 
+                      : 'hover:bg-white/10 text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Bildung
+                </button>
+                <button
+                  onClick={() => setActiveTimeline('career')}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTimeline === 'career' 
+                      ? 'bg-secondary text-secondary-foreground shadow-lg transform scale-105' 
+                      : 'hover:bg-white/10 text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Berufsleben
+                </button>
+                <button
+                  onClick={() => setActiveTimeline('interests')}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTimeline === 'interests' 
+                      ? 'bg-accent text-accent-foreground shadow-lg transform scale-105' 
+                      : 'hover:bg-white/10 text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Interessen
+                </button>
+              </div>
+            </div>
 
-          {/* Kompakte Timeline Navigation */}
-          <div className="flex space-x-2 mb-6">
-            <button
-              onClick={() => setActiveTimeline('education')}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                activeTimeline === 'education' 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-white/5 text-muted-foreground hover:text-foreground hover:bg-white/10'
-              }`}
-            >
-              Bildung
-            </button>
-            <button
-              onClick={() => setActiveTimeline('career')}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                activeTimeline === 'career' 
-                  ? 'bg-secondary text-secondary-foreground' 
-                  : 'bg-white/5 text-muted-foreground hover:text-foreground hover:bg-white/10'
-              }`}
-            >
-              Berufsleben
-            </button>
-            <button
-              onClick={() => setActiveTimeline('interests')}
-              className={`px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
-                activeTimeline === 'interests' 
-                  ? 'bg-accent text-accent-foreground' 
-                  : 'bg-white/5 text-muted-foreground hover:text-foreground hover:bg-white/10'
-              }`}
-            >
-              Interessen
-            </button>
-          </div>
-
-          {/* Timeline Content - Kollapsierbar */}
-          <div className={`overflow-hidden transition-all duration-500 ease-in-out ${
-            isTimelineExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-32 opacity-70'
-          }`}>
-            <div className="space-y-4">
-              {timelines[activeTimeline].map((item: any, index: number) => (
-                <div key={index} className={`relative pl-8 pb-4 last:pb-0 transition-all duration-300 ${
-                  !isTimelineExpanded && index >= 2 ? 'hidden' : ''
-                }`}>
-                  {/* Timeline line */}
-                  {index !== timelines[activeTimeline].length - 1 && (
-                    <div className="absolute left-3 top-6 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-accent opacity-30"></div>
-                  )}
-                  
-                  {/* Timeline dot */}
-                  <div className={`absolute left-1 top-2 w-4 h-4 rounded-full border-2 ${
-                    item.type === 'education' || item.type === 'future' ? 'bg-primary border-primary' :
-                    item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary border-secondary' :
-                    'bg-accent border-accent'
-                  }`}></div>
-                  
-                  {/* Content */}
-                  <div className="space-y-2">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                      <div>
-                        <h4 className="text-base font-semibold text-foreground">{item.title}</h4>
-                        {item.subtitle && (
-                          <p className="text-sm text-muted-foreground/80">{item.subtitle}</p>
-                        )}
-                      </div>
-                      <span className="text-xs font-mono text-muted-foreground bg-white/5 px-2 py-1 rounded">
-                        {item.period}
-                      </span>
+            {/* Timeline Content */}
+            <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-accent/20 transition-all duration-500 min-h-[600px]">
+              <div className="space-y-8">
+                {timelines[activeTimeline].map((item: any, index: number) => (
+                  <div key={index} className="relative pl-12 pb-8 last:pb-0 group">
+                    {/* Timeline line */}
+                    {index !== timelines[activeTimeline].length - 1 && (
+                      <div className="absolute left-4 top-8 w-1 h-full bg-gradient-to-b from-primary via-secondary to-accent opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    )}
+                    
+                    {/* Timeline dot */}
+                    <div className={`absolute left-1 top-3 w-6 h-6 rounded-full border-3 shadow-lg group-hover:scale-110 transition-transform duration-300 ${
+                      item.type === 'education' || item.type === 'future' ? 'bg-primary border-primary shadow-primary/30' :
+                      item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary border-secondary shadow-secondary/30' :
+                      item.type === 'training' || item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent border-accent shadow-accent/30' :
+                      'bg-accent border-accent shadow-accent/30'
+                    }`}>
+                      <div className="absolute inset-1 rounded-full bg-white/20"></div>
                     </div>
                     
-                    {isTimelineExpanded && (
-                      <>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                        {item.skills && item.skills.length > 0 && (
-                          <div className="flex flex-wrap gap-1 mt-2">
-                            {item.skills.map((skill: string, skillIndex: number) => (
-                              <span 
-                                key={skillIndex}
-                                className={`px-2 py-1 text-xs rounded font-mono ${
-                                  item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary' :
-                                  item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary' :
-                                  'bg-accent/20 text-accent'
-                                }`}
-                              >
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                        )}
-                      </>
-                    )}
+                    {/* Content */}
+                    <div className="space-y-4 glassmorphism p-6 rounded-2xl hover:bg-white/5 transition-all duration-300 group-hover:shadow-lg">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-6">
+                        <div className="flex-1">
+                          <h4 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h4>
+                          {item.subtitle && (
+                            <p className="text-base font-medium text-muted-foreground/90 mb-3">{item.subtitle}</p>
+                          )}
+                        </div>
+                        <span className="text-sm font-mono text-muted-foreground bg-white/10 px-4 py-2 rounded-full whitespace-nowrap group-hover:bg-white/15 transition-colors duration-300">
+                          {item.period}
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                      {item.skills && item.skills.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {item.skills.map((skill: string, skillIndex: number) => (
+                            <span 
+                              key={skillIndex}
+                              className={`px-3 py-1 text-sm rounded-full font-medium transition-all duration-300 hover:scale-105 ${
+                                item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary hover:bg-primary/30' :
+                                item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary hover:bg-secondary/30' :
+                                item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent/20 text-accent hover:bg-accent/30' :
+                                'bg-muted/20 text-muted-foreground hover:bg-muted/30'
+                              }`}
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-            
-            {!isTimelineExpanded && timelines[activeTimeline].length > 2 && (
-              <div className="text-center mt-4">
-                <p className="text-sm text-muted-foreground">
-                  +{timelines[activeTimeline].length - 2} weitere Einträge
-                </p>
+                ))}
               </div>
-            )}
-          </div>
-        </div>
+            </div>
+
+            </div>
 
         {/* Skills Tags - zentriert unter dem Lebenslauf */}
         <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 mt-12">
