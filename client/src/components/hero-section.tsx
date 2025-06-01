@@ -4,11 +4,7 @@ export default function HeroSection() {
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest'
-      });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
