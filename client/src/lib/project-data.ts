@@ -48,7 +48,8 @@ export const projects: Project[] = [
     technologies: ['Node.js', 'Discord.js', 'OpenAI API', 'Anthropic API', 'MongoDB', 'Redis'],
     impact: 'Erfolgreich in 50+ Discord Servern deployed mit 99.9% Uptime und über 10.000 täglichen Interaktionen. Reduziert Moderationsaufwand um 70%.',
     image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600',
-    imageAlt: 'KI Discord Bot Interface mit modernen Chat-Features und künstlicher Intelligenz Integration'
+    imageAlt: 'KI Discord Bot Interface mit modernen Chat-Features und künstlicher Intelligenz Integration',
+    githubUrl: 'https://github.com/maxaufknax/AI-Discord-Bot'
   },
   {
     id: 'soulscribe',
