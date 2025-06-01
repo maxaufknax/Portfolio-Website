@@ -335,20 +335,7 @@ export default function AboutSection() {
                 </div>
               </div>
               
-              {/* Kompakte Skills Anzeige */}
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <h5 className="text-lg font-semibold text-foreground mb-4">Technologien & Tools</h5>
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {skills.map((skill, index) => (
-                    <span 
-                      key={index} 
-                      className="skill-tag px-3 py-1 rounded-lg text-sm font-medium hover:scale-105 transition-all duration-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
