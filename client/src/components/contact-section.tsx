@@ -62,10 +62,7 @@ export default function ContactSection() {
     <section id="contact" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Let's Connect</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to collaborate on innovative projects or discuss Media Design Informatics opportunities
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Mein Kontakt</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-16 items-center">
