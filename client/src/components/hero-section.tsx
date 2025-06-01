@@ -43,27 +43,26 @@ export default function HeroSection() {
             Mein digitales Portfolio für eine Bewerbung auf ein Studium in Mediendesigninformatik.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button 
-              onClick={(e) => {
-                e.preventDefault();
+            <button 
+              onClick={() => {
                 console.log('Projects button clicked');
                 scrollToProjects();
               }}
-              className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold animate-glow"
+              className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold animate-glow rounded-md cursor-pointer relative z-10"
+              style={{ pointerEvents: 'all' }}
             >
               Meine Projekte
-            </Button>
-            <Button 
-              variant="outline"
-              onClick={(e) => {
-                e.preventDefault();
+            </button>
+            <button 
+              onClick={() => {
                 console.log('About button clicked');
                 scrollToAbout();
               }}
-              className="px-8 py-4 glassmorphism hover:bg-white/10 border-white/10 text-foreground font-semibold"
+              className="px-8 py-4 glassmorphism hover:bg-white/10 border border-white/10 text-foreground font-semibold rounded-md cursor-pointer relative z-10"
+              style={{ pointerEvents: 'all' }}
             >
               Über mich
-            </Button>
+            </button>
           </div>
         </div>
         <div className="relative">
