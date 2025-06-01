@@ -304,7 +304,7 @@ export default function AboutSection() {
         {/* Motivation Section */}
         <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 mt-12">
           <div className="text-center max-w-4xl mx-auto">
-            <h4 className="text-2xl font-bold mb-6 text-gradient">Meine Vision</h4>
+            <h4 className="text-2xl font-bold mb-6 text-gradient">Meine Motivation</h4>
             <div className="space-y-6">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 „Ich glaube an die Kraft der Technologie, Menschen zu verbinden und das Leben zu verbessern. 
