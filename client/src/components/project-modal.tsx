@@ -127,7 +127,7 @@ export default function ProjectModal() {
                     <div className="relative rounded-lg overflow-hidden bg-black/20">
                       <video 
                         controls 
-                        className="w-full h-32 object-contain rounded-lg"
+                        className="w-full h-40 object-contain rounded-lg"
                         poster={selectedProject.image}
                       >
                         <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
@@ -142,7 +142,7 @@ export default function ProjectModal() {
                     <div className="relative rounded-lg overflow-hidden bg-black/20">
                       <video 
                         controls 
-                        className="w-full h-32 object-contain rounded-lg"
+                        className="w-full h-40 object-contain rounded-lg"
                         poster={selectedProject.image}
                       >
                         <source src="/medical-spytool-local-showcase.mp4" type="video/mp4" />
