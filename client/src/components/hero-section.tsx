@@ -2,30 +2,26 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   const scrollToProjects = () => {
+    console.log('Button clicked - scrolling to projects');
     const element = document.getElementById('projects');
+    console.log('Projects element found:', element);
     if (element) {
-      const headerOffset = 80; // Account for fixed navigation
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // Fallback scroll
+      window.scrollTo({ top: 1000, behavior: 'smooth' });
     }
   };
 
   const scrollToAbout = () => {
+    console.log('Button clicked - scrolling to about');
     const element = document.getElementById('about');
+    console.log('About element found:', element);
     if (element) {
-      const headerOffset = 80; // Account for fixed navigation
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      // Fallback scroll
+      window.scrollTo({ top: 800, behavior: 'smooth' });
     }
   };
 
