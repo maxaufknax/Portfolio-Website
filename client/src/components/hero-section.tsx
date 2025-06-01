@@ -5,19 +5,25 @@ export default function HeroSection() {
     console.log('Scrolling to projects');
     const element = document.getElementById('projects');
     if (element) {
+      console.log('Projects element found, scrolling...');
       element.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       });
+    } else {
+      console.error('Projects element not found!');
     }
   };
 
   const scrollToAbout = () => {
     console.log('Scrolling to about');
-    document.getElementById('about')?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
+    const element = document.getElementById('about');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (
@@ -38,14 +44,22 @@ export default function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
-              onClick={scrollToProjects}
+              onClick={(e) => {
+                e.preventDefault();
+                console.log('Projects button clicked');
+                scrollToProjects();
+              }}
               className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold animate-glow"
             >
               Meine Projekte
             </Button>
             <Button 
               variant="outline"
-              onClick={scrollToAbout}
+              onClick={(e) => {
+                e.preventDefault();
+                console.log('About button clicked');
+                scrollToAbout();
+              }}
               className="px-8 py-4 glassmorphism hover:bg-white/10 border-white/10 text-foreground font-semibold"
             >
               Über mich
