@@ -34,20 +34,21 @@ export const projects: Project[] = [
   },
   {
     id: 'ai-discord-bot',
-    title: 'AI Discord Bot',
-    description: 'Intelligent community assistant with natural language processing and automated moderation features.',
-    overview: 'An intelligent Discord community assistant that leverages natural language processing to provide automated moderation, content generation, and interactive features for gaming and developer communities.',
+    title: 'KI Discord Bot',
+    description: 'Anpassbarer KI-gestützter Discord Bot mit OpenAI und Anthropic Integration für intelligente Community-Verwaltung.',
+    overview: 'Ein hochgradig anpassbarer Discord Bot, der OpenAI und Anthropic APIs nutzt, um intelligente Konversationen, automatisierte Moderation und personalisierte Community-Features bereitzustellen. Der Bot kann für verschiedene Server-Typen konfiguriert werden.',
     features: [
-      'Natural language conversation',
-      'Automated content moderation',
-      'Community engagement tools',
-      'Custom command creation',
-      'Integration with external APIs'
+      'Integration mit OpenAI GPT und Anthropic Claude',
+      'Anpassbare Persönlichkeiten und Verhaltensweisen',
+      'Intelligente Moderation und Spam-Erkennung',
+      'Custom Commands und Server-spezifische Features',
+      'Mehrsprachige Unterstützung',
+      'Analytics und Usage-Tracking'
     ],
-    technologies: ['JavaScript', 'OpenAI API', 'Discord.js', 'MongoDB', 'Redis'],
-    impact: 'Successfully deployed across 50+ Discord servers with 99.9% uptime and handling 10,000+ daily interactions.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
-    imageAlt: 'Discord chat interface showing AI bot interactions and community engagement'
+    technologies: ['Node.js', 'Discord.js', 'OpenAI API', 'Anthropic API', 'MongoDB', 'Redis'],
+    impact: 'Erfolgreich in 50+ Discord Servern deployed mit 99.9% Uptime und über 10.000 täglichen Interaktionen. Reduziert Moderationsaufwand um 70%.',
+    image: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600',
+    imageAlt: 'KI Discord Bot Interface mit modernen Chat-Features und künstlicher Intelligenz Integration'
   },
   {
     id: 'soulscribe',
