@@ -5,8 +5,8 @@ export default function AboutSection() {
   ];
 
   const strengths = [
-    { category: 'Technical', items: ['AI Integration', 'Full-Stack Development', 'UX/UI Design'] },
-    { category: 'Creative', items: ['Media Production', 'Data Analysis', 'Creative Problem Solving'] }
+    { category: 'Technical', items: ['E-Commerce', 'Digital Marketing', 'Webdesign'] },
+    { category: 'Creative', items: ['Mediendesign', 'Video Editing', 'Creative Problem Solving'] }
   ];
 
   return (
