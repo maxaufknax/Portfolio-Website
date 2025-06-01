@@ -40,6 +40,40 @@
         height: 50px;
         font-size: 1.2rem;
     }
+
+    /* About Page Specific Responsive Styles for Tablets */
+    .about-hero-content {
+        grid-template-columns: 1fr; /* Stack on tablets */
+        text-align: center;
+        gap: 3rem;
+    }
+    .about-hero .hero-visual {
+        order: -1; /* Image above text */
+        margin-bottom: 2rem;
+    }
+    .hero-greeting {
+        font-size: 3.5rem; /* Adjust for about page tablet */
+    }
+    .profile-showcase {
+        width: 320px;
+        height: 320px;
+    }
+    .profile-image-container {
+        width: 250px;
+        height: 250px;
+    }
+    .profile-showcase .element.code { top: -8%; left: 25%; }
+    .profile-showcase .element.design { top: 22%; right: -10%; }
+    .profile-showcase .element.ai { bottom: -2%; right: 20%; }
+    .profile-showcase .element.business { bottom: 20%; left: -12%; }
+
+    .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .goals-grid {
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    /* End About Page Specific for Tablets */
 }
 
 /* Mobile Landscape and Small Tablet (481px to 767px) */
@@ -268,7 +302,80 @@
         bottom: 15%;
         left: 15%;
     }
-    
+
+    /* About Page Specific Responsive Styles */
+    .about-hero {
+        padding: 6rem 0 3rem;
+        min-height: auto;
+    }
+    .hero-greeting {
+        font-size: 2.5rem; /* Adjusted for about page */
+    }
+    .hero-descriptors .descriptor {
+        font-size: 1.1rem; /* Adjusted for about page */
+    }
+    .profile-showcase {
+        width: 220px; /* Smaller showcase */
+        height: 220px;
+    }
+    .profile-image-container {
+        width: 180px;
+        height: 180px;
+    }
+    .profile-showcase .element {
+        font-size: 1.2rem;
+        padding: 8px;
+    }
+    .profile-showcase .element.code { top: -5%; left: 15%; }
+    .profile-showcase .element.design { top: 15%; right: -8%; }
+    .profile-showcase .element.ai { bottom: 0%; right: 10%; }
+    .profile-showcase .element.business { bottom: 15%; left: -10%; }
+
+    .about-detailed .section-title {
+        font-size: 1.8rem;
+    }
+    .story-content .lead {
+        font-size: 1.1rem;
+    }
+    .value-card, .goal-item {
+        padding: 1.5rem;
+    }
+    .value-card h3, .goal-item h4 {
+        font-size: 1.15rem;
+    }
+    .tab-navigation {
+        gap: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .tab-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    .timeline-item {
+        padding: 1rem 1.5rem;
+        padding-left: 1.5rem; /* Space from marker */
+    }
+    .timeline-marker {
+        left: -1.5rem; /* Adjust for new timeline padding */
+        width: 14px;
+        height: 14px;
+        border-width: 2px;
+        transform: translateX(-40%);
+    }
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    .cta-content p {
+        font-size: 1rem;
+    }
+    /* End About Page Specific */
+
     /* Typography */
     h1 { font-size: 2rem; }
     h2 { font-size: 1.75rem; }
@@ -357,7 +464,35 @@
     .floating-elements {
         display: none; /* Hide floating elements on very small screens */
     }
-    
+
+    /* About Page Specific for very small screens */
+    .hero-greeting {
+        font-size: 2rem;
+    }
+    .profile-showcase {
+        width: 180px;
+        height: 180px;
+    }
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+    .profile-showcase .floating-elements {
+        display: none; /* Hide these too */
+    }
+    .about-detailed .section-title {
+        font-size: 1.6rem;
+    }
+    .value-card, .goal-item, .timeline-item {
+        padding: 1rem;
+    }
+     .timeline-marker {
+        left: -1.2rem;
+        width: 12px;
+        height: 12px;
+    }
+    /* End About Page Specific */
+
     .section-title {
         font-size: 1.5rem;
     }

@@ -1,0 +1,209 @@
+/* Animation Keyframes and Utilities */
+
+/* Grid animation for hero background */
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Floating Elements Orbit Animations */
+@keyframes orbitClockwise {
+    0% { 
+        transform: rotate(0deg) translateX(160px) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(90deg) translateX(160px) rotate(-90deg) scale(1.05);
+    }
+    50% { 
+        transform: rotate(180deg) translateX(160px) rotate(-180deg) scale(1);
+    }
+    75% {
+        transform: rotate(270deg) translateX(160px) rotate(-270deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(360deg) translateX(160px) rotate(-360deg) scale(1);
+    }
+}
+
+@keyframes orbitCounterClockwise {
+    0% { 
+        transform: rotate(0deg) translateX(130px) rotate(0deg) scale(1);
+    }
+    25% {
+        transform: rotate(-90deg) translateX(130px) rotate(90deg) scale(1.03);
+    }
+    50% { 
+        transform: rotate(-180deg) translateX(130px) rotate(180deg) scale(1);
+    }
+    75% {
+        transform: rotate(-270deg) translateX(130px) rotate(270deg) scale(1.03);
+    }
+    100% {
+        transform: rotate(-360deg) translateX(130px) rotate(360deg) scale(1);
+    }
+}
+
+/* Gentle floating and pulsing animation for homepage elements */
+@keyframes gentlePulseAndFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1) rotate(0deg);
+        opacity: 0.85;
+    }
+    25% {
+        transform: translateY(-10px) scale(1.03) rotate(-4deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(0px) scale(0.97) rotate(0deg);
+        opacity: 0.75;
+    }
+    75% {
+        transform: translateY(10px) scale(1.03) rotate(4deg);
+        opacity: 0.95;
+    }
+}
+
+/* Gentle float for profile image */
+@keyframes gentle-float {
+    0%, 100% { 
+        transform: translateZ(0) rotateY(0deg) scale(1) translateY(0px);
+    }
+    25% { 
+        transform: translateZ(0) rotateY(0deg) scale(1) translateY(-5px);
+    }
+    50% { 
+        transform: translateZ(0) rotateY(0deg) scale(1) translateY(-8px);
+    }
+    75% { 
+        transform: translateZ(0) rotateY(0deg) scale(1) translateY(-3px);
+    }
+}
+
+/* Standard float animation */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+    50% { 
+        transform: translateY(-20px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+}
+
+/* Keyframes for About Page Animations */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatElement {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-12px) rotate(3deg); }
+    50% { transform: translateY(0px) rotate(-2deg); }
+    75% { transform: translateY(-8px) rotate(0deg); }
+}
+
+/* Spinner animation for preloader */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pulse animation for QR codes and special elements */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animation utility classes */
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.8s ease-out 0.2s;
+    animation-fill-mode: backwards;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Scroll indicator animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatElement { /* General purpose floating element animation */
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-12px) rotate(3deg); }
+    50% { transform: translateY(0px) rotate(-2deg); }
+    75% { transform: translateY(-8px) rotate(0deg); }
+}
+
+/* Spinner animation for preloader */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation utility classes if needed, e.g., for triggering with JS */
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-fadeInRight {
+    animation: fadeInRight 0.8s ease-out 0.2s;
+    animation-fill-mode: backwards;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.7s ease-out;
+}
