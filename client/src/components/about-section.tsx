@@ -136,48 +136,49 @@ export default function AboutSection() {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-5 gap-12 items-start">
-          <div className="lg:col-span-2 space-y-8">
-            <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-              <h3 className="text-3xl font-bold mb-6 text-primary">Meine Vision</h3>
-              <div className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
-                  Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
-                  dem Ziel kreativer Selbstständigkeit.
-                </p>
-                <div className="h-px bg-gradient-to-r from-primary via-secondary to-accent opacity-30"></div>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  Ich will unabhängig arbeiten, sinnvolle Dinge bauen, dabei stetig lernen und Menschen erreichen. 
-                  Geld und Erfolg sind für mich kein Selbstzweck, sondern Werkzeuge für kreative Freiheit.
-                </p>
-              </div>
-            </div>
-            
-            <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-secondary/20 transition-all duration-500">
-              <h3 className="text-3xl font-bold mb-6 text-secondary">Expertise</h3>
-              <div className="grid grid-cols-1 gap-6">
-                {strengths.map((strength, index) => (
-                  <div key={index} className="space-y-4">
-                    <h4 className="text-lg font-semibold text-accent">{strength.category}</h4>
-                    <div className="space-y-3">
-                      {strength.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="flex items-center space-x-3 group">
-                          <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                            itemIndex === 0 ? 'bg-primary group-hover:scale-125' : 
-                            itemIndex === 1 ? 'bg-secondary group-hover:scale-125' : 'bg-accent group-hover:scale-125'
-                          }`}></div>
-                          <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+        {/* Vision und Expertise - zentriert über Lebenslauf */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+            <h3 className="text-3xl font-bold mb-6 text-primary">Meine Vision</h3>
+            <div className="space-y-6">
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
+                Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
+                dem Ziel kreativer Selbstständigkeit.
+              </p>
+              <div className="h-px bg-gradient-to-r from-primary via-secondary to-accent opacity-30"></div>
+              <p className="text-muted-foreground leading-relaxed text-lg">
+                Ich will unabhängig arbeiten, sinnvolle Dinge bauen, dabei stetig lernen und Menschen erreichen. 
+                Geld und Erfolg sind für mich kein Selbstzweck, sondern Werkzeuge für kreative Freiheit.
+              </p>
             </div>
           </div>
           
-          <div className="lg:col-span-3 space-y-8">
+          <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-secondary/20 transition-all duration-500">
+            <h3 className="text-3xl font-bold mb-6 text-secondary">Expertise</h3>
+            <div className="grid grid-cols-1 gap-6">
+              {strengths.map((strength, index) => (
+                <div key={index} className="space-y-4">
+                  <h4 className="text-lg font-semibold text-accent">{strength.category}</h4>
+                  <div className="space-y-3">
+                    {strength.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="flex items-center space-x-3 group">
+                        <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                          itemIndex === 0 ? 'bg-primary group-hover:scale-125' : 
+                          itemIndex === 1 ? 'bg-secondary group-hover:scale-125' : 'bg-accent group-hover:scale-125'
+                        }`}></div>
+                        <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Lebenslauf-Bereich */}
+        <div className="space-y-8">
             {/* Timeline Navigation */}
             <div className="glassmorphism p-2 rounded-2xl">
               <div className="flex space-x-1">
@@ -271,20 +272,20 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Skills Tags */}
-            <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-              <h4 className="text-2xl font-bold mb-6 text-accent">Technologien & Tools</h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                {skills.map((skill, index) => (
-                  <div 
-                    key={index} 
-                    className="skill-tag px-4 py-3 rounded-xl text-sm font-semibold text-center hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-                  >
-                    <span className="group-hover:text-white transition-colors duration-300">{skill}</span>
-                  </div>
-                ))}
-              </div>
             </div>
+
+        {/* Skills Tags - zentriert unter dem Lebenslauf */}
+        <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 mt-12">
+          <h4 className="text-2xl font-bold mb-6 text-accent text-center">Technologien & Tools</h4>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 max-w-6xl mx-auto">
+            {skills.map((skill, index) => (
+              <div 
+                key={index} 
+                className="skill-tag px-4 py-3 rounded-xl text-sm font-semibold text-center hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              >
+                <span className="group-hover:text-white transition-colors duration-300">{skill}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
