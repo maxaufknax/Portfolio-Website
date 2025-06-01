@@ -138,7 +138,7 @@ export default function AboutSection() {
         {/* Vision und Expertise - zentriert über Lebenslauf */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-            <h3 className="text-3xl font-bold mb-6 text-primary">Meine Vision</h3>
+            <h3 className="text-3xl font-bold mb-6 text-primary">Über Max</h3>
             <div className="space-y-6">
               <p className="text-muted-foreground leading-relaxed text-lg">
                 Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
