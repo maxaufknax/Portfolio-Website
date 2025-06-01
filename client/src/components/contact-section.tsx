@@ -92,12 +92,12 @@ export default function ContactSection() {
                   <div>
                     <p className="font-semibold">LinkedIn</p>
                     <a 
-                      href="https://linkedin.com/in/alexchen" 
+                      href="https://www.linkedin.com/in/max-paasch" 
                       className="text-muted-foreground hover:text-secondary transition-colors flex items-center gap-1"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      linkedin.com/in/alexchen
+                      www.linkedin.com/in/max-paasch
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
