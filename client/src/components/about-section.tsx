@@ -135,43 +135,39 @@ export default function AboutSection() {
           <p className="md:text-2xl text-muted-foreground max-w-4xl mx-auto text-[23px]">Während andere noch überlegen, bau ich es einfach. Learning by Doing, 100%.</p>
         </div>
         
-        {/* Vision und Expertise - zentriert über Lebenslauf */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-            <h3 className="text-3xl font-bold mb-6 text-primary">Über Max</h3>
+        {/* Persönliche Motivation und Profilfoto */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
+          <div className="glassmorphism-strong p-10 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+            <h3 className="text-4xl font-black mb-8 text-gradient">Warum Mediendesigninformatik?</h3>
             <div className="space-y-6">
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
-                Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
-                dem Ziel kreativer Selbstständigkeit.
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Für mich ist Mediendesigninformatik nicht nur ein Studiengang, sondern die perfekte Fusion meiner Leidenschaften: Technologie, die funktioniert, und Design, das begeistert.
               </p>
-              <div className="h-px bg-gradient-to-r from-primary via-secondary to-accent opacity-30"></div>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Ich will unabhängig arbeiten, sinnvolle Dinge bauen, dabei stetig lernen und Menschen erreichen. 
-                Geld und Erfolg sind für mich kein Selbstzweck, sondern Werkzeuge für kreative Freiheit.
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Ich will nicht nur Code schreiben oder schöne Oberflächen gestalten. Ich will verstehen, wie digitale Kommunikation wirklich funktioniert, wie Benutzer denken und fühlen, und wie man Technologie so einsetzt, dass sie Menschen erreicht und bewegt.
+              </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                Mein Ziel ist es, interaktive Medien zu schaffen, die sowohl technisch innovativ als auch emotional ansprechend sind. Systeme, die nicht nur funktionieren, sondern ein Erlebnis bieten.
               </p>
             </div>
           </div>
           
-          <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-secondary/20 transition-all duration-500">
-            <h3 className="text-3xl font-bold mb-6 text-secondary">Expertise</h3>
-            <div className="grid grid-cols-1 gap-6">
-              {strengths.map((strength, index) => (
-                <div key={index} className="space-y-4">
-                  <h4 className="text-lg font-semibold text-accent">{strength.category}</h4>
-                  <div className="space-y-3">
-                    {strength.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-center space-x-3 group">
-                        <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                          itemIndex === 0 ? 'bg-primary group-hover:scale-125' : 
-                          itemIndex === 1 ? 'bg-secondary group-hover:scale-125' : 'bg-accent group-hover:scale-125'
-                        }`}></div>
-                        <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="relative glassmorphism-strong p-2 rounded-3xl">
+                <img 
+                  src="/bewerbungsfoto-max-paasch.jpeg" 
+                  alt="Max Paasch - Professional Portrait" 
+                  className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Floating elements around photo */}
+              <div className="absolute -top-6 -right-6 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-secondary/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-accent/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
             </div>
           </div>
         </div>
