@@ -28,8 +28,8 @@ export const projects: Project[] = [
     ],
     technologies: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL', 'Docker'],
     impact: 'Reduced diagnostic time by 40% and improved accuracy rates by 25% in preliminary testing with healthcare partners.',
-    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
-    imageAlt: 'Medical diagnostic interface showing data analysis and visualization tools'
+    image: '/medical-spytool.png',
+    imageAlt: 'Medical research database interface showing scientific publication search functionality'
   },
   {
     id: 'ai-discord-bot',
