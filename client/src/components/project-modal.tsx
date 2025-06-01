@@ -114,7 +114,12 @@ export default function ProjectModal() {
               </div>
               
               <h4 className="text-xl font-semibold mb-3 text-primary">Impact</h4>
-              <p className="text-muted-foreground mb-4">{selectedProject.impact}</p>
+              <p className="text-muted-foreground mb-4">
+                {selectedProject.id === 'medical-spytool' 
+                  ? selectedProject.impact.replace('um 60%', 'enorm')
+                  : selectedProject.impact
+                }
+              </p>
               
               {/* Video Showcase - nur für Medical Spytool */}
               {selectedProject.id === 'medical-spytool' && (
