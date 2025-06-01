@@ -132,9 +132,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">Über mich</h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Bridging the gap between technical innovation and creative expression
-          </p>
+          <p className="md:text-2xl text-muted-foreground max-w-4xl mx-auto text-[23px]">Während andere noch überlegen, bau ich es einfach. Learning by Doing, 100%.</p>
         </div>
         
         {/* Vision und Expertise - zentriert über Lebenslauf */}
