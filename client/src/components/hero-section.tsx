@@ -2,10 +2,23 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   const scrollToProjects = () => {
-    const element = document.getElementById('projects');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Wait a bit for DOM to be ready if needed
+    setTimeout(() => {
+      const element = document.getElementById('projects');
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        console.error('Projects section not found');
+        // Fallback: try to scroll by approximate position
+        window.scrollTo({
+          top: window.innerHeight,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
   };
 
   const downloadResume = () => {
