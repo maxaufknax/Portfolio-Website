@@ -128,7 +128,6 @@ export default function ProjectModal() {
                       <video 
                         controls 
                         className="w-full h-40 object-contain rounded-lg"
-                        poster={selectedProject.image}
                       >
                         <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
                         Browser unterstützt das Video nicht.
@@ -143,7 +142,6 @@ export default function ProjectModal() {
                       <video 
                         controls 
                         className="w-full h-40 object-contain rounded-lg"
-                        poster={selectedProject.image}
                       >
                         <source src="/medical-spytool-local-showcase.mp4" type="video/mp4" />
                         Browser unterstützt das Video nicht.
