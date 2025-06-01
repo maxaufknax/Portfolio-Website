@@ -36,7 +36,7 @@ export default function AboutSection() {
             </div>
             
             <div className="glassmorphism p-8 rounded-2xl animate-slide-up">
-              <h3 className="text-2xl font-semibold mb-4 text-secondary">Core Strengths</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-secondary">Meine Interessen und Kenntnisse</h3>
               <div className="grid grid-cols-2 gap-4">
                 {strengths.map((strength, index) => (
                   <div key={index} className="space-y-2">
