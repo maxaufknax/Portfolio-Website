@@ -47,7 +47,7 @@ export default function HeroSection() {
         </div>
         <div className="relative">
           <img 
-            src="/attached_assets/Bewerbungsfoto - Max Paasch.jpeg" 
+            src="/bewerbungsfoto-max-paasch.jpeg" 
             alt="Max Paasch - Professional portrait" 
             className="rounded-2xl shadow-2xl animate-float w-full max-w-md mx-auto"
           />
