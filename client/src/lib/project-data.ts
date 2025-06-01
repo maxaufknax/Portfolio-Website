@@ -16,20 +16,20 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'medical-spytool',
-    title: 'Medical Spytool',
-    description: 'AI-powered medical analysis platform for enhanced diagnostic accuracy and patient care insights.',
-    overview: 'An AI-powered medical analysis platform designed to enhance diagnostic accuracy and provide comprehensive patient care insights. The system processes medical imaging data and provides intelligent recommendations to healthcare professionals.',
+    title: 'Wissenschaftliche Publikationen Suche',
+    description: 'Intelligente Suchplattform für medizinische und wissenschaftliche Publikationen mit erweiterten Filterfunktionen.',
+    overview: 'Eine benutzerfreundliche Plattform zur Recherche wissenschaftlicher Publikationen. Das System ermöglicht es Forschern und Medizinern, gezielt nach relevanten Studien und Artikeln zu suchen und diese effizient zu filtern.',
     features: [
-      'Real-time medical image analysis',
-      'Pattern recognition algorithms',
-      'Integration with hospital systems',
-      'HIPAA-compliant data handling',
-      'Collaborative diagnostic workflows'
+      'Erweiterte Datenbanksuche',
+      'Intelligente Filteroptionen',
+      'Personalisierte Suchergebnisse',
+      'Export- und Speicherfunktionen',
+      'Kollaborative Sammlungen'
     ],
-    technologies: ['Python', 'TensorFlow', 'FastAPI', 'PostgreSQL', 'Docker'],
-    impact: 'Reduced diagnostic time by 40% and improved accuracy rates by 25% in preliminary testing with healthcare partners.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Elasticsearch'],
+    impact: 'Verkürzt die Recherche-Zeit um 60% und verbessert die Präzision wissenschaftlicher Literatursuchen erheblich.',
     image: '/medical-spytool.png',
-    imageAlt: 'Medical research database interface showing scientific publication search functionality'
+    imageAlt: 'Wissenschaftliche Publikationen Suchinterface mit erweiterten Filtermöglichkeiten und benutzerfreundlicher Oberfläche'
   },
   {
     id: 'ai-discord-bot',
