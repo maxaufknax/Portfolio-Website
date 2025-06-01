@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ChevronDown } from "lucide-react";
 
 export default function AboutSection() {
   const [activeTimeline, setActiveTimeline] = useState<'education' | 'career' | 'interests'>('education');
@@ -217,66 +215,61 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Timeline Content - Accordion Version */}
-            <div className="glassmorphism p-6 rounded-3xl shadow-2xl hover:shadow-accent/20 transition-all duration-500">
-              <Accordion type="multiple" className="space-y-4">
+            {/* Timeline Content */}
+            <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-accent/20 transition-all duration-500 min-h-[600px]">
+              <div className="space-y-8">
                 {timelines[activeTimeline].map((item: any, index: number) => (
-                  <AccordionItem 
-                    key={index} 
-                    value={`item-${index}`}
-                    className="border-none"
-                  >
-                    <AccordionTrigger className="hover:no-underline group px-6 py-4 glassmorphism rounded-2xl hover:bg-white/5 transition-all duration-300">
-                      <div className="flex items-center space-x-4 w-full">
-                        {/* Timeline dot */}
-                        <div className={`w-4 h-4 rounded-full border-2 shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0 ${
-                          item.type === 'education' || item.type === 'future' ? 'bg-primary border-primary shadow-primary/30' :
-                          item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary border-secondary shadow-secondary/30' :
-                          item.type === 'training' || item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent border-accent shadow-accent/30' :
-                          'bg-accent border-accent shadow-accent/30'
-                        }`}>
-                          <div className="absolute inset-1 rounded-full bg-white/20"></div>
-                        </div>
-                        
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-2">
-                          <div className="text-left">
-                            <h4 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-300">{item.title}</h4>
-                            {item.subtitle && (
-                              <p className="text-sm font-medium text-muted-foreground/90">{item.subtitle}</p>
-                            )}
-                          </div>
-                          <span className="text-xs font-mono text-muted-foreground bg-white/10 px-3 py-1 rounded-full whitespace-nowrap group-hover:bg-white/15 transition-colors duration-300 self-start sm:self-center">
-                            {item.period}
-                          </span>
-                        </div>
-                      </div>
-                    </AccordionTrigger>
+                  <div key={index} className="relative pl-12 pb-8 last:pb-0 group">
+                    {/* Timeline line */}
+                    {index !== timelines[activeTimeline].length - 1 && (
+                      <div className="absolute left-4 top-8 w-1 h-full bg-gradient-to-b from-primary via-secondary to-accent opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    )}
                     
-                    <AccordionContent className="px-6 pb-4">
-                      <div className="pl-8 space-y-4">
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                        {item.skills && item.skills.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {item.skills.map((skill: string, skillIndex: number) => (
-                              <span 
-                                key={skillIndex}
-                                className={`px-3 py-1 text-sm rounded-full font-medium transition-all duration-300 hover:scale-105 ${
-                                  item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary hover:bg-primary/30' :
-                                  item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary hover:bg-secondary/30' :
-                                  item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent/20 text-accent hover:bg-accent/30' :
-                                  'bg-muted/20 text-muted-foreground hover:bg-muted/30'
-                                }`}
-                              >
-                                {skill}
-                              </span>
-                            ))}
-                          </div>
-                        )}
+                    {/* Timeline dot */}
+                    <div className={`absolute left-1 top-3 w-6 h-6 rounded-full border-3 shadow-lg group-hover:scale-110 transition-transform duration-300 ${
+                      item.type === 'education' || item.type === 'future' ? 'bg-primary border-primary shadow-primary/30' :
+                      item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary border-secondary shadow-secondary/30' :
+                      item.type === 'training' || item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent border-accent shadow-accent/30' :
+                      'bg-accent border-accent shadow-accent/30'
+                    }`}>
+                      <div className="absolute inset-1 rounded-full bg-white/20"></div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="space-y-4 glassmorphism p-6 rounded-2xl hover:bg-white/5 transition-all duration-300 group-hover:shadow-lg">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-6">
+                        <div className="flex-1">
+                          <h4 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h4>
+                          {item.subtitle && (
+                            <p className="text-base font-medium text-muted-foreground/90 mb-3">{item.subtitle}</p>
+                          )}
+                        </div>
+                        <span className="text-sm font-mono text-muted-foreground bg-white/10 px-4 py-2 rounded-full whitespace-nowrap group-hover:bg-white/15 transition-colors duration-300">
+                          {item.period}
+                        </span>
                       </div>
-                    </AccordionContent>
-                  </AccordionItem>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                      {item.skills && item.skills.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {item.skills.map((skill: string, skillIndex: number) => (
+                            <span 
+                              key={skillIndex}
+                              className={`px-3 py-1 text-sm rounded-full font-medium transition-all duration-300 hover:scale-105 ${
+                                item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary hover:bg-primary/30' :
+                                item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary hover:bg-secondary/30' :
+                                item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent/20 text-accent hover:bg-accent/30' :
+                                'bg-muted/20 text-muted-foreground hover:bg-muted/30'
+                              }`}
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 ))}
-              </Accordion>
+              </div>
             </div>
 
             </div>
