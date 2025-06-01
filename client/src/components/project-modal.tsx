@@ -178,7 +178,7 @@ export default function ProjectModal() {
             Live Demo
           </Button>
           <Button variant="outline" onClick={openCaseStudy} className="glassmorphism hover:bg-white/10 border-white/10">
-            Case Study
+            Download PDF
           </Button>
         </div>
       </div>
