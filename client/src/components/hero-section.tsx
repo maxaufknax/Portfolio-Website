@@ -3,10 +3,13 @@ import { Button } from "@/components/ui/button";
 export default function HeroSection() {
   const scrollToProjects = () => {
     console.log('Scrolling to projects');
-    document.getElementById('projects')?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
+    const element = document.getElementById('projects');
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   const scrollToAbout = () => {
