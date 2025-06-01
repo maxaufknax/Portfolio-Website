@@ -20,15 +20,14 @@ export default function HeroSection() {
         <div className="space-y-8">
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-              Hi, I'm <span className="text-gradient">Alex Chen</span>
+              Hi, ich bin <span className="text-gradient">Max Paasch</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground">
-              Creative Developer & Digital Designer specializing in Media Design Informatics
+              Zwischen Code und Kreativität.
             </p>
           </div>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Passionate about blending technology with creativity to build innovative digital experiences. 
-            From AI-powered tools to immersive media projects, I craft solutions that push boundaries.
+            Mein digitales Portfolio für eine Bewerbung auf ein Studium in Mediendesigninformatik.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
