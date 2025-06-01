@@ -301,18 +301,55 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Skills Tags - zentriert unter dem Lebenslauf */}
+        {/* Motivation Section */}
         <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500 mt-12">
-          <h4 className="text-2xl font-bold mb-6 text-accent text-center">Technologien & Tools</h4>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 max-w-6xl mx-auto">
-            {skills.map((skill, index) => (
-              <div 
-                key={index} 
-                className="skill-tag px-4 py-3 rounded-xl text-sm font-semibold text-center hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer group"
-              >
-                <span className="group-hover:text-white transition-colors duration-300">{skill}</span>
+          <div className="text-center max-w-4xl mx-auto">
+            <h4 className="text-2xl font-bold mb-6 text-gradient">Meine Vision</h4>
+            <div className="space-y-6">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                „Ich glaube an die Kraft der Technologie, Menschen zu verbinden und das Leben zu verbessern. 
+                Mein Ziel ist es, durch kreative Lösungen und innovative Ansätze digitale Erfahrungen zu schaffen, 
+                die nicht nur funktional, sondern auch inspirierend sind."
+              </p>
+              <div className="flex flex-col md:flex-row gap-8 mt-8">
+                <div className="flex-1 glassmorphism p-6 rounded-2xl">
+                  <h5 className="text-lg font-semibold text-primary mb-3">Innovation</h5>
+                  <p className="text-muted-foreground text-sm">
+                    Kontinuierliches Lernen und die Bereitschaft, neue Technologien zu erkunden, 
+                    um zukunftsweisende Lösungen zu entwickeln.
+                  </p>
+                </div>
+                <div className="flex-1 glassmorphism p-6 rounded-2xl">
+                  <h5 className="text-lg font-semibold text-secondary mb-3">Kreativität</h5>
+                  <p className="text-muted-foreground text-sm">
+                    Die Verbindung von technischem Know-how mit gestalterischem Denken 
+                    für einzigartige und benutzerfreundliche Ergebnisse.
+                  </p>
+                </div>
+                <div className="flex-1 glassmorphism p-6 rounded-2xl">
+                  <h5 className="text-lg font-semibold text-accent mb-3">Impact</h5>
+                  <p className="text-muted-foreground text-sm">
+                    Projekte entwickeln, die einen echten Mehrwert schaffen und positive 
+                    Veränderungen in der digitalen Welt bewirken.
+                  </p>
+                </div>
               </div>
-            ))}
+              
+              {/* Kompakte Skills Anzeige */}
+              <div className="mt-8 pt-6 border-t border-white/10">
+                <h5 className="text-lg font-semibold text-foreground mb-4">Technologien & Tools</h5>
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {skills.map((skill, index) => (
+                    <span 
+                      key={index} 
+                      className="skill-tag px-3 py-1 rounded-lg text-sm font-medium hover:scale-105 transition-all duration-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
