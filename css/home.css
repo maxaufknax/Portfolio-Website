@@ -124,102 +124,6 @@
     filter: brightness(1.1) contrast(1.2) saturate(1.2);
 }
 
-/* Floating Elements */
-.floating-elements {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    pointer-events: none;
-    z-index: 20;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    overflow: visible;
-}
-
-.floating-element {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border: 2px solid rgba(99, 102,241, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    box-shadow: 0 10px 25px rgba(99, 102,241, 0.15);
-    animation: float 6s ease-in-out infinite;
-    z-index: 25;
-    transition: all var(--transition-normal);
-    cursor: pointer;
-    pointer-events: auto;
-    will-change: transform;
-}
-
-.floating-element:hover {
-    animation-play-state: paused !important;
-    z-index: 30 !important;
-}
-
-.floating-element:nth-child(1) {
-    top: 10%;
-    right: 20%;
-    animation: orbitClockwise 12s linear infinite;
-    animation-delay: 0s;
-}
-
-.floating-element:nth-child(2) {
-    bottom: 20%;
-    right: 10%;
-    animation: orbitCounterClockwise 15s linear infinite;
-    animation-delay: 3s;
-}
-
-.floating-element:nth-child(3) {
-    top: 20%;
-    left: 10%;
-    animation: orbitClockwise 18s linear infinite;
-    animation-delay: 6s;
-}
-
-.floating-element:nth-child(4) {
-    bottom: 10%;
-    left: 20%;
-    animation: orbitCounterClockwise 21s linear infinite;
-    animation-delay: 9s;
-}
-
-.floating-element:nth-child(5) {
-    top: 5%;
-    right: 50%;
-    animation: orbitClockwise 14s linear infinite;
-    animation-delay: 2s;
-}
-
-.floating-element:nth-child(6) {
-    bottom: 5%;
-    left: 50%;
-    animation: orbitCounterClockwise 16s linear infinite;
-    animation-delay: 5s;
-}
-
-.floating-element:nth-child(7) {
-    top: 50%;
-    left: 5%;
-    animation: orbitClockwise 20s linear infinite;
-    animation-delay: 8s;
-}
-
-.floating-element:nth-child(8) {
-    top: 50%;
-    right: 5%;
-    animation: orbitCounterClockwise 22s linear infinite;
-    animation-delay: 11s;
-}
-
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
@@ -503,14 +407,14 @@
 }
 
 /* Individual positioning and animation delays for floating elements */
-.floating-element:nth-child(1) { top: 0%; left: 30%; animation-delay: 0s; }
-.floating-element:nth-child(2) { top: 15%; right: 5%; animation-delay: -1s; }
-.floating-element:nth-child(3) { top: 50%; right: -5%; animation-delay: -2s; }
-.floating-element:nth-child(4) { bottom: 15%; right: 10%; animation-delay: -3s; }
-.floating-element:nth-child(5) { bottom: 0%; left: 40%; animation-delay: -4s; }
-.floating-element:nth-child(6) { bottom: 15%; left: 5%; animation-delay: -5s; }
-.floating-element:nth-child(7) { top: 50%; left: -5%; animation-delay: -6s; }
-.floating-element:nth-child(8) { top: 15%; left: 10%; animation-delay: -7s; }
+.floating-element:nth-child(1) { top: 0%; left: 20%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 10%; right: 0%; animation-delay: -0.5s; }
+.floating-element:nth-child(3) { top: 40%; right: -10%; animation-delay: 1s; }
+.floating-element:nth-child(4) { bottom: 10%; right: 0%; animation-delay: -1.5s; }
+.floating-element:nth-child(5) { bottom: 0%; left: 30%; animation-delay: 0.5s; }
+.floating-element:nth-child(6) { bottom: 10%; left: 0%; animation-delay: -2.5s; }
+.floating-element:nth-child(7) { top: 40%; left: -10%; animation-delay: 2s; }
+.floating-element:nth-child(8) { top: 10%; left: 0%; animation-delay: -3.5s; }
 
 
 /* Featured Projects Section (Homepage) */
@@ -645,4 +549,114 @@
 .quick-about-text p {
     margin-bottom: 1.5rem;
     line-height: 1.7;
+}
+
+/* Code Window Styles */
+.code-window {
+    background-color: #282c34; /* Modern dark editor color */
+    border-radius: 10px; /* Increased border-radius */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23); /* Subtle box-shadow */
+    overflow: hidden; /* Maintain rounded corners for child elements */
+    margin-top: 2rem; /* Separation from elements above */
+}
+
+.window-header {
+    background-color: #21252b; /* Slightly lighter or contrasting color */
+    padding: 0.75rem 1rem; /* Adjusted padding */
+    border-bottom: 1px solid #181a1f; /* Subtle, darker line */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Spacing for controls and title */
+}
+
+.window-controls {
+    display: flex;
+    gap: 0.5rem; /* Spacing between control buttons */
+}
+
+.window-controls span {
+    display: block;
+    width: 12px; /* Adjusted width */
+    height: 12px; /* Adjusted height */
+    border-radius: 50%; /* Ensure they are circular */
+    border: 1px solid rgba(0,0,0,0.2); /* Subtle border for definition */
+}
+
+.window-controls .close {
+    background-color: #ff5f57; /* Red */
+}
+
+.window-controls .minimize {
+    background-color: #ffbd2e; /* Yellow */
+}
+
+.window-controls .maximize {
+    background-color: #28c940; /* Green */
+}
+
+.file-name {
+    color: #abb2bf; /* Light grey or muted accent */
+    font-size: 0.875rem; /* Adjusted font-size */
+    margin-left: 0.5rem; /* Space from controls */
+}
+
+.code-content {
+    padding: 1.5rem; /* Adjusted padding */
+    font-family: var(--font-mono), monospace; /* Monospace font */
+    color: #abb2bf; /* Default text color */
+    font-size: 0.9rem; /* Adjusted font-size */
+    overflow-x: auto; /* Horizontal scrolling */
+    /* Scrollbar styling for Webkit */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #4f5663 #2c313a; /* For Firefox */
+}
+
+.code-content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.code-content::-webkit-scrollbar-track {
+    background: #2c313a;
+    border-radius: 4px;
+}
+
+.code-content::-webkit-scrollbar-thumb {
+    background: #4f5663;
+    border-radius: 4px;
+}
+
+.code-content::-webkit-scrollbar-thumb:hover {
+    background: #67707f;
+}
+
+.code-content pre {
+    margin: 0; /* Remove default pre margin */
+    white-space: pre; /* Preserve whitespace and allow overflow-x to work */
+}
+
+/* Syntax Highlighting (ensure specificity) */
+.code-content .keyword {
+    color: #c678dd; /* Purple/Magenta */
+}
+
+.code-content .class {
+    color: #e5c07b; /* Yellow/Gold */
+}
+
+.code-content .function {
+    color: #61afef; /* Blue */
+}
+
+.code-content .param {
+    color: #d19a66; /* Orange/Brown */
+}
+
+.code-content .string {
+    color: #98c379; /* Green */
+}
+
+.code-content .comment { /* Added as per consideration */
+    color: #5c6370; /* Muted grey for comments */
+    font-style: italic;
 }
