@@ -47,8 +47,8 @@ export default function HeroSection() {
         </div>
         <div className="relative">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
-            alt="Professional developer portrait" 
+            src="/attached_assets/Bewerbungsfoto - Max Paasch.jpeg" 
+            alt="Max Paasch - Professional portrait" 
             className="rounded-2xl shadow-2xl animate-float w-full max-w-md mx-auto"
           />
           <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
