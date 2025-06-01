@@ -28,8 +28,8 @@ export const projects: Project[] = [
     ],
     technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Elasticsearch'],
     impact: 'Verkürzt die Recherche-Zeit um 60% und verbessert die Präzision wissenschaftlicher Literatursuchen erheblich.',
-    image: '/medical-spytool.png?v=2',
-    imageAlt: 'Wissenschaftliche Publikationen Suchinterface mit erweiterten Filtermöglichkeiten und benutzerfreundlicher Oberfläche',
+    image: '/medical-spytool-new.png',
+    imageAlt: 'Medical Spytool - Benutzerfreundliche Oberfläche für wissenschaftliche Publikationssuche mit erweiterten Suchoptionen und Datenbankfiltern',
     githubUrl: 'https://github.com/maxaufknax/Medical-Spytool'
   },
   {
