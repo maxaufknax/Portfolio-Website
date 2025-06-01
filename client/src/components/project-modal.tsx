@@ -123,7 +123,7 @@ export default function ProjectModal() {
                   <div className="relative rounded-lg overflow-hidden bg-black/20">
                     <video 
                       controls 
-                      className="w-full h-32 object-cover rounded-lg"
+                      className="w-full h-48 object-contain rounded-lg"
                       poster={selectedProject.image}
                     >
                       <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
