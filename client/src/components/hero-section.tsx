@@ -2,28 +2,31 @@ import { Button } from "@/components/ui/button";
 
 export default function HeroSection() {
   const scrollToProjects = () => {
-    // Wait a bit for DOM to be ready if needed
-    setTimeout(() => {
-      const element = document.getElementById('projects');
-      if (element) {
-        element.scrollIntoView({ 
-          behavior: 'smooth',
-          block: 'start'
-        });
-      } else {
-        console.error('Projects section not found');
-        // Fallback: try to scroll by approximate position
-        window.scrollTo({
-          top: window.innerHeight,
-          behavior: 'smooth'
-        });
-      }
-    }, 100);
+    const element = document.getElementById('projects');
+    if (element) {
+      const headerOffset = 80; // Account for fixed navigation
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
-  const downloadResume = () => {
-    // Placeholder for resume download functionality
-    alert("Resume download functionality would be implemented here");
+  const scrollToAbout = () => {
+    const element = document.getElementById('about');
+    if (element) {
+      const headerOffset = 80; // Account for fixed navigation
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -51,7 +54,7 @@ export default function HeroSection() {
             </Button>
             <Button 
               variant="outline"
-              onClick={downloadResume}
+              onClick={scrollToAbout}
               className="px-8 py-4 glassmorphism hover:bg-white/10 border-white/10 text-foreground font-semibold"
             >
               Über mich
