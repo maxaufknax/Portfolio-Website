@@ -34,14 +34,14 @@ export default function HeroSection() {
               onClick={scrollToProjects}
               className="px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold animate-glow"
             >
-              View My Work
+              Meine Projekte
             </Button>
             <Button 
               variant="outline"
               onClick={downloadResume}
               className="px-8 py-4 glassmorphism hover:bg-white/10 border-white/10 text-foreground font-semibold"
             >
-              Download Resume
+              Über mich
             </Button>
           </div>
         </div>
