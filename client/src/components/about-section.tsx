@@ -317,15 +317,13 @@ export default function AboutSection() {
                 <div className="flex-1 glassmorphism p-6 rounded-2xl">
                   <h5 className="text-lg font-semibold text-secondary mb-3">Kreativität</h5>
                   <p className="text-muted-foreground text-sm">
-                    Die Verbindung von technischem Know-how mit gestalterischem Denken 
-                    für einzigartige und benutzerfreundliche Ergebnisse.
+                    Technik trifft Ästhetik. Design und Code gehören für mich zusammen. Ich will digitale Erlebnisse schaffen, die funktionieren, sich gut anfühlen und die man nicht einfach wieder vergisst.
                   </p>
                 </div>
                 <div className="flex-1 glassmorphism p-6 rounded-2xl">
                   <h5 className="text-lg font-semibold text-accent mb-3">Impact</h5>
                   <p className="text-muted-foreground text-sm">
-                    Projekte entwickeln, die einen echten Mehrwert schaffen und positive 
-                    Veränderungen in der digitalen Welt bewirken.
+                    Ich baue nicht einfach nur Apps oder Websites, sondern Lösungen, die echte Probleme lösen und Menschen wirklich helfen. Es geht um Impact, nicht um Features.
                   </p>
                 </div>
               </div>
