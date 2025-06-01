@@ -83,6 +83,26 @@ export default function ProjectModal() {
             className="w-full h-64 object-cover rounded-lg"
           />
           
+          {/* Video Showcase Section */}
+          {selectedProject.id === 'medical-spytool' && (
+            <div className="space-y-4">
+              <h4 className="text-xl font-semibold text-primary">Video Showcase</h4>
+              <div className="relative rounded-lg overflow-hidden bg-black/20">
+                <video 
+                  controls 
+                  className="w-full h-auto rounded-lg"
+                  poster={selectedProject.image}
+                >
+                  <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
+                  Ihr Browser unterstützt das Video-Element nicht.
+                </video>
+              </div>
+              <p className="text-sm text-muted-foreground text-center">
+                🎥 Live-Demo des Medical Spytool Web Interface
+              </p>
+            </div>
+          )}
+          
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="text-xl font-semibold mb-3 text-primary">Overview</h4>
