@@ -85,8 +85,13 @@ export default function ProjectModal() {
           
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="text-xl font-semibold mb-3 text-primary">Overview</h4>
-              <p className="text-muted-foreground mb-4">{selectedProject.overview}</p>
+              <h4 className="text-xl font-semibold mb-3 text-primary">Überblick</h4>
+              <p className="text-muted-foreground mb-4">
+                {selectedProject.id === 'medical-spytool' 
+                  ? "Das Medical Spytool ist eine innovative, benutzerfreundliche Plattform, die speziell für die effiziente Recherche wissenschaftlicher und medizinischer Publikationen entwickelt wurde. Mit fortschrittlichen Suchalgorithmen und intelligenten Filterfunktionen ermöglicht es Forschern, Ärzten und Studenten, gezielt nach relevanten Studien, Artikeln und Fachpublikationen zu suchen. Die Plattform kombiniert modernste Technologie mit einer intuitiven Benutzeroberfläche, um den Rechercheprozess zu revolutionieren und wertvolle Zeit bei der Literatursuche zu sparen."
+                  : selectedProject.overview
+                }
+              </p>
               
               <h4 className="text-xl font-semibold mb-3 text-secondary">Key Features</h4>
               <ul className="space-y-2 text-muted-foreground">
