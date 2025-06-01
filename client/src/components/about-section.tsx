@@ -306,10 +306,8 @@ export default function AboutSection() {
           <div className="text-center max-w-4xl mx-auto">
             <h4 className="text-2xl font-bold mb-6 text-gradient">Meine Motivation</h4>
             <div className="space-y-6">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                „Ich glaube an die Kraft der Technologie, Menschen zu verbinden und das Leben zu verbessern. 
-                Mein Ziel ist es, durch kreative Lösungen und innovative Ansätze digitale Erfahrungen zu schaffen, 
-                die nicht nur funktional, sondern auch inspirierend sind."
+              <p className="text-muted-foreground text-[16px]">
+                „"
               </p>
               <div className="flex flex-col md:flex-row gap-8 mt-8">
                 <div className="flex-1 glassmorphism p-6 rounded-2xl">
