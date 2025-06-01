@@ -26,9 +26,7 @@ export default function Navigation() {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glassmorphism-strong border-b border-white/20' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
-          <div className="text-2xl font-black text-gradient cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => scrollToSection('home')}>
-            Max Paasch
-          </div>
+          <div className="text-2xl font-black text-gradient cursor-pointer hover:scale-105 transition-transform duration-300" onClick={() => scrollToSection('home')}>Portfolio - Max Paasch</div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
