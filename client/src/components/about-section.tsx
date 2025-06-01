@@ -178,7 +178,7 @@ export default function AboutSection() {
             <h3 className="text-xl font-semibold text-foreground">Mein Werdegang</h3>
             <button
               onClick={() => setIsTimelineExpanded(!isTimelineExpanded)}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2"
+              className="px-4 py-2 text-muted-foreground hover:text-foreground transition-colors duration-300 flex items-center gap-2 text-[16px] bg-[#de6f6f00] font-semibold"
             >
               {isTimelineExpanded ? 'Weniger anzeigen' : 'Details anzeigen'}
               <svg 
