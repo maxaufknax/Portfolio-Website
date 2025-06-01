@@ -23,7 +23,7 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
             Innovative solutions combining AI, design, and technology
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div 
