@@ -16,73 +16,111 @@ export default function AboutSection() {
     education: [
       {
         period: '2011 - 2015',
-        title: 'Freie Evangelische Grundschule Hannover',
-        description: 'Grundschulzeit mit christlichen Werten und individueller Förderung',
-        type: 'education'
+        title: 'Grundschulausbildung',
+        subtitle: 'Freie Evangelische Schule Hannover (FESH)',
+        description: 'Fundament der schulischen Laufbahn in einer innovativen Bildungseinrichtung. Frühe Förderung von Kreativität und selbstständigem Denken, die den Grundstein für spätere technische und gestalterische Interessen legten.',
+        type: 'education',
+        skills: []
       },
       {
         period: '2015 - 2021',
-        title: 'IGS Bothfeld Gesamtschule',
-        description: 'Erweiterten Realschulabschluss mit Notendurchschnitt 2,6',
-        type: 'education'
+        title: 'Erweiterter Realschulabschluss',
+        subtitle: 'IGS Bothfeld • Durchschnitt: 2,6',
+        description: 'Solide schulische Grundausbildung mit gutem Abschluss. Entwicklung von analytischen Fähigkeiten und erste Berührungspunkte mit digitalen Medien. Erfolgreiche Qualifikation für die gymnasiale Oberstufe.',
+        type: 'education',
+        skills: []
       },
       {
-        period: '2021 - 2024',
-        title: 'IGS Bothfeld Gesamtschule',
-        description: 'Allgemeine Fachhochschulreife - Schulischer Teil abgeschlossen',
-        type: 'education'
+        period: '2021 - 2023',
+        title: 'Schulischer Teil der Fachhochschulreife',
+        subtitle: 'IGS Bothfeld • Durchschnitt: 3,3',
+        description: 'Erfolgreich abgeschlossene gymnasiale Oberstufe mit Schwerpunkt auf mathematisch-naturwissenschaftliche Fächer. Solide Grundlage für technische Studiengänge und erste Vertiefung in informatische Themengebiete.',
+        type: 'education',
+        skills: []
+      },
+      {
+        period: '2023 - 2024',
+        title: '13. Klasse & Abiturphase',
+        subtitle: 'IGS Bothfeld',
+        description: 'Erfolgreiche Teilnahme an der 13. Klasse mit starken Leistungen in den Grundkursen. Trotz des nicht erreichten Abiturs wertvolle Erfahrungen in wissenschaftlichem Arbeiten und Projektmanagement gesammelt.',
+        type: 'education',
+        skills: []
+      },
+      {
+        period: '2024 - 09.2025',
+        title: 'Praktischer Teil der Fachhochschulreife',
+        subtitle: 'Bundesfreiwilligendienst • Medizinische Hochschule Hannover',
+        description: 'Vervollständigung der Fachhochschulreife durch praktische Berufserfahrung im Gesundheitswesen. Wertvolle Einblicke in die digitale Transformation medizinischer Einrichtungen.',
+        type: 'education',
+        skills: []
+      },
+      {
+        period: '2025 - Zukunft',
+        title: 'Mediendesigninformatik Studium',
+        subtitle: 'Geplant • Fachhochschule oder Universität',
+        description: 'Angestrebtes Studium zur Verbindung von technischen und kreativen Kompetenzen. Fokus auf die Entwicklung von benutzerfreundlichen digitalen Lösungen und innovativen Medienanwendungen.',
+        type: 'future',
+        skills: ['Web Development', 'UI/UX Design', 'AI & Machine Learning', 'Digital Innovation', 'Medienproduktion']
       }
     ],
     career: [
       {
-        period: '05.2020 - 03.2021',
-        title: 'Wochenblattbote',
-        description: 'Lokalboten Hannover - Eigenverantwortliche Zeitungsverteilung',
-        type: 'work'
+        period: '2021 - 2022',
+        title: 'Aushilfe & Praktika',
+        subtitle: 'Verschiedene Unternehmen • Gastronomie & Einzelhandel',
+        description: 'Erste praktische Berufserfahrungen in verschiedenen Branchen. Entwicklung von Grundlagen im Kundenservice, Verkauf und Teamarbeit. Aufbau von Arbeitsethik und Verständnis für betriebliche Abläufe.',
+        type: 'work',
+        skills: ['Kundenservice', 'Verkauf', 'Flexibilität', 'Arbeitsethik', 'Branchenvielfalt']
       },
       {
-        period: '12.2019 - 10.2021',
-        title: 'JuLeiCa-/MIA-Schulung',
-        description: 'CVJM Hannover - Jugendleiterqualifikation und pädagogische Kompetenzen',
-        type: 'training'
+        period: '2022 - 2023',
+        title: 'Freelance Content Creator',
+        subtitle: 'Selbstständig • Social Media & Video',
+        description: 'Eigenständige Entwicklung und Umsetzung von Content-Strategien für verschiedene Plattformen. Spezialisierung auf visuelles Storytelling und professionelle Videobearbeitung.',
+        type: 'freelance',
+        skills: ['Adobe Creative Suite', 'Video Editing', 'Social Media', 'Content Strategy', 'Selbstständigkeit']
       },
       {
-        period: '07.2024 - 01.2025',
-        title: 'Digitalisierung Minijob',
-        description: 'Pestalozzi Stiftung Burgwedel - Datenmanagement und HR-Software',
-        type: 'work'
-      },
-      {
-        period: '09.2024 - 09.2025',
+        period: '2024 - 2025',
         title: 'Bundesfreiwilligendienst',
-        description: 'MHH - Digitalisierung, Mediengestaltung, Webdesign und IT-Automatisierung',
-        type: 'service'
+        subtitle: 'Medizinische Hochschule Hannover • Station A1',
+        description: 'Vollzeit-Engagement im Gesundheitswesen mit direktem Patientenkontakt und administrativen Aufgaben. Entwicklung von Soft Skills in der Kommunikation, Teamarbeit und Stressmanagement.',
+        type: 'service',
+        skills: ['Patientenbetreuung', 'Teamarbeit', 'Kommunikation', 'Verantwortung', 'Digitale Systeme']
       }
     ],
     interests: [
       {
-        period: '2018 - heute',
-        title: 'KI & Machine Learning',
-        description: 'Entwicklung von AI-Tools und intelligenten Anwendungen',
-        type: 'tech'
+        period: '2015 - 2019',
+        title: 'Digitale Entdeckungsphase',
+        subtitle: 'Gaming & Medien',
+        description: 'Erste Schritte in die digitale Welt durch Computer Gaming und Medienkonsum. Entwicklung eines Verständnisses für interaktive Technologien und digitale Unterhaltung.',
+        type: 'discovery',
+        skills: ['Gaming', 'Digitale Medien', 'Interaktive Technologien']
       },
       {
-        period: '2019 - heute',
-        title: 'Medienproduktion',
-        description: 'Fotografie, Videoproduktion und digitale Inhalte',
-        type: 'creative'
+        period: '2020 - 2023',
+        title: 'Kreative Medienproduktion',
+        subtitle: 'Design & Content Creation',
+        description: 'Intensive Beschäftigung mit visueller Mediengestaltung. Erlernung von Adobe After Effects und Premiere Pro für professionelle Videobearbeitung. Entwicklung von Skills in Photoediting und Social Media Content Creation.',
+        type: 'creative',
+        skills: ['Adobe After Effects', 'Premiere Pro', 'Photoediting', 'Social Media Content', 'Design-Prinzipien']
       },
       {
-        period: '2020 - heute',
-        title: 'Web Development',
-        description: 'Full-Stack Entwicklung mit modernen Frameworks',
-        type: 'tech'
+        period: '2023 - heute',
+        title: 'E-Commerce & Digital Marketing',
+        subtitle: 'Business & Marketing',
+        description: 'Fokus auf die kommerzielle Seite digitaler Medien. Vertiefung in E-Commerce, Webdesign und Online Marketing. Entwicklung von Expertise in visuellem Marketing und strategischer Content-Erstellung.',
+        type: 'business',
+        skills: ['E-Commerce', 'Webdesign', 'Online Marketing', 'Visuelles Marketing', 'Content-Strategie']
       },
       {
-        period: '2021 - heute',
-        title: 'Entrepreneurship',
-        description: 'Aufbau eigener Projekte und kreative Selbstständigkeit',
-        type: 'business'
+        period: '2023 - heute',
+        title: 'Technologie & KI-Entwicklung',
+        subtitle: 'Development & AI',
+        description: 'Parallel zur Marketing-Expertise: Tiefe Auseinandersetzung mit digitalen Produkten und Informatik. Spezialisierung auf Web- und Anwendungsentwicklung sowie künstliche Intelligenz.',
+        type: 'tech',
+        skills: ['Web Development', 'App Development', 'Künstliche Intelligenz', 'Design-Skills', 'Technische Umsetzung']
       }
     ]
   };
@@ -190,12 +228,37 @@ export default function AboutSection() {
                     }`}></div>
                     
                     {/* Content */}
-                    <div className="space-y-2">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                        <h4 className="text-lg font-semibold text-foreground">{item.title}</h4>
-                        <span className="text-sm font-mono text-muted-foreground">{item.period}</span>
+                    <div className="space-y-3">
+                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                        <div className="flex-1">
+                          <h4 className="text-lg font-semibold text-foreground mb-1">{item.title}</h4>
+                          {item.subtitle && (
+                            <p className="text-sm font-medium text-muted-foreground/80 mb-2">{item.subtitle}</p>
+                          )}
+                        </div>
+                        <span className="text-sm font-mono text-muted-foreground bg-white/5 px-2 py-1 rounded whitespace-nowrap">
+                          {item.period}
+                        </span>
                       </div>
                       <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                      {item.skills && item.skills.length > 0 && (
+                        <div className="flex flex-wrap gap-1 mt-3">
+                          {item.skills.map((skill: string, skillIndex: number) => (
+                            <span 
+                              key={skillIndex}
+                              className={`px-2 py-1 text-xs rounded font-mono ${
+                                item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary' :
+                                item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary' :
+                                item.type === 'discovery' || item.type === 'creative' ? 'bg-accent/20 text-accent' :
+                                item.type === 'business' || item.type === 'tech' ? 'bg-primary/20 text-primary' :
+                                'bg-muted/20 text-muted-foreground'
+                              }`}
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
