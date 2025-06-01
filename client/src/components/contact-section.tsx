@@ -110,12 +110,12 @@ export default function ContactSection() {
                   <div>
                     <p className="font-semibold">GitHub</p>
                     <a 
-                      href="https://github.com/alexchen" 
+                      href="https://github.com/maxaufknax" 
                       className="text-muted-foreground hover:text-accent transition-colors flex items-center gap-1"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      github.com/alexchen
+                      https://github.com/maxaufknax
                       <ExternalLink className="w-3 h-3" />
                     </a>
                   </div>
