@@ -126,132 +126,138 @@ export default function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-24 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Über mich</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+    <section id="about" className="py-32 relative overflow-hidden">
+      <div className="absolute inset-0 gradient-bg opacity-5"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">Über mich</h2>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Bridging the gap between technical innovation and creative expression
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <div className="glassmorphism p-8 rounded-2xl animate-slide-up">
-              <h3 className="text-2xl font-semibold mb-4 text-primary">Über mich</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
-                Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
-                dem Ziel kreativer Selbstständigkeit. Struktur, Eigenständigkeit und Vision treiben mich.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Ich will unabhängig arbeiten, sinnvolle Dinge bauen, dabei stetig lernen und Menschen erreichen. 
-                Geld und Erfolg sind für mich kein Selbstzweck, sondern Werkzeuge für kreative Freiheit. 
-                Ich träume nicht nur, ich plane, ich baue und ich mache weiter, bis es funktioniert.
-              </p>
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          <div className="lg:col-span-2 space-y-8">
+            <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+              <h3 className="text-3xl font-bold mb-6 text-primary">Meine Vision</h3>
+              <div className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
+                  Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
+                  dem Ziel kreativer Selbstständigkeit.
+                </p>
+                <div className="h-px bg-gradient-to-r from-primary via-secondary to-accent opacity-30"></div>
+                <p className="text-muted-foreground leading-relaxed text-lg">
+                  Ich will unabhängig arbeiten, sinnvolle Dinge bauen, dabei stetig lernen und Menschen erreichen. 
+                  Geld und Erfolg sind für mich kein Selbstzweck, sondern Werkzeuge für kreative Freiheit.
+                </p>
+              </div>
             </div>
             
-            <div className="glassmorphism p-8 rounded-2xl animate-slide-up">
-              <h3 className="text-2xl font-semibold mb-4 text-secondary">Meine Interessen und Kenntnisse</h3>
-              <div className="grid grid-cols-2 gap-4">
+            <div className="glassmorphism p-8 rounded-3xl animate-slide-up shadow-2xl hover:shadow-secondary/20 transition-all duration-500">
+              <h3 className="text-3xl font-bold mb-6 text-secondary">Expertise</h3>
+              <div className="grid grid-cols-1 gap-6">
                 {strengths.map((strength, index) => (
-                  <div key={index} className="space-y-2">
-                    {strength.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex items-center space-x-2">
-                        <div className={`w-2 h-2 rounded-full ${
-                          itemIndex === 0 ? 'bg-primary' : 
-                          itemIndex === 1 ? 'bg-secondary' : 'bg-accent'
-                        }`}></div>
-                        <span>{item}</span>
-                      </div>
-                    ))}
+                  <div key={index} className="space-y-4">
+                    <h4 className="text-lg font-semibold text-accent">{strength.category}</h4>
+                    <div className="space-y-3">
+                      {strength.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="flex items-center space-x-3 group">
+                          <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                            itemIndex === 0 ? 'bg-primary group-hover:scale-125' : 
+                            itemIndex === 1 ? 'bg-secondary group-hover:scale-125' : 'bg-accent group-hover:scale-125'
+                          }`}></div>
+                          <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">{item}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
           </div>
           
-          <div className="space-y-6">
+          <div className="lg:col-span-3 space-y-8">
             {/* Timeline Navigation */}
-            <div className="flex space-x-2">
-              <button
-                onClick={() => setActiveTimeline('education')}
-                className={`px-4 py-2 rounded-lg transition-all ${
-                  activeTimeline === 'education' 
-                    ? 'bg-primary text-primary-foreground' 
-                    : 'glassmorphism hover:bg-white/10'
-                }`}
-              >
-                Bildung
-              </button>
-              <button
-                onClick={() => setActiveTimeline('career')}
-                className={`px-4 py-2 rounded-lg transition-all ${
-                  activeTimeline === 'career' 
-                    ? 'bg-secondary text-secondary-foreground' 
-                    : 'glassmorphism hover:bg-white/10'
-                }`}
-              >
-                Berufsleben
-              </button>
-              <button
-                onClick={() => setActiveTimeline('interests')}
-                className={`px-4 py-2 rounded-lg transition-all ${
-                  activeTimeline === 'interests' 
-                    ? 'bg-accent text-accent-foreground' 
-                    : 'glassmorphism hover:bg-white/10'
-                }`}
-              >
-                Interessen
-              </button>
+            <div className="glassmorphism p-2 rounded-2xl">
+              <div className="flex space-x-1">
+                <button
+                  onClick={() => setActiveTimeline('education')}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTimeline === 'education' 
+                      ? 'bg-primary text-primary-foreground shadow-lg transform scale-105' 
+                      : 'hover:bg-white/10 text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Bildung
+                </button>
+                <button
+                  onClick={() => setActiveTimeline('career')}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTimeline === 'career' 
+                      ? 'bg-secondary text-secondary-foreground shadow-lg transform scale-105' 
+                      : 'hover:bg-white/10 text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Berufsleben
+                </button>
+                <button
+                  onClick={() => setActiveTimeline('interests')}
+                  className={`flex-1 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
+                    activeTimeline === 'interests' 
+                      ? 'bg-accent text-accent-foreground shadow-lg transform scale-105' 
+                      : 'hover:bg-white/10 text-muted-foreground hover:text-foreground'
+                  }`}
+                >
+                  Interessen
+                </button>
+              </div>
             </div>
 
             {/* Timeline Content */}
-            <div className="glassmorphism p-6 rounded-2xl">
-              <div className="space-y-6">
+            <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-accent/20 transition-all duration-500 min-h-[600px]">
+              <div className="space-y-8">
                 {timelines[activeTimeline].map((item: any, index: number) => (
-                  <div key={index} className="relative pl-8 pb-6 last:pb-0">
+                  <div key={index} className="relative pl-12 pb-8 last:pb-0 group">
                     {/* Timeline line */}
                     {index !== timelines[activeTimeline].length - 1 && (
-                      <div className="absolute left-3 top-6 w-0.5 h-full bg-gradient-to-b from-primary via-secondary to-accent opacity-30"></div>
+                      <div className="absolute left-4 top-8 w-1 h-full bg-gradient-to-b from-primary via-secondary to-accent opacity-20 group-hover:opacity-40 transition-opacity duration-300"></div>
                     )}
                     
                     {/* Timeline dot */}
-                    <div className={`absolute left-1 top-2 w-4 h-4 rounded-full border-2 ${
-                      item.type === 'education' ? 'bg-primary border-primary' :
-                      item.type === 'work' ? 'bg-secondary border-secondary' :
-                      item.type === 'training' ? 'bg-accent border-accent' :
-                      item.type === 'service' ? 'bg-primary border-primary' :
-                      item.type === 'tech' ? 'bg-primary border-primary' :
-                      item.type === 'creative' ? 'bg-secondary border-secondary' :
-                      'bg-accent border-accent'
-                    }`}></div>
+                    <div className={`absolute left-1 top-3 w-6 h-6 rounded-full border-3 shadow-lg group-hover:scale-110 transition-transform duration-300 ${
+                      item.type === 'education' || item.type === 'future' ? 'bg-primary border-primary shadow-primary/30' :
+                      item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary border-secondary shadow-secondary/30' :
+                      item.type === 'training' || item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent border-accent shadow-accent/30' :
+                      'bg-accent border-accent shadow-accent/30'
+                    }`}>
+                      <div className="absolute inset-1 rounded-full bg-white/20"></div>
+                    </div>
                     
                     {/* Content */}
-                    <div className="space-y-3">
-                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                    <div className="space-y-4 glassmorphism p-6 rounded-2xl hover:bg-white/5 transition-all duration-300 group-hover:shadow-lg">
+                      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-6">
                         <div className="flex-1">
-                          <h4 className="text-lg font-semibold text-foreground mb-1">{item.title}</h4>
+                          <h4 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">{item.title}</h4>
                           {item.subtitle && (
-                            <p className="text-sm font-medium text-muted-foreground/80 mb-2">{item.subtitle}</p>
+                            <p className="text-base font-medium text-muted-foreground/90 mb-3">{item.subtitle}</p>
                           )}
                         </div>
-                        <span className="text-sm font-mono text-muted-foreground bg-white/5 px-2 py-1 rounded whitespace-nowrap">
+                        <span className="text-sm font-mono text-muted-foreground bg-white/10 px-4 py-2 rounded-full whitespace-nowrap group-hover:bg-white/15 transition-colors duration-300">
                           {item.period}
                         </span>
                       </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
+                      <p className="text-muted-foreground leading-relaxed">{item.description}</p>
                       {item.skills && item.skills.length > 0 && (
-                        <div className="flex flex-wrap gap-1 mt-3">
+                        <div className="flex flex-wrap gap-2 mt-4">
                           {item.skills.map((skill: string, skillIndex: number) => (
                             <span 
                               key={skillIndex}
-                              className={`px-2 py-1 text-xs rounded font-mono ${
-                                item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary' :
-                                item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary' :
-                                item.type === 'discovery' || item.type === 'creative' ? 'bg-accent/20 text-accent' :
-                                item.type === 'business' || item.type === 'tech' ? 'bg-primary/20 text-primary' :
-                                'bg-muted/20 text-muted-foreground'
+                              className={`px-3 py-1 text-sm rounded-full font-medium transition-all duration-300 hover:scale-105 ${
+                                item.type === 'education' || item.type === 'future' ? 'bg-primary/20 text-primary hover:bg-primary/30' :
+                                item.type === 'work' || item.type === 'freelance' || item.type === 'service' ? 'bg-secondary/20 text-secondary hover:bg-secondary/30' :
+                                item.type === 'discovery' || item.type === 'creative' || item.type === 'business' || item.type === 'tech' ? 'bg-accent/20 text-accent hover:bg-accent/30' :
+                                'bg-muted/20 text-muted-foreground hover:bg-muted/30'
                               }`}
                             >
                               {skill}
@@ -266,13 +272,16 @@ export default function AboutSection() {
             </div>
 
             {/* Skills Tags */}
-            <div className="glassmorphism p-6 rounded-2xl">
-              <h4 className="text-lg font-semibold mb-4 text-accent">Technologien & Tools</h4>
-              <div className="flex flex-wrap gap-2">
+            <div className="glassmorphism p-8 rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-500">
+              <h4 className="text-2xl font-bold mb-6 text-accent">Technologien & Tools</h4>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {skills.map((skill, index) => (
-                  <span key={index} className="skill-tag px-3 py-1 rounded-full text-sm font-mono">
-                    {skill}
-                  </span>
+                  <div 
+                    key={index} 
+                    className="skill-tag px-4 py-3 rounded-xl text-sm font-semibold text-center hover:scale-105 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  >
+                    <span className="group-hover:text-white transition-colors duration-300">{skill}</span>
+                  </div>
                 ))}
               </div>
             </div>
