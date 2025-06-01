@@ -311,8 +311,7 @@ export default function AboutSection() {
                 <div className="flex-1 glassmorphism p-6 rounded-2xl">
                   <h5 className="text-lg font-semibold text-primary mb-3">Innovation</h5>
                   <p className="text-muted-foreground text-sm">
-                    Kontinuierliches Lernen und die Bereitschaft, neue Technologien zu erkunden, 
-                    um zukunftsweisende Lösungen zu entwickeln.
+                    Ständiges Lernen, neugierig bleiben und die Möglichkeiten neuer Technologien wirklich ausreizen. Ich will keine fertigen Rezepte, sondern eigene Lösungen entwickeln, die nach vorn schauen.
                   </p>
                 </div>
                 <div className="flex-1 glassmorphism p-6 rounded-2xl">
