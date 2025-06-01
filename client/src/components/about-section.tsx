@@ -24,14 +24,14 @@ export default function AboutSection() {
             <div className="glassmorphism p-8 rounded-2xl animate-slide-up">
               <h3 className="text-2xl font-semibold mb-4 text-primary">My Journey</h3>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Currently pursuing Media Design Informatics, I'm passionate about creating intelligent, 
-                user-centered digital experiences. My work spans from AI-powered applications to 
-                immersive media projects, always with a focus on meaningful innovation.
+                Ich bin Kreativer Tech-Enthusiast mit Leidenschaft für digitale Medien, Informatik und KI. 
+                Ich entwickle Anwendungen, gestalte visuelle Inhalte und arbeite an eigenen Projekten mit 
+                dem Ziel kreativer Selbstständigkeit. Struktur, Eigenständigkeit und Vision treiben mich.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I believe in the power of technology to enhance human creativity and solve real-world problems. 
-                Whether it's developing medical analysis tools or crafting engaging digital content, 
-                I approach each project with curiosity and dedication.
+                Ich will unabhängig arbeiten, sinnvolle Dinge bauen, dabei stetig lernen und Menschen erreichen. 
+                Geld und Erfolg sind für mich kein Selbstzweck, sondern Werkzeuge für kreative Freiheit. 
+                Ich träume nicht nur, ich plane, ich baue und ich mache weiter, bis es funktioniert.
               </p>
             </div>
             
