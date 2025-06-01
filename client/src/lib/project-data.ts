@@ -28,7 +28,7 @@ export const projects: Project[] = [
     ],
     technologies: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Elasticsearch'],
     impact: 'Verkürzt die Recherche-Zeit um 60% und verbessert die Präzision wissenschaftlicher Literatursuchen erheblich.',
-    image: '/medical-spytool.png',
+    image: '/medical-spytool.png?v=2',
     imageAlt: 'Wissenschaftliche Publikationen Suchinterface mit erweiterten Filtermöglichkeiten und benutzerfreundlicher Oberfläche'
   },
   {
