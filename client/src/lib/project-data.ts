@@ -46,7 +46,7 @@ export const projects: Project[] = [
     ],
     technologies: ['JavaScript', 'OpenAI API', 'Discord.js', 'MongoDB', 'Redis'],
     impact: 'Successfully deployed across 50+ Discord servers with 99.9% uptime and handling 10,000+ daily interactions.',
-    image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
+    image: '/medical-spytool-new.png',
     imageAlt: 'Discord chat interface showing AI bot interactions and community engagement'
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     ],
     technologies: ['React', 'GPT-4', 'Firebase', 'Chart.js', 'PWA'],
     impact: '95% of users reported improved self-awareness and emotional clarity after 30 days of consistent use.',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
+    image: '/medical-spytool-new.png',
     imageAlt: 'Peaceful meditation interface with journaling features and AI-powered reflection tools'
   },
   {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Electron', 'Ollama', 'WebRTC', 'SQLite', 'Python'],
     impact: 'First consumer-grade offline AI assistant capable of running on standard hardware while maintaining enterprise-level privacy standards.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
+    image: '/medical-spytool-new.png',
     imageAlt: 'Futuristic AI assistant interface with voice visualization and local processing capabilities'
   },
   {
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Photoshop', 'Premiere Pro', 'After Effects', 'Lightroom', 'Figma'],
     impact: 'Delivered 150+ projects with 40% average increase in client engagement rates and 98% client satisfaction score.',
-    image: 'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
+    image: '/bewerbungsfoto-max-paasch.jpeg',
     imageAlt: 'Professional photography studio setup with lighting equipment and product displays'
   },
   {
@@ -114,7 +114,7 @@ export const projects: Project[] = [
     ],
     technologies: ['Three.js', 'WebGL', 'GSAP', 'React Three Fiber', 'Blender'],
     impact: 'Featured in design showcases with 500K+ total views and recognition from industry leaders for innovative approach to web interactivity.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600',
+    image: '/medical-spytool.png',
     imageAlt: 'Creative interactive web interface with animations and immersive design elements'
   }
 ];
