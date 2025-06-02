@@ -26,10 +26,10 @@ Da Sie bereits ein Portfolio-Website Repository haben, führen Sie diese Schritt
 git checkout -b portfolio-website-1.0
 ```
 
-### 2. Aktuelle Dateien ersetzen
-- Kopieren Sie alle Dateien aus diesem Replit-Projekt
-- Überschreiben Sie den Inhalt Ihres lokalen Repository-Ordners
-- **Wichtig**: Behalten Sie die .git/ Ordner bei
+### 2. Alle Dateien hinzufügen
+- Das Portfolio-Projekt ist vollständig entwickelt und bereit für GitHub
+- Alle Dateien sind bereits korrekt konfiguriert
+- **Wichtig**: Stellen Sie sicher, dass Sie im richtigen Verzeichnis sind
 
 ### 3. Änderungen committen
 ```bash
@@ -45,9 +45,46 @@ git commit -m "Portfolio Website v1.0 - Complete redesign with modern tech stack
 - GitHub integration for project links"
 ```
 
-### 4. Branch zu GitHub pushen
+## GitHub Pages Setup (Automatisches Deployment)
+
+### 1. Repository vorbereiten
 ```bash
-git push origin portfolio-website-1.0
+# Falls Sie ein neues Repository erstellen:
+git init
+git remote add origin https://github.com/IHR-USERNAME/portfolio-website.git
+```
+
+### 2. Alle Dateien hinzufügen
+```bash
+git add .
+git commit -m "Initial portfolio website setup"
+git push -u origin main
+```
+
+### 3. GitHub Pages aktivieren
+1. Gehen Sie zu Ihrem Repository auf GitHub
+2. Klicken Sie auf **Settings** → **Pages**
+3. Wählen Sie **GitHub Actions** als Source
+4. Der Workflow wird automatisch ausgeführt
+
+### 4. URL der Website
+Nach erfolgreichem Deployment ist Ihre Website verfügbar unter:
+`https://IHR-USERNAME.github.io/portfolio-website/`
+
+## Lokale Entwicklung
+
+```bash
+# Dependencies installieren
+npm install
+
+# Entwicklungsserver starten
+npm run dev
+
+# Client für Produktion builden
+npm run build:client
+
+# GitHub Pages Build (mit korrekter Base URL)
+npm run build:github
 ```
 
 ## Automatische Alternative

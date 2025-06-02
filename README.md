@@ -1,6 +1,10 @@
-# Media Design Informatics Portfolio
+# Max Paasch - Portfolio Website
 
-Eine moderne, professionelle Portfolio-Website für Bewerbungen im Bereich Mediendesigninformatik. Die Website präsentiert Projekte, Fähigkeiten und den beruflichen Werdegang mit einem eleganten, dunklen Design.
+Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studiengang Mediendesigninformatik. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
+
+## Über dieses Projekt
+
+Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation für meine Bewerbung um einen Studienplatz in Mediendesigninformatik.
 
 ## Features
 

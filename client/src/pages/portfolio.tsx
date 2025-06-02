@@ -8,28 +8,28 @@ import ProjectModal from "@/components/project-modal";
 
 export default function Portfolio() {
   useEffect(() => {
-    document.title = "Alex Chen - Media Design Informatics Portfolio";
+    document.title = "Max Paasch - Portfolio Mediendesigninformatik";
     
     // SEO meta tags
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Creative Developer & Digital Designer specializing in Media Design Informatics. AI-powered tools, immersive media projects, and innovative digital experiences.');
+      metaDescription.setAttribute('content', 'Portfolio von Max Paasch für das Studium der Mediendesigninformatik. Digitale Innovation durch die Fusion von Technologie und Design.');
     } else {
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content = 'Creative Developer & Digital Designer specializing in Media Design Informatics. AI-powered tools, immersive media projects, and innovative digital experiences.';
+      meta.content = 'Portfolio von Max Paasch für das Studium der Mediendesigninformatik. Digitale Innovation durch die Fusion von Technologie und Design.';
       document.head.appendChild(meta);
     }
 
     // Open Graph meta tags
     const ogTitle = document.createElement('meta');
     ogTitle.setAttribute('property', 'og:title');
-    ogTitle.content = 'Alex Chen - Media Design Informatics Portfolio';
+    ogTitle.content = 'Max Paasch - Portfolio Mediendesigninformatik';
     document.head.appendChild(ogTitle);
 
     const ogDescription = document.createElement('meta');
     ogDescription.setAttribute('property', 'og:description');
-    ogDescription.content = 'Passionate about blending technology with creativity to build innovative digital experiences. From AI-powered tools to immersive media projects.';
+    ogDescription.content = 'Digitale Innovation durch die Fusion von Technologie und Design. Portfolio für das Studium der Mediendesigninformatik.';
     document.head.appendChild(ogDescription);
 
     const ogType = document.createElement('meta');
