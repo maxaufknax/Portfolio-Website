@@ -1,6 +1,20 @@
-# Max Paasch - Portfolio Website
+# Max Paasch - Portfolio Website v1.3 (Stable)
 
 Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studiengang Mediendesigninformatik. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
+
+## 🆕 Version 1.3 Updates
+
+### Neue Features:
+- **Authentische "Über Max" Sektion** - Komplett neu geschrieben mit persönlichem, reflektiertem Inhalt
+- **Bildergalerien** für BFD-MHH und E-Commerce Projekte mit echten Arbeitsergebnissen
+- **Responsive Galerie-Layout** mit Click-to-Expand Funktionalität
+- **Erweiterte Projekt-Modals** mit professionellen Asset-Präsentationen
+
+### Content Updates:
+- **Persönlichere Einführung** - Authentischer, nachdenklicher Schreibstil
+- **Konkrete Projektergebnisse** - Echte Poster, Analytics, Marketing-Materialien
+- **Neue Fokus-Bereiche** - Informatik & KI, Mediendesign, E-Commerce
+- **Detaillierte Arbeitsbeispiele** - MHH Event-Poster, E-Commerce Performance-Daten
 
 ## Über dieses Projekt
 
@@ -10,10 +24,13 @@ Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der W
 
 - **Responsive Design**: Vollständig responsiv für alle Geräte
 - **Interaktive Timeline**: Bildung, Berufsleben und Interessen in einer kompakten, erweiterbaren Ansicht
-- **Projekt-Showcase**: Detaillierte Projektdarstellung mit Modals
+- **Projekt-Showcase**: Detaillierte Projektdarstellung mit Modals und Bildergalerien
+- **Authentische Inhalte**: Persönliche, reflektierte Texte statt Marketing-Sprache
+- **Bildergalerien**: Echte Arbeitsergebnisse - Poster, Analytics, Marketing-Materialien
 - **Kontaktformular**: Funktionsfähiges Kontaktformular mit Backend-Integration
 - **Moderne UI**: Glassmorphism-Effekte, Gradient-Texte und sanfte Animationen
 - **Dark Theme**: Professionelles dunkles Design mit Neon-Akzenten
+- **Click-to-Expand**: Bildergalerien mit Vollbild-Ansicht
 
 ## Tech Stack
 
