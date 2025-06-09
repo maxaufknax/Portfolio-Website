@@ -54,40 +54,32 @@ export default function AboutSection() {
         description: 'Vervollständigung der Fachhochschulreife durch praktische Berufserfahrung im Gesundheitswesen. Wertvolle Einblicke in die digitale Transformation medizinischer Einrichtungen.',
         type: 'education',
         skills: []
-      },
-      {
-        period: '2025 - Zukunft',
-        title: 'Mediendesigninformatik Studium',
-        subtitle: 'Geplant • Fachhochschule oder Universität',
-        description: 'Angestrebtes Studium zur Verbindung von technischen und kreativen Kompetenzen. Fokus auf die Entwicklung von benutzerfreundlichen digitalen Lösungen und innovativen Medienanwendungen.',
-        type: 'future',
-        skills: ['Web Development', 'UI/UX Design', 'AI & Machine Learning', 'Digital Innovation', 'Medienproduktion']
       }
     ],
     career: [
       {
-        period: '2021 - 2022',
-        title: 'Aushilfe & Praktika',
-        subtitle: 'Verschiedene Unternehmen • Gastronomie & Einzelhandel',
-        description: 'Erste praktische Berufserfahrungen in verschiedenen Branchen. Entwicklung von Grundlagen im Kundenservice, Verkauf und Teamarbeit. Aufbau von Arbeitsethik und Verständnis für betriebliche Abläufe.',
+        period: '05.2020 - 03.2021',
+        title: 'Aushilfe / Minijob – Wochenblattbote',
+        subtitle: 'Lokalboten Hannover',
+        description: 'Zuverlässige und eigenständige Verteilung von Wochenblättern im Rahmen eines Minijobs. Entwicklung von Belastbarkeit, Ausdauer und Selbstorganisation durch regelmäßige und verantwortungsvolle Tätigkeiten.',
         type: 'work',
-        skills: ['Kundenservice', 'Verkauf', 'Flexibilität', 'Arbeitsethik', 'Branchenvielfalt']
+        skills: ['Zuverlässigkeit', 'Selbstständigkeit', 'Belastbarkeit', 'Arbeitsdisziplin', 'Ausdauer']
       },
       {
-        period: '2022 - 2023',
-        title: 'Freelance Content Creator',
-        subtitle: 'Selbstständig • Social Media & Video',
-        description: 'Eigenständige Entwicklung und Umsetzung von Content-Strategien für verschiedene Plattformen. Spezialisierung auf visuelles Storytelling und professionelle Videobearbeitung.',
-        type: 'freelance',
-        skills: ['Adobe Creative Suite', 'Video Editing', 'Social Media', 'Content Strategy', 'Selbstständigkeit']
+        period: '07.2024 - 01.2025',
+        title: 'Aushilfe / Minijob – Digitalisierung',
+        subtitle: 'Pestalozzi Stiftung Burgwedel',
+        description: 'Mitarbeit im Digitalisierungsmanagement der Personalabteilung. Aufgaben im Datenmanagement, Digitalisierung, Nutzung von HR-Software und digitalen Tools sowie Beachtung von Datenschutz und abteilungsübergreifende Zusammenarbeit.',
+        type: 'work',
+        skills: ['Digitalisierung', 'HR-Software', 'Datenmanagement', 'Datenschutz', 'Teamarbeit']
       },
       {
-        period: '2024 - 2025',
+        period: '09.2024 - 09.2025',
         title: 'Bundesfreiwilligendienst',
-        subtitle: 'Medizinische Hochschule Hannover • Station A1',
-        description: 'Vollzeit-Engagement im Gesundheitswesen mit direktem Patientenkontakt und administrativen Aufgaben. Entwicklung von Soft Skills in der Kommunikation, Teamarbeit und Stressmanagement.',
+        subtitle: 'Medizinische Hochschule Hannover • Dekanat für Akademische Karriereentwicklung',
+        description: 'Unterstützung in den Bereichen Datenmanagement, Digitalisierung, Mediengestaltung, Webdesign (Frontend), IT-Automatisierungsprozesse und datenschutzrelevante Aufgaben. Praktische Anwendung technischer Fähigkeiten im professionellen Umfeld.',
         type: 'service',
-        skills: ['Patientenbetreuung', 'Teamarbeit', 'Kommunikation', 'Verantwortung', 'Digitale Systeme']
+        skills: ['Digitalisierung', 'Mediengestaltung', 'Frontend-Entwicklung', 'IT-Automatisierung', 'Datenschutz', 'Teamarbeit', 'Verantwortung']
       }
     ],
     interests: [
@@ -135,39 +127,106 @@ export default function AboutSection() {
           <p className="md:text-2xl text-muted-foreground max-w-4xl mx-auto text-[23px]">Während andere noch überlegen, bau ich es einfach. Learning by Doing, 100%.</p>
         </div>
         
-        {/* Persönliche Motivation und Profilfoto */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16 items-center">
-          <div className="glassmorphism-strong p-10 rounded-3xl animate-slide-up shadow-2xl hover:shadow-primary/20 transition-all duration-500">
-            <h3 className="text-4xl font-black mb-8 text-gradient">Warum Mediendesigninformatik?</h3>
-            <div className="space-y-6">
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Für mich ist Mediendesigninformatik nicht nur ein Studiengang, sondern die perfekte Fusion meiner Leidenschaften: Technologie, die funktioniert, und Design, das begeistert.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Ich will nicht nur Code schreiben oder schöne Oberflächen gestalten. Ich will verstehen, wie digitale Kommunikation wirklich funktioniert, wie Benutzer denken und fühlen, und wie man Technologie so einsetzt, dass sie Menschen erreicht und bewegt.
-              </p>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Mein Ziel ist es, interaktive Medien zu schaffen, die sowohl technisch innovativ als auch emotional ansprechend sind. Systeme, die nicht nur funktionieren, sondern ein Erlebnis bieten.
-              </p>
+        {/* Profilfoto Header */}
+        <div className="flex justify-center mb-16">
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+            <div className="relative glassmorphism-strong p-2 rounded-3xl">
+              <img 
+                src="/bewerbungsfoto-max-paasch.jpeg" 
+                alt="Max Paasch - Professional Portrait" 
+                className="w-64 h-64 md:w-72 md:h-72 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
             </div>
+            
+            {/* Floating elements around photo */}
+            <div className="absolute -top-6 -right-6 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-secondary/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+            <div className="absolute top-1/2 -right-8 w-12 h-12 bg-accent/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
           </div>
+        </div>
+
+        {/* Über Max - Neustrukturiert */}
+        <div className="mb-16">
+          <h3 className="text-3xl md:text-4xl font-black mb-12 text-gradient text-center">Über Max</h3>
           
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              <div className="relative glassmorphism-strong p-2 rounded-3xl">
-                <img 
-                  src="/bewerbungsfoto-max-paasch.jpeg" 
-                  alt="Max Paasch - Professional Portrait" 
-                  className="w-80 h-80 lg:w-96 lg:h-96 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+          {/* Haupteinführung */}
+          <div className="glassmorphism p-6 md:p-8 rounded-2xl mb-8 max-w-4xl mx-auto animate-slide-up">
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed text-center">
+              Ich bin Max, 20 Jahre alt, und ich denke viel – manchmal zu viel.
+              <br />
+              Ich frage mich oft, was wirklich sinnvoll ist, was Wirkung hat und was nur Lärm ist.
+              <br />
+              <span className="text-primary font-medium">Ich will keine Oberflächen. Ich will Tiefe</span> – in meiner Arbeit, in Gesprächen, in mir selbst.
+            </p>
+          </div>
+
+          {/* Eigenschaften Grid */}
+          <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            {/* Wie ich arbeite */}
+            <div className="glassmorphism p-6 rounded-2xl hover:shadow-lg transition-all duration-300 animate-slide-up" style={{animationDelay: '0.1s'}}>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-lg font-semibold text-primary mb-3">Wie ich arbeite</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Ich baue gerne digitale Dinge – Anwendungen, Interfaces, Systeme.
+                    Aber nicht, um Technik zu feiern.
+                    Sondern, um Komplexes verständlich zu machen.
+                    Ich arbeite mit Code, KI und Design wie mit Werkzeugen – um Gedanken nutzbar zu machen.
+                  </p>
+                </div>
               </div>
-              
-              {/* Floating elements around photo */}
-              <div className="absolute -top-6 -right-6 w-16 h-16 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-20 h-20 bg-secondary/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 -right-8 w-12 h-12 bg-accent/20 rounded-full blur-xl animate-pulse" style={{animationDelay: '2s'}}></div>
+            </div>
+
+            {/* Was mich antreibt */}
+            <div className="glassmorphism p-6 rounded-2xl hover:shadow-lg transition-all duration-300 animate-slide-up" style={{animationDelay: '0.2s'}}>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-secondary rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-lg font-semibold text-secondary mb-3">Was mich antreibt</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Ich will nicht nur „coole Sachen" machen.
+                    Ich will gestalten, was Bestand hat – was ruhig, durchdacht und klar ist.
+                    Ich glaube, dass echte Qualität Zeit und Haltung braucht.
+                    Und dass nicht alles sofort sichtbar sein muss, um Wirkung zu haben.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Was mich ausmacht */}
+            <div className="glassmorphism p-6 rounded-2xl hover:shadow-lg transition-all duration-300 animate-slide-up" style={{animationDelay: '0.3s'}}>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-lg font-semibold text-accent mb-3">Was mich ausmacht</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Ich arbeite oft im Hintergrund – mit Fokus.
+                    Ich brauche keine Show – aber ich will Verantwortung für das, was ich tue.
+                    Meine Projekte sind auch persönliche Reflexionen.
+                    Sie zeigen, wie ich denke. Und wohin ich will.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Was ich glaube */}
+            <div className="glassmorphism p-6 rounded-2xl hover:shadow-lg transition-all duration-300 animate-slide-up" style={{animationDelay: '0.4s'}}>
+              <div className="flex items-start gap-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gradient mb-3">Was ich glaube</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    Ich habe keinen Masterplan. Aber ich habe einen inneren Kompass.
+                    Und vielleicht ist das in einer Welt voller Ablenkung genau das, was zählt.
+                    Ich baue an etwas – nicht laut, aber konsequent.
+                    <br />
+                    <span className="text-primary/80 italic">Und ich glaube daran, dass stille Arbeit sichtbarer wird, als man denkt.</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

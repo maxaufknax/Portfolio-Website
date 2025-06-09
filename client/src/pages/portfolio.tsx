@@ -5,6 +5,7 @@ import AboutSection from "@/components/about-section";
 import ProjectsSection from "@/components/projects-section";
 import ContactSection from "@/components/contact-section";
 import ProjectModal from "@/components/project-modal";
+import PasswordAdmin from "@/components/password-admin";
 
 export default function Portfolio() {
   useEffect(() => {
@@ -62,6 +63,7 @@ export default function Portfolio() {
         </div>
       </footer>
       <ProjectModal />
+      <PasswordAdmin />
     </div>
   );
 }

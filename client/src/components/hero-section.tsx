@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Code, Palette, Sparkles } from "lucide-react";
+import { ArrowDown, Github, Brain, Paintbrush, ShoppingCart } from "lucide-react";
 
 export default function HeroSection() {
   const scrollToProjects = () => {
@@ -77,12 +77,15 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">
               <div className="mb-8 relative">
-                <Code className="h-20 w-20 text-primary mx-auto group-hover:scale-125 transition-transform duration-500" />
+                <Brain className="h-20 w-20 text-primary mx-auto group-hover:scale-125 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-2xl font-black mb-6 text-gradient">Full-Stack Development</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                React, TypeScript, Node.js, Express, PostgreSQL und moderne KI-APIs für skalbare Webanwendungen
+              <h3 className="text-2xl font-black mb-4 text-gradient">🟣 Informatik & KI</h3>
+              <p className="text-sm font-semibold text-muted-foreground mb-3 italic">"Technik ist für mich Werkzeug – nicht Ziel."</p>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Ich entwickle Webanwendungen mit modernen Tools (React, Node.js, TypeScript) und arbeite viel mit KI – GPT, Claude, APIs, aber auch lokale Modelle.
+                Mich interessiert, wie Systeme funktionieren – und wie man sie nutzbar macht.
+                Code ist für mich die Brücke zwischen Idee und Anwendung.
               </p>
             </div>
           </div>
@@ -91,12 +94,15 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">
               <div className="mb-8 relative">
-                <Palette className="h-20 w-20 text-secondary mx-auto group-hover:scale-125 transition-transform duration-500" />
+                <Paintbrush className="h-20 w-20 text-secondary mx-auto group-hover:scale-125 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-secondary/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-2xl font-black mb-6 text-gradient">UI/UX Design</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                Benutzerzentrierte Gestaltung, Prototyping, Designsysteme und responsive Interfaces
+              <h3 className="text-2xl font-black mb-4 text-gradient">🟣 Mediendesign</h3>
+              <p className="text-sm font-semibold text-muted-foreground mb-3 italic">"Gestaltung war immer mein Ding – auch bevor ich wusste, was Design ist."</p>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Ich habe früh angefangen, Videos zu schneiden, Edits zu bauen und Post-Templates zu gestalten.
+                Ich war der, der freiwillig PowerPoint-Präsentationen gemacht hat.
+                Heute nutze ich dieses Gespür, um komplexe Technik visuell klar und intuitiv zu machen.
               </p>
             </div>
           </div>
@@ -105,12 +111,15 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">
               <div className="mb-8 relative">
-                <Sparkles className="h-20 w-20 text-accent mx-auto group-hover:scale-125 transition-transform duration-500" />
+                <ShoppingCart className="h-20 w-20 text-accent mx-auto group-hover:scale-125 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-accent/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
-              <h3 className="text-2xl font-black mb-6 text-gradient">KI & Innovation</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                OpenAI GPT-4, Claude, Discord Bots und intelligente Automatisierungslösungen
+              <h3 className="text-2xl font-black mb-4 text-gradient">🟣 E-Commerce</h3>
+              <p className="text-sm font-semibold text-muted-foreground mb-3 italic">"Ein gutes Produkt bringt nichts, wenn es niemand versteht."</p>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                Ich habe an E-Commerce-Projekten mitgearbeitet – von Shops über Branding bis Automatisierung.
+                Mich interessiert, wie man digitale Systeme sichtbar, verständlich und relevant macht.
+                Tech, Psychologie und Design gehören für mich dabei zusammen.
               </p>
             </div>
           </div>

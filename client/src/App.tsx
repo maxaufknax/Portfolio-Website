@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Portfolio from "@/pages/portfolio";
 import NotFound from "@/pages/not-found";
+import PasswordProtection from "@/components/password-protection";
 
 function Router() {
   return (
@@ -19,8 +20,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Toaster />
-        <Router />
+        <PasswordProtection>
+          <Toaster />
+          <Router />
+        </PasswordProtection>
       </TooltipProvider>
     </QueryClientProvider>
   );
