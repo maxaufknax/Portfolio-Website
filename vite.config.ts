@@ -18,5 +18,5 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
-  base: process.env.NODE_ENV === "production" ? "/portfolio-website/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/Portfolio-Website/" : "/",
 });
