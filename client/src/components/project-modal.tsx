@@ -117,24 +117,21 @@ export default function ProjectModal() {
               <h4 className="text-lg md:text-xl font-semibold mb-2 text-secondary">{selectedProject.technologiesTitle || "Technologie-Stack"}</h4>
               <div className="flex flex-wrap gap-2 mb-3 md:mb-4">
                 {selectedProject.technologies.map((tech, index) => {
-                  const colors = [
-                    "bg-sky-100 text-sky-700 border-sky-300",
-                    "bg-amber-100 text-amber-700 border-amber-300",
-                    "bg-emerald-100 text-emerald-700 border-emerald-300",
-                    "bg-rose-100 text-rose-700 border-rose-300",
-                    "bg-indigo-100 text-indigo-700 border-indigo-300",
-                    "bg-pink-100 text-pink-700 border-pink-300",
-                    "bg-teal-100 text-teal-700 border-teal-300",
+                  // Elegante, gedämpfte Farben passend zum dunklen Design
+                  const styles = [
+                    "glassmorphism border-primary/20 text-primary hover:bg-primary/10 hover:border-primary/30",
+                    "glassmorphism border-secondary/20 text-secondary hover:bg-secondary/10 hover:border-secondary/30",
+                    "glassmorphism border-accent/20 text-accent hover:bg-accent/10 hover:border-accent/30",
+                    "glassmorphism border-muted-foreground/20 text-muted-foreground hover:bg-muted-foreground/10 hover:border-muted-foreground/30",
                   ];
-                  const colorClass = colors[index % colors.length];
+                  const styleClass = styles[index % styles.length];
                   return (
-                    <Badge 
+                    <span
                       key={index} 
-                      variant="outline" 
-                      className={`text-xs md:text-sm font-mono px-2.5 py-1 border ${colorClass}`}
+                      className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${styleClass}`}
                     >
                       {tech}
-                    </Badge>
+                    </span>
                   );
                 })}
               </div>
@@ -143,9 +140,21 @@ export default function ProjectModal() {
                 <div className="mb-3 md:mb-4">
                   <h5 className="text-base md:text-lg font-semibold mb-1.5 text-accent">Aktuelle Versionen</h5>
                   <div className="flex flex-wrap gap-2">
-                    {selectedProject.versions.stable.map(v => <Badge key={v.name} variant="default" className="bg-green-600 hover:bg-green-700 text-white"><GitBranch className="w-3 h-3 mr-1.5" />{v.name} (stable)</Badge>)}
-                    {selectedProject.versions.beta.map(v => <Badge key={v.name} variant="outline" className="border-yellow-500 text-yellow-500"><GitBranch className="w-3 h-3 mr-1.5" />{v.name} (beta)</Badge>)}
-                    {selectedProject.versions.experimental.map(v => <Badge key={v.name} variant="outline" className="border-purple-500 text-purple-500"><GitBranch className="w-3 h-3 mr-1.5" />{v.name} (experimental)</Badge>)}
+                    {selectedProject.versions.stable.map(v => 
+                      <span key={v.name} className="glassmorphism border-primary/30 text-primary hover:bg-primary/10 hover:border-primary/40 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 flex items-center">
+                        <GitBranch className="w-3 h-3 mr-1.5" />{v.name} (stable)
+                      </span>
+                    )}
+                    {selectedProject.versions.beta.map(v => 
+                      <span key={v.name} className="glassmorphism border-secondary/30 text-secondary hover:bg-secondary/10 hover:border-secondary/40 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 flex items-center">
+                        <GitBranch className="w-3 h-3 mr-1.5" />{v.name} (beta)
+                      </span>
+                    )}
+                    {selectedProject.versions.experimental.map(v => 
+                      <span key={v.name} className="glassmorphism border-accent/30 text-accent hover:bg-accent/10 hover:border-accent/40 px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 flex items-center">
+                        <GitBranch className="w-3 h-3 mr-1.5" />{v.name} (experimental)
+                      </span>
+                    )}
                   </div>
                 </div>
               )}
@@ -180,31 +189,46 @@ export default function ProjectModal() {
           {/* Bildergalerie für spezielle Projekte */}
           {selectedProject.gallery && selectedProject.gallery.length > 0 && (
             <div className="space-y-3 md:space-y-4 pt-3 md:pt-4 border-t border-border">
-              <h4 className="text-lg md:text-xl font-semibold text-secondary">Erstellte Materialien</h4>
+              <h4 className="text-lg md:text-xl font-semibold text-secondary">
+                {selectedProject.id === 'bfd-mhh' ? 'Erstellte Materialien' : 'Projekt Gallery'}
+              </h4>
               <div className="grid gap-6 md:gap-8">
-                {selectedProject.gallery.map((image, index) => (
+                {selectedProject.gallery.map((item, index) => (
                   <div key={index} className="grid md:grid-cols-2 gap-4 md:gap-6 items-start">
-                    {/* Bild - kompakter */}
+                    {/* Bild oder Video */}
                     <div className="relative rounded-lg overflow-hidden border border-border bg-muted/30 shadow-md group">
-                      <img 
-                        src={image.src} 
-                        alt={image.alt}
-                        className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
-                        onClick={() => window.open(image.src, '_blank')}
-                      />
-                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <span className="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">
-                          Vergrößern 🔍
-                        </span>
-                      </div>
+                      {item.isVideo ? (
+                        <video 
+                          controls 
+                          className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain"
+                          preload="metadata"
+                        >
+                          <source src={item.src} type="video/mp4" />
+                          Ihr Browser unterstützt das Video-Tag nicht.
+                        </video>
+                      ) : (
+                        <>
+                          <img 
+                            src={item.src} 
+                            alt={item.alt}
+                            className="w-full h-auto max-h-[300px] md:max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300 cursor-pointer"
+                            onClick={() => window.open(item.src, '_blank')}
+                          />
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                            <span className="text-white text-sm font-medium bg-black/50 px-3 py-1 rounded-full">
+                              Vergrößern 🔍
+                            </span>
+                          </div>
+                        </>
+                      )}
                     </div>
                     
                     {/* Beschreibung */}
                     <div className="space-y-3 flex flex-col justify-center">
                       <div>
-                        <h5 className="text-lg md:text-xl font-semibold text-foreground mb-2">{image.title}</h5>
-                        {image.description && (
-                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{image.description}</p>
+                        <h5 className="text-lg md:text-xl font-semibold text-foreground mb-2">{item.title}</h5>
+                        {item.description && (
+                          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{item.description}</p>
                         )}
                       </div>
                       
@@ -212,7 +236,11 @@ export default function ProjectModal() {
                       <div className="glassmorphism p-3 rounded-lg">
                         <div className="flex items-center gap-2 text-xs text-muted-foreground">
                           <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                          <span>Professionelles Design für MHH Events</span>
+                          <span>
+                            {selectedProject.id === 'bfd-mhh' && index === selectedProject.gallery!.length - 1 ? 'Office Automatisierungsprozesse und Benutzerfreundliche Anleitungen' : 
+                             selectedProject.id === 'bfd-mhh' ? 'Professionelles Design für MHH Events' :
+                             item.isVideo ? 'Social Media Werbeanzeige' : 'E-Commerce Sales Performance May 2024'}
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -221,16 +249,24 @@ export default function ProjectModal() {
               </div>
               <div className="glassmorphism p-4 rounded-lg text-center">
                 <p className="text-sm text-muted-foreground/80">
-                  🎨 <span className="font-medium">Eigenständig gestaltete Poster und Materialien</span> für Events und Veranstaltungen an der MHH.
-                  <br />
-                  <span className="text-xs">Klicken Sie auf ein Bild, um es in voller Größe zu öffnen.</span>
+                  {selectedProject.id === 'bfd-mhh' ? (
+                    <>
+                      <span className="text-xs">Klicken Sie auf ein Bild, um es in voller Größe zu öffnen.</span>
+                    </>
+                  ) : (
+                    <>
+                      🎥 <span className="font-medium">E-Commerce Projekt Portfolio</span> - Store Design, Marketing Visuals und Social Media Ads
+                      <br />
+                      <span className="text-xs">Videos zeigen Live-Kampagnen und Produktvisualisierungen.</span>
+                    </>
+                  )}
                 </p>
               </div>
             </div>
           )}
 
           {/* Allgemeiner Video Showcase */}
-          {selectedProject.videoUrl && (
+          {selectedProject.videoUrl && selectedProject.id !== 'media-portfolio' && (
             <div className="space-y-3 md:space-y-4 pt-3 md:pt-4 border-t border-border">
               <h4 className="text-lg md:text-xl font-semibold text-secondary">Video Showcase</h4>
               <div className="relative rounded-lg overflow-hidden border border-border bg-muted/30 aspect-video shadow-md">
@@ -315,7 +351,7 @@ export default function ProjectModal() {
           {selectedProject.liveDemoUrl && ( // Geändert von demoUrl zu liveDemoUrl
             <Button onClick={openDemo} className="bg-primary hover:bg-primary/90 text-primary-foreground flex-grow sm:flex-grow-0">
               <ExternalLink className="w-4 h-4 mr-2" />
-              Live Demo starten
+              {selectedProject.id === 'bfd-mhh' ? 'Offizielle Abteilungsseite besuchen' : 'Live Demo starten'}
             </Button>
           )}
           {selectedProject.githubUrl && (

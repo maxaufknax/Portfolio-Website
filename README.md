@@ -1,20 +1,25 @@
-# Max Paasch - Portfolio Website v1.3 (Stable)
+# Max Paasch - Portfolio Website v1.5 (Official Release)
 
 Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studiengang Mediendesigninformatik. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
 
-## 🆕 Version 1.3 Updates
+## 🆕 Version 1.5 Updates (Official Release)
 
-### Neue Features:
-- **Authentische "Über Max" Sektion** - Komplett neu geschrieben mit persönlichem, reflektiertem Inhalt
-- **Bildergalerien** für BFD-MHH und E-Commerce Projekte mit echten Arbeitsergebnissen
-- **Responsive Galerie-Layout** mit Click-to-Expand Funktionalität
-- **Erweiterte Projekt-Modals** mit professionellen Asset-Präsentationen
+### UI/UX Verbesserungen:
+- **Redesigned Technology Tags** - Elegante glassmorphism-basierte Tags passend zum dunklen Design
+- **Konsistente Version-Badges** - Einheitliches Design für alle Projekt-Versionen
+- **Verbesserte Farbharmonie** - Gedämpfte, professionelle Farben statt bunter Tags
+- **Optimierte Hover-Effekte** - Sanfte Animationen und Farbübergänge
 
-### Content Updates:
-- **Persönlichere Einführung** - Authentischer, nachdenklicher Schreibstil
-- **Konkrete Projektergebnisse** - Echte Poster, Analytics, Marketing-Materialien
-- **Neue Fokus-Bereiche** - Informatik & KI, Mediendesign, E-Commerce
-- **Detaillierte Arbeitsbeispiele** - MHH Event-Poster, E-Commerce Performance-Daten
+### Content & Funktionalität:
+- **BFD-MHH Projekt erweitert** - Button zur offiziellen MHH-Abteilungsseite hinzugefügt
+- **Präzisere Projektbeschreibungen** - Automatisierungsprozesse und Makros korrekt dargestellt
+- **E-Commerce Analytics** - Sales Performance Analytics korrekt betitelt (Mai 2024)
+- **Office Automatisierung** - Spezifische Beschreibung für entwickelte Makros und Anleitungen
+
+### Technische Verbesserungen:
+- **Designsystem-Konsistenz** - Alle UI-Elemente folgen einheitlichen Designrichtlinien
+- **Performance-Optimierung** - Verbesserte Ladezeiten und Animationen
+- **Code-Aufräumung** - Sauberer, wartbarer Code mit konsistenter Struktur
 
 ## Über dieses Projekt
 

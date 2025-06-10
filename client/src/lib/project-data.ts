@@ -8,6 +8,7 @@ export interface GalleryImage {
   alt: string;
   title: string;
   description?: string;
+  isVideo?: boolean;
 }
 
 export interface Project {
@@ -187,22 +188,36 @@ export const projects: Project[] = [
       '360° Erfahrung im E-Commerce-Funnel von Store-Setup bis Paid Marketing. Erfolgreiche Skalierung mehrerer Shopify Stores mit Umsatzsteigerung durch optimierte Creatives & Copy. Hohe Conversion-Optimierung durch zielgerichtete Produktvisualisierung & UX-optimiertes Store-Design. Datengetriebenes Testing & kontinuierliche Kampagnenoptimierung in enger Teamarbeit.',
     gallery: [
       {
-        src: '/RD.sales_over_time.jpg',
-        alt: 'E-Commerce Sales Analytics Dashboard mit Verkaufsdaten über Zeit',
+        src: '/ecommerce-sales-analytics.jpg',
+        alt: 'E-Commerce Sales Analytics Dashboard mit detaillierten Performance-Metriken',
         title: 'Sales Performance Analytics',
-        description: 'Detaillierte Verkaufsanalyse eines E-Commerce Stores mit täglich tracking von Orders, Gross Sales, Discounts und Net Sales. Zeigt erfolgreiche Umsatzentwicklung mit $666,88 Gesamtumsatz über 7 Tage und datengetriebene Optimierung des Sales Funnels.'
+        description: 'Umfassendes Analytics Dashboard für E-Commerce Performance-Tracking mit detaillierten Verkaufsdaten, Conversion-Raten und ROI-Metriken zur datengetriebenen Optimierung des Sales Funnels.'
       },
       {
-        src: '/Design ohne Titel2.png',
-        alt: 'Produktwerbung für Schuheinlagen mit Marketing Copy',
-        title: 'Produktwerbung & Marketing Copy',
-        description: 'Professionelle Produktwerbung für Schuheinlagen mit überzeugendem Marketing Copy. Fokus auf Benefits wie "Instant Height", "Confidence & Charisma" mit ansprechendem Visual Design für Social Media Kampagnen und Conversion-Optimierung.'
+        src: '/ecom_visual_1.png',
+        alt: 'Unterschiedliche Produkt Visuals und Store Section Elemente für physische Produkte',
+        title: 'Produkt Visuals & Store Elemente',
+        description: 'Verschiedene Marketing Visuals für physische Produkte inklusive Store Section Elementen, Produktvisualisierungen und kreativen Assets für E-Commerce Stores.'
       },
       {
-        src: '/4.png',
-        alt: 'Buchcover Design Collection für E-Commerce',
-        title: 'Buchcover Design Collection',
-        description: 'Kreative Buchcover-Designs für digitale Produkte und E-Books. Verschiedene Stile und Zielgruppen - von "The Warrior Within" bis "Everyday Superwoman". Zeigt Vielseitigkeit im Grafikdesign und Verständnis für verschiedene Marktsegmente im digitalen Publishing.'
+        src: '/ecom_visual_2.png',
+        alt: 'Produkt Visuals und Organic Ads für digitale Produkte wie E-Books',
+        title: 'Digitale Produkt Visuals & Organic Ads',
+        description: 'Unterschiedliche Produkt Visuals und Organic Ads mit Fokus auf digitale Produkte, insbesondere E-Books und weitere digitale Inhalte für den Online-Verkauf.'
+      },
+      {
+        src: '/ecom_video_1.MP4',
+        alt: 'Social Media Werbeanzeige für Keyguard Box - Schutz vor Autodiebstahl',
+        title: 'Keyguard Box Social Media Ad',
+        description: 'Professionelle Social Media Werbeanzeige für ein physisches Produkt - eine Keyguard Box, die Schallwellen von drahtlosen Autoschlüsseln vor Autodieben schützt.',
+        isVideo: true
+      },
+      {
+        src: '/ecom_video_2.MP4',
+        alt: 'Social Media Werbeanzeige für Cat Dental Sticks - Katzenhygiene',
+        title: 'Cat Dental Sticks Social Media Ad',
+        description: 'Kreative Social Media Werbeanzeige für Cat Dental Sticks, ein physisches Produkt das Katzen hygienevolles Kauen und gesunde Ernährung ermöglicht.',
+        isVideo: true
       }
     ],
     githubUrl: 'https://github.com/maxaufknax/E-Commerce', // Hinzugefügter GitHub Link
@@ -255,11 +270,11 @@ export const projects: Project[] = [
         src: '/Schnellstart-Anleitung Termin‑Platzhalter in Outlook.pdf.png',
         alt: 'Schnellstart-Anleitung für Termin-Platzhalter in Outlook',
         title: 'Outlook Schnellstart-Anleitung',
-        description: 'Gestaltete Anleitung zur Verwendung von Termin-Platzhaltern in Microsoft Outlook. Kombiniert klare visuelle Gestaltung mit praktischen Schritt-für-Schritt Anleitungen.'
+        description: 'Entwickelte Automatisierungsprozesse und Makros für Office-Programme sowie benutzerfreundliche Anleitungen für optimierte Arbeitsabläufe. Kombiniert technische Umsetzung mit klarer visueller Gestaltung.'
       }
     ],
     // githubUrl: 'Link zum relevanten GitHub-Repository, falls vorhanden' // Optional
-    // liveDemoUrl: 'Link zur Live-Demo oder relevanten Webseite, falls vorhanden' // Optional
+    liveDemoUrl: 'https://www.mhh.de/akademische-karriereentwicklung' // Link zur offiziellen Abteilungsseite
   }
   // Weitere Projekte können hier hinzugefügt werden
 ];
