@@ -114,21 +114,30 @@ Die Website ist dann unter `http://localhost:5000` erreichbar.
 
 Das Projekt ist für verschiedene Hosting-Plattformen optimiert:
 
-### Vercel (Empfohlen)
+### GitHub Pages (Aktuell aktiv)
+Die Website wird automatisch über GitHub Actions deployed:
+- **Live URL:** https://maxaufknax.github.io/Portfolio-Website/
+- **Automatisches Deployment** bei Push zu `main` oder `portfolio-website-1.5-official`
+- **Build-Status:** Verfügbar in GitHub Actions Tab
+
+Setup GitHub Pages:
+1. Repository Settings → Pages
+2. Source: "GitHub Actions" wählen
+3. Workflow wird automatisch erkannt
+
+### Andere Hosting-Optionen
+
+#### Vercel
 ```bash
 npm run build
 vercel --prod
 ```
 
-### Netlify
+#### Netlify
 ```bash
 npm run build
 # Upload dist/ Ordner zu Netlify
 ```
-
-### GitHub Pages
-1. Build erstellen: `npm run build`
-2. Dist-Ordner zu gh-pages Branch pushen
 
 ## Anpassung
 
