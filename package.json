@@ -1,7 +1,7 @@
 {
   "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "Modern portfolio website for Mediendesigninformatik applications",
+  "version": "2.0.0-beta",
+  "description": "Portfolio Website 2.0 - Maximilian Paasch - Mediendesigninformatik Bewerbung",
   "main": "index.html",  "scripts": {
     "start": "npx live-server --port=3000 --host=localhost --open=/",
     "dev": "npx live-server --port=3000 --host=localhost --open=/ --watch=.",
@@ -18,7 +18,7 @@
     "css3",
     "javascript"
   ],
-  "author": "Your Name",
+  "author": "Maximilian Paasch",
   "license": "MIT",
   "devDependencies": {
     "live-server": "^1.2.2"
