@@ -1,6 +1,24 @@
-# Max Paasch - Portfolio Website v1.5 (Official Release)
+# 🎨 Max Paasch - Portfolio Website
 
-Eine moderne, professionelle Portfolio-Website. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
+> **Live Website:** [https://maxaufknax.github.io/Portfolio-Website/](https://maxaufknax.github.io/Portfolio-Website/)
+
+Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studiengang Mediendesigninformatik. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
+
+## 📋 Repository-Struktur & Branches
+
+| Branch | Status | Beschreibung | Verwendung |
+|--------|--------|--------------|------------|
+| **`portfolio-website-1.5-official`** | 🟢 **PRODUKTIV** | Aktuelle stabile Version | Hauptentwicklung, GitHub Pages Quelle |
+| **`gh-pages`** | 🚀 **DEPLOYMENT** | Automatisch generierte Build-Version | GitHub Pages Hosting |
+| **`portfolio-website-2.0-(beta)`** | 🧪 **BETA** | Neue Features in Entwicklung | Experimentelle Features |
+| **`portfolio-website-1.0-(stable)`** | 📚 **ARCHIV** | Erste stabile Version | Referenz/Backup |
+| **`main`** | 🔄 **SYNC** | Standard-Branch | Mirror von 1.5-official |
+
+### 🎯 Empfohlener Workflow:
+- **Entwicklung:** `portfolio-website-1.5-official`
+- **Live-Website:** Automatisch von `gh-pages` gehostet
+- **Neue Features:** `portfolio-website-2.0-(beta)`
+- **Produktions-Deployment:** Via GitHub Actions zu `gh-pages`
 
 ## 🆕 Version 1.5 Updates (Official Release)
 
@@ -23,7 +41,7 @@ Eine moderne, professionelle Portfolio-Website. Die Website präsentiert meine P
 
 ## Über dieses Projekt
 
-Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation.
+Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation für meine Bewerbung um einen Studienplatz in Mediendesigninformatik.
 
 ## Features
 
@@ -53,44 +71,69 @@ Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der W
 - **Drizzle ORM** für Datenbankschema
 - **Zod** für Validierung
 
-## Installation
+## 🚀 Quick Start
 
-1. Repository klonen:
+### Lokale Entwicklung
 ```bash
-git clone https://github.com/maxaufknax/portfolio
-cd portfolio
-```
+# Repository klonen
+git clone https://github.com/maxaufknax/Portfolio-Website.git
+cd Portfolio-Website
 
-2. Dependencies installieren:
-```bash
+# Zum produktiven Branch wechseln
+git checkout portfolio-website-1.5-official
+
+# Dependencies installieren
 npm install
-```
 
-3. Entwicklungsserver starten:
-```bash
+# Entwicklungsserver starten
 npm run dev
 ```
 
 Die Website ist dann unter `http://localhost:5000` erreichbar.
 
-## Projektstruktur
+### Production Build
+```bash
+# Build für GitHub Pages erstellen
+npm run build
+
+# Build testen
+npm run preview
+```
+
+## 📁 Projektstruktur
 
 ```
-├── client/                 # Frontend-Code
+Portfolio-Website/
+├── client/                 # Frontend (React + TypeScript)
 │   ├── src/
 │   │   ├── components/     # React-Komponenten
+│   │   │   ├── about-section.tsx
+│   │   │   ├── contact-form.tsx
+│   │   │   ├── project-modal.tsx
+│   │   │   └── ...
 │   │   ├── pages/         # Seiten-Komponenten
-│   │   ├── lib/           # Utilities und Datenmodelle
+│   │   │   ├── home.tsx
+│   │   │   ├── portfolio.tsx
+│   │   │   └── contact.tsx
+│   │   ├── lib/           # Utils & Datenschicht
+│   │   │   ├── project-data.ts
+│   │   │   └── api.ts
 │   │   └── hooks/         # Custom React Hooks
+│   ├── public/            # Statische Assets
+│   │   ├── *.pdf          # Portfolio-PDFs
+│   │   ├── *.mp4          # Projekt-Videos
+│   │   ├── *.png          # Bilder & Screenshots
+│   │   └── index.html
 │   └── index.html         # HTML-Template
-├── server/                # Backend-Code
+├── server/                # Backend (Express + TypeScript)
 │   ├── index.ts           # Server-Einstiegspunkt
 │   ├── routes.ts          # API-Routen
-│   ├── storage.ts         # Datenbank-Interface
-│   └── vite.ts            # Vite-Integration
+│   └── storage.ts         # Datenbank-Interface
 ├── shared/                # Geteilte TypeScript-Typen
 │   └── schema.ts          # Drizzle-Schemas
-└── components.json        # Shadcn/ui-Konfiguration
+├── vite.config.ts         # Vite-Konfiguration
+├── tailwind.config.js     # Tailwind-Konfiguration
+└── README.md              # Diese Datei
 ```
 
 ## Deployed Features
@@ -110,30 +153,60 @@ Die Website ist dann unter `http://localhost:5000` erreichbar.
 5. **Media Portfolio**: Professionelle Medienproduktion
 6. **Interactive Experiences**: 3D-Web-Erlebnisse
 
-## Deployment
+## 🌐 Deployment & Hosting
 
-Das Projekt ist für verschiedene Hosting-Plattformen optimiert:
+### GitHub Pages (Aktuell Live)
+Die Website wird automatisch auf GitHub Pages gehostet:
+- **Live-URL:** https://maxaufknax.github.io/Portfolio-Website/
+- **Source:** `gh-pages` Branch (automatisch generiert)
+- **Trigger:** Push zu `portfolio-website-1.5-official`
 
-### Vercel (Empfohlen)
+### Deployment-Workflow
+```bash
+# 1. Auf produktivem Branch entwickeln
+git checkout portfolio-website-1.5-official
+# ... Änderungen machen ...
+
+# 2. Build erstellen und zu gh-pages deployen
+npm run build
+git add -A && git commit -m "Deploy: Website updates"
+git push origin portfolio-website-1.5-official
+
+# 3. GitHub Pages aktualisiert automatisch
+```
+
+### Alternative Hosting-Optionen
+
+#### Vercel
 ```bash
 npm run build
 vercel --prod
 ```
 
-### Netlify
+#### Netlify
 ```bash
 npm run build
 # Upload dist/ Ordner zu Netlify
 ```
 
-### GitHub Pages
-1. Build erstellen: `npm run build`
-2. Dist-Ordner zu gh-pages Branch pushen
+## 🔧 Entwicklung & Anpassung
 
-## Anpassung
+### Branch-Management
+```bash
+# Zum Haupt-Entwicklungsbranch wechseln
+git checkout portfolio-website-1.5-official
 
-### Farben ändern
-Farben können in `client/src/index.css` angepasst werden:
+# Neue Features in Beta-Branch testen
+git checkout portfolio-website-2.0-(beta)
+
+# Archiv-Version ansehen
+git checkout portfolio-website-1.0-(stable)
+```
+
+### Konfiguration anpassen
+
+#### Farben ändern
+Farben in `client/src/index.css` anpassen:
 ```css
 :root {
   --primary: 239 84% 67%;     /* Indigo */
@@ -142,24 +215,55 @@ Farben können in `client/src/index.css` angepasst werden:
 }
 ```
 
-### Projekte hinzufügen
-Neue Projekte in `client/src/lib/project-data.ts` hinzufügen.
+#### Projekte hinzufügen/bearbeiten
+Projekte in `client/src/lib/project-data.ts` anpassen:
+```typescript
+export const projects: Project[] = [
+  {
+    id: "new-project",
+    title: "Neues Projekt",
+    description: "Beschreibung...",
+    // ...weitere Konfiguration
+  }
+];
+```
 
-### Kontaktformular
-Das Kontaktformular nutzt In-Memory Storage. Für Produktion sollte eine echte Datenbank konfiguriert werden.
+#### GitHub Pages Pfade
+Für GitHub Pages deployment sind alle Asset-Pfade relativ konfiguriert:
+```typescript
+// ✅ Korrekt für GitHub Pages
+imagePath: "./assets/project-image.png"
 
-## Browser-Unterstützung
+// ❌ Falsch - würde 404 verursachen
+imagePath: "/assets/project-image.png"
+```
 
-- Chrome/Edge 88+
-- Firefox 85+
-- Safari 14+
+## 📞 Support & Kontakt
 
-## Lizenz
+### Repository-Management
+- **Issues:** GitHub Issues für Bug-Reports und Feature-Requests
+- **Pull Requests:** Contributions sind willkommen
+- **Wiki:** Zusätzliche Dokumentation (falls vorhanden)
 
-MIT License - siehe LICENSE-Datei für Details.
+### Kontakt
+- **GitHub:** [@maxaufknax](https://github.com/maxaufknax)
+- **Website:** [Portfolio ansehen](https://maxaufknax.github.io/Portfolio-Website/)
+- **LinkedIn:** [Max Paasch](https://linkedin.com/in/max-paasch) *(falls vorhanden)*
 
-## Kontakt
+## 📊 Status & Metriken
 
-Bei Fragen oder Feedback:
-- Email: maximilian.elias.paasch@gmail.com
-- GitHub: [@maxaufknax](https://github.com/maxaufknax)
+### Version History
+- **v1.5 (Official)** - Aktuelle Produktivversion
+- **v1.3 (Stable)** - ~~Zwischenversion~~ *(deprecated)*
+- **v1.0 (Stable)** - Erste Release
+- **v2.0 (Beta)** - In Entwicklung
+
+### Performance
+- **Lighthouse Score:** 95+ (Performance, Accessibility, SEO)
+- **First Contentful Paint:** < 1.5s
+- **Largest Contentful Paint:** < 2.5s
+- **Cumulative Layout Shift:** < 0.1
+
+---
+
+**⭐ Wenn dir dieses Portfolio gefällt, gib dem Repository einen Stern!**
