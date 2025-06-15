@@ -1,7 +1,7 @@
 # Portfolio Website 2.0-Beta - Maximilian Paasch
 
 ## 🚀 Version 2.0-Beta
-Diese ist die Beta-Version 2.0 der Portfolio-Website von Maximilian Paasch für die Bewerbung im Bereich Mediendesigninformatik.
+Diese ist die Beta-Version 2.0 der Portfolio-Website von Maximilian Paasch für uA. Bewerbungen.
 
 ## ⚠️ Beta-Status
 Diese Version befindet sich noch in der Entwicklung. Einige Features sind möglicherweise noch nicht vollständig funktionsfähig.
