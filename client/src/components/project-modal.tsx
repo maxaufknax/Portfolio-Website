@@ -287,7 +287,7 @@ export default function ProjectModal() {
                   <h5 className="text-sm md:text-base font-medium text-muted-foreground">Web Version</h5>
                   <div className="relative rounded-lg overflow-hidden border border-border bg-muted/30 aspect-video">
                     <video controls className="w-full h-full object-contain">
-                      <source src="/medical-spytool-showcase.mp4" type="video/mp4" />
+                      <source src="./medical-spytool-showcase.mp4" type="video/mp4" />
                       Ihr Browser unterstützt das Video-Tag nicht.
                     </video>
                   </div>
@@ -296,7 +296,7 @@ export default function ProjectModal() {
                   <h5 className="text-sm md:text-base font-medium text-muted-foreground">Desktop Version</h5>
                   <div className="relative rounded-lg overflow-hidden border border-border bg-muted/30 aspect-video">
                     <video controls className="w-full h-full object-contain">
-                      <source src="/medical-spytool-local-showcase.mp4" type="video/mp4" />
+                      <source src="./medical-spytool-local-showcase.mp4" type="video/mp4" />
                       Ihr Browser unterstützt das Video-Tag nicht.
                     </video>
                   </div>

@@ -135,7 +135,7 @@ export default function AboutSection() {
             <div className="absolute -inset-4 bg-gradient-to-r from-primary via-secondary to-accent rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
             <div className="relative glassmorphism-strong p-2 rounded-3xl">
               <img 
-                src="/bewerbungsfoto-max-paasch.jpeg" 
+                src="./bewerbungsfoto-max-paasch.jpeg" 
                 alt="Max Paasch - Professional Portrait" 
                 className="w-64 h-64 md:w-72 md:h-72 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
               />
