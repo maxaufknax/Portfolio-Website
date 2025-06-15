@@ -2,7 +2,7 @@
 
 > **Live Website:** [https://maxaufknax.github.io/Portfolio-Website/](https://maxaufknax.github.io/Portfolio-Website/)
 
-Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studiengang Mediendesigninformatik. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
+Eine moderne, professionelle Portfolio-Website. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
 
 ## 📋 Repository-Struktur & Branches
 
@@ -43,7 +43,7 @@ Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studienga
 
 ## Über dieses Projekt
 
-Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation für meine Bewerbung um einen Studienplatz in Mediendesigninformatik.
+Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation.
 
 ## Features
 
