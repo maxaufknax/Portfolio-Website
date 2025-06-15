@@ -1,6 +1,6 @@
 # Max Paasch - Portfolio Website v1.5 (Official Release)
 
-Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studiengang Mediendesigninformatik. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
+Eine moderne, professionelle Portfolio-Website. Die Website präsentiert meine Projekte, Fähigkeiten und meinen beruflichen Werdegang mit einem eleganten, dunklen Design.
 
 ## 🆕 Version 1.5 Updates (Official Release)
 
@@ -23,7 +23,7 @@ Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studienga
 
 ## Über dieses Projekt
 
-Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation für meine Bewerbung um einen Studienplatz in Mediendesigninformatik.
+Diese Portfolio-Website wurde von mir entwickelt, um meine Fähigkeiten in der Webentwicklung und im Design zu demonstrieren. Sie dient als digitale Präsentation.
 
 ## Features
 
@@ -161,6 +161,5 @@ MIT License - siehe LICENSE-Datei für Details.
 ## Kontakt
 
 Bei Fragen oder Feedback:
-- Email: [Ihre Email]
+- Email: maximilian.elias.paasch@gmail.com
 - GitHub: [@maxaufknax](https://github.com/maxaufknax)
-- LinkedIn: [Ihr LinkedIn Profil]
