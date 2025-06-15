@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function AboutSection() {
+  const { t } = useLanguage();
   const [activeTimeline, setActiveTimeline] = useState<'education' | 'career' | 'interests'>('education');
   const [isTimelineExpanded, setIsTimelineExpanded] = useState(false);
   const skills = [
@@ -123,8 +125,8 @@ export default function AboutSection() {
       <div className="absolute inset-0 gradient-bg opacity-5"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">Über mich</h2>
-          <p className="md:text-2xl text-muted-foreground max-w-4xl mx-auto text-[23px]">Während andere noch überlegen, bau ich es einfach. Learning by Doing, 100%.</p>
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-gradient">{t('about.title')}</h2>
+          <p className="md:text-2xl text-muted-foreground max-w-4xl mx-auto text-[23px]">{t('about.intro')}</p>
         </div>
         
         {/* Profilfoto Header */}

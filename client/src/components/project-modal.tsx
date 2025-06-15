@@ -348,7 +348,22 @@ export default function ProjectModal() {
         </div>
         
         <div className="flex flex-wrap gap-2 md:gap-3 mt-6 md:mt-8 pt-4 md:pt-6 border-t border-border">
-          {selectedProject.liveDemoUrl && ( // Geändert von demoUrl zu liveDemoUrl
+          {/* Spezielle Behandlung für Medical Spytool - deaktivierter Demo Button */}
+          {selectedProject.id === 'medical-spytool' && (
+            <Button 
+              disabled 
+              className="bg-muted text-muted-foreground cursor-not-allowed flex-grow sm:flex-grow-0 relative group"
+              title="Live Demo ab Portfolio Version 2.5 verfügbar"
+            >
+              <ExternalLink className="w-4 h-4 mr-2 opacity-50" />
+              Live Demo (ab v2.5 verfügbar)
+              <span className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-popover text-popover-foreground text-xs px-2 py-1 rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                Verfügbar ab Portfolio 2.5
+              </span>
+            </Button>
+          )}
+          {/* Normale Live Demo Buttons für andere Projekte */}
+          {selectedProject.liveDemoUrl && selectedProject.id !== 'medical-spytool' && (
             <Button onClick={openDemo} className="bg-primary hover:bg-primary/90 text-primary-foreground flex-grow sm:flex-grow-0">
               <ExternalLink className="w-4 h-4 mr-2" />
               {selectedProject.id === 'bfd-mhh' ? 'Offizielle Abteilungsseite besuchen' : 'Live Demo starten'}

@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Brain, Paintbrush, ShoppingCart } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   const scrollToProjects = () => {
     const element = document.getElementById('projects');
     if (element) {
@@ -35,20 +37,19 @@ export default function HeroSection() {
         <div className="text-center mb-16">
           <div className="inline-block mb-8">
             <span className="px-6 py-3 text-sm font-bold glassmorphism-strong rounded-full text-primary border border-primary/30 shadow-lg">
-              Portfolio 2025 • Media Design Informatics
+              {t('hero.badge')}
             </span>
           </div>
           
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-none">
-            <span className="block text-gradient mb-4">Max Paasch</span>
+            <span className="block text-gradient mb-4">{t('hero.name')}</span>
             <span className="block text-4xl md:text-5xl lg:text-6xl font-semibold text-muted-foreground">
-              Zwischen Code & Kreativität
+              {t('hero.subtitle')}
             </span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-            Digitale Innovation durch die Fusion von Technologie und Design. 
-            Mein Portfolio für das Studium der Mediendesigninformatik.
+            {t('hero.description')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
@@ -57,7 +58,7 @@ export default function HeroSection() {
               size="lg" 
               className="glassmorphism-strong hover:scale-110 transition-all duration-300 px-12 py-6 text-xl font-bold bg-gradient-to-r from-primary via-secondary to-accent text-white border-0 shadow-2xl group"
             >
-              Projekte entdecken
+              {t('hero.projects')}
               <ArrowDown className="ml-3 h-6 w-6 group-hover:translate-y-1 transition-transform" />
             </Button>
             <Button 
@@ -66,7 +67,7 @@ export default function HeroSection() {
               size="lg"
               className="glassmorphism-strong hover:glassmorphism transition-all duration-300 border-white/30 px-12 py-6 text-xl font-bold hover:scale-110"
             >
-              Über mich erfahren
+              {t('nav.about')}
             </Button>
           </div>
         </div>

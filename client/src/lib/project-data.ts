@@ -68,8 +68,7 @@ export const projects: Project[] = [
     image: '/Design ohne Titel.png', // Aktualisiertes Bild
     imageAlt: 'Medical Spytool - Neues Design der Benutzeroberfläche', // Aktualisierter Alternativtext
     githubUrl: 'https://github.com/maxaufknax/Medical-Spytool',
-    liveDemoUrl: 'https://medical-spytool-demo.example.com', // Beispiel-URL, bitte anpassen
-    pdfUrl: '/pdfs/medical-spytool-beschreibung.pdf' // Beispiel-URL, bitte anpassen
+    pdfUrl: '/Portfolio - Medical Spytool.pdf'
   },
   {
     id: 'ai-discord-bot',
@@ -100,6 +99,7 @@ export const projects: Project[] = [
       'Der Bot ermöglicht eine direkte und kontrollierte Nutzung von leistungsstarker KI in Discord-Communities. Durch die lokale Ausführung und die Möglichkeit, eine eigene Wissensdatenbank zu integrieren, bietet er ein hohes Maß an Datenschutz und Anpassbarkeit, was ihn ideal für private Server oder spezielle Interessengruppen macht.',
     githubUrl: 'https://github.com/maxaufknax/AI-Discord-Bot', // Aktualisierter GitHub Link
     videoUrl: '/ai discord bot showcase video.mp4',
+    pdfUrl: '/Portfolio - Digital Portfolio.pdf'
   },
   {
     id: 'soulscribe',
@@ -148,7 +148,7 @@ export const projects: Project[] = [
     impact:
       'Fördert persönliche Entwicklung und emotionale Intelligenz durch strukturierte Selbstreflexion. Dient als Werkzeug zur Stressreduktion und Zielverfolgung. Bietet Potenzial für Therapeuten zur Klientenunterstützung und für Unternehmen im Bereich Mitarbeiterwohlbefinden und Burnout-Prävention.',
     githubUrl: 'https://github.com/maxaufknax/SoulScribe-AI-Application', // Hinzugefügter GitHub Link
-    // Ggf. liveDemoUrl hinzufügen, falls vorhanden
+    pdfUrl: '/Portfolio - SoulScribe.pdf'
   },
   {
     id: 'media-portfolio', // ID bleibt vorerst gleich, kann später angepasst werden, falls gewünscht
@@ -221,7 +221,7 @@ export const projects: Project[] = [
       }
     ],
     githubUrl: 'https://github.com/maxaufknax/E-Commerce', // Hinzugefügter GitHub Link
-    // Ggf. liveDemoUrl hinzufügen, falls vorhanden
+    pdfUrl: '/Portfolio - E-Commerce.pdf'
   },
   {
     id: 'bfd-mhh',
@@ -274,7 +274,8 @@ export const projects: Project[] = [
       }
     ],
     // githubUrl: 'Link zum relevanten GitHub-Repository, falls vorhanden' // Optional
-    liveDemoUrl: 'https://www.mhh.de/akademische-karriereentwicklung' // Link zur offiziellen Abteilungsseite
+    liveDemoUrl: 'https://www.mhh.de/akademische-karriereentwicklung', // Link zur offiziellen Abteilungsseite
+    pdfUrl: '/Portfolio - BFD Portfolio.pdf'
   }
   // Weitere Projekte können hier hinzugefügt werden
 ];

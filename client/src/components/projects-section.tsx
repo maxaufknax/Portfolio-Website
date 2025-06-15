@@ -1,10 +1,12 @@
 import { projects } from "@/lib/project-data";
+import { useLanguage } from "../contexts/LanguageContext";
 
 interface ProjectsSectionProps {
   onProjectClick?: (projectId: string) => void;
 }
 
 export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps) {
+  const { t } = useLanguage();
   const handleProjectClick = (projectId: string) => {
     if (onProjectClick) {
       onProjectClick(projectId);
@@ -75,9 +77,9 @@ export default function ProjectsSection({ onProjectClick }: ProjectsSectionProps
     <section id="projects" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Meine Projekte</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">{t('projects.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Innovative Lösungen aus Software-Entwicklung und kreativer Medienproduktion
+            {t('projects.subtitle')}
           </p>
         </div>
 

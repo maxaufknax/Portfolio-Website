@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { LanguageToggle } from "./language-toggle";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,16 +38,17 @@ export default function Navigation() {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button onClick={() => scrollToSection('about')} className="text-foreground hover:text-primary transition-all duration-300 font-semibold text-lg relative group">
-              About
+              {t('nav.about')}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button onClick={() => scrollToSection('projects')} className="text-foreground hover:text-primary transition-all duration-300 font-semibold text-lg relative group">
-              Projects
+              {t('nav.projects')}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
             </button>
             <button onClick={() => scrollToSection('contact')} className="glassmorphism px-6 py-3 rounded-full font-bold text-primary border border-primary/30 hover:bg-primary/10 hover:scale-105 transition-all duration-300">
-              Kontakt
+              {t('nav.contact')}
             </button>
+            <LanguageToggle />
           </div>
 
           {/* Mobile Menu Button */}
@@ -58,17 +62,20 @@ export default function Navigation() {
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-4">
               <button onClick={() => scrollToSection('home')} className="text-left hover:text-primary transition-colors duration-300">
-                Startseite
+                Home
               </button>
               <button onClick={() => scrollToSection('about')} className="text-left hover:text-primary transition-colors duration-300">
-                Über mich
+                {t('nav.about')}
               </button>
               <button onClick={() => scrollToSection('projects')} className="text-left hover:text-primary transition-colors duration-300">
-                Projekte
+                {t('nav.projects')}
               </button>
               <button onClick={() => scrollToSection('contact')} className="text-left hover:text-primary transition-colors duration-300">
-                Kontakt
+                {t('nav.contact')}
               </button>
+              <div className="pt-2">
+                <LanguageToggle />
+              </div>
             </div>
           </div>
         )}

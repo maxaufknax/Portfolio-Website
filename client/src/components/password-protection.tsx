@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Eye, EyeOff, Lock, Shield } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface PasswordProtectionProps {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ export default function PasswordProtection({
   password = "Maximilian2025", // Hardcoded for now to ensure it works
   disabled = false // Disabled only for debugging
 }: PasswordProtectionProps) {
+  const { t } = useLanguage();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [inputPassword, setInputPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -110,10 +112,10 @@ export default function PasswordProtection({
             </div>
             <div>
               <CardTitle className="text-3xl font-black text-gradient mb-2">
-                Portfolio Zugang
+                {t('password.title')}
               </CardTitle>
               <CardDescription className="text-lg text-muted-foreground">
-                Bitte gib das Passwort ein, um das Portfolio zu betreten
+                {t('password.subtitle')}
               </CardDescription>
             </div>
           </CardHeader>
@@ -123,7 +125,7 @@ export default function PasswordProtection({
               <div className="space-y-2">
                 <Label htmlFor="password" className="text-sm font-semibold flex items-center gap-2">
                   <Lock className="w-4 h-4" />
-                  Passwort
+                  {t('password.placeholder')}
                 </Label>
                 <div className="relative">
                   <Input
@@ -132,7 +134,7 @@ export default function PasswordProtection({
                     value={inputPassword}
                     onChange={(e) => setInputPassword(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    placeholder="Passwort eingeben..."
+                    placeholder={t('password.placeholder')}
                     className="pr-12 border-2 border-primary/20 focus:border-primary/40 glassmorphism"
                     disabled={isLoading}
                   />
@@ -156,7 +158,7 @@ export default function PasswordProtection({
               {error && (
                 <Alert variant="destructive" className="glassmorphism border-red-500/30">
                   <AlertDescription className="text-sm">
-                    {error}
+                    {t('password.error')}
                   </AlertDescription>
                 </Alert>
               )}
@@ -169,12 +171,12 @@ export default function PasswordProtection({
                 {isLoading ? (
                   <div className="flex items-center justify-center gap-2">
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                    Überprüfe...
+                    {t('general.loading')}
                   </div>
                 ) : (
                   <div className="flex items-center justify-center gap-2">
                     <Shield className="w-4 h-4" />
-                    Portfolio betreten
+                    {t('password.submit')}
                   </div>
                 )}
               </Button>
@@ -194,7 +196,7 @@ export default function PasswordProtection({
         {/* Additional info */}
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground glassmorphism px-4 py-2 rounded-full border border-primary/20 inline-block">
-            Max Paasch Portfolio • Mediendesigninformatik
+            {t('password.footer')}
           </p>
         </div>
       </div>
