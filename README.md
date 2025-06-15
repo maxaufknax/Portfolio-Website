@@ -20,6 +20,8 @@ Eine moderne, professionelle Portfolio-Website für meine Bewerbung im Studienga
 - **Neue Features:** `portfolio-website-2.0-(beta)`
 - **Produktions-Deployment:** Via GitHub Actions zu `gh-pages`
 
+> 📖 **Detaillierte Branch-Dokumentation:** Siehe [BRANCHES.md](./BRANCHES.md) für vollständige Informationen zum Branch-Management und Aufräum-Empfehlungen.
+
 ## 🆕 Version 1.5 Updates (Official Release)
 
 ### UI/UX Verbesserungen:
