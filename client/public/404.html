@@ -4,21 +4,11 @@
   <meta charset="utf-8">
   <title>Max Paasch - Portfolio</title>
   <script type="text/javascript">
-    // Single Page Apps for GitHub Pages
-    // https://github.com/rafgraph/spa-github-pages
-    // Copyright (c) 2016 Rafael Pedicini, licensed under the MIT License
-    var pathSegmentsToKeep = 1;
-
-    var l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
+    // Direct redirect to index.html for GitHub Pages SPA
+    window.location.replace(window.location.origin + '/Portfolio-Website/');
   </script>
 </head>
 <body>
+  <p>Weiterleitung zur Portfolio-Website...</p>
 </body>
 </html>
